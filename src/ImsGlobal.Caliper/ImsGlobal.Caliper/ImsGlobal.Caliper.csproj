@@ -50,7 +50,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Annotation\BookmarkAnnotation.cs" />
+    <Compile Include="Entities\Annotation\HighlightAnnotation.cs" />
     <Compile Include="Entities\Annotation\Annotation.cs" />
+    <Compile Include="Entities\Annotation\TextPositionSelector.cs" />
     <Compile Include="Events\Annotation\AnnotationEvent.cs" />
     <Compile Include="Events\Reading\ViewedEvent.cs" />
     <Compile Include="Protocol\CaliperClient.cs" />
