@@ -9,7 +9,7 @@ namespace ImsGlobal.Caliper.Events.Annotation {
 	/// <summary>
 	/// Event raised when an actor annotates a resource.
 	/// </summary>
-	public class AnnotationEvent : CaliperEvent {
+	public class AnnotationEvent : Event {
 
 		public AnnotationEvent( string action )
 			: base() {

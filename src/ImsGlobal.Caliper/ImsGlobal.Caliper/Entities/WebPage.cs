@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace ImsGlobal.Caliper.Entities {
 
-	public interface ICaliperAgent : Foaf.IAgent {
+	public class WebPage : DigitalResource {
+
+		public WebPage( string id )
+			: base( id ) {
+			this.Type = DigitalResourceType.WebPage.Uri;
+		}
+
 	}
 
 }

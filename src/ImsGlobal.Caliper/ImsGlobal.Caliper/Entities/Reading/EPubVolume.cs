@@ -5,22 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ImsGlobal.Caliper.Entities.Reading {
-	using ImsGlobal.Caliper.Entities.SchemaDotOrg;
 
 	/// <summary>
 	/// Representation of an EPUB 3 Volume.
 	/// 
 	/// A component of a collection.
-	/// 
 	/// http://www.idpf.org/epub/vocab/structure/#volume
 	/// </summary>
-	public class EPubVolume : CaliperDigitalResource, ICreativeWork {
+	public class EPubVolume : DigitalResource {
 
 		public EPubVolume( string id )
-			: base() {
-
-			this.Id = id;
-			this.Type = "http://www.idpf.org/epub/vocab/structure/#volume";
+			: base( id ) {
+			this.Type = DigitalResourceType.EpubVolume.Uri;
 		}
 
 	}

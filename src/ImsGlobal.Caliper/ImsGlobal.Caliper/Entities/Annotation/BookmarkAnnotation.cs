@@ -11,8 +11,7 @@ namespace ImsGlobal.Caliper.Entities.Annotation {
 
 		public BookmarkAnnotation( string id )
 			: base( id ) {
-
-			this.Type = "http://purl.imsglobal.org/caliper/v1/BookmarkAnnotation";
+			this.Type = AnnotationType.Bookmark.Uri;
 		}
 
 		[JsonProperty( "bookmarkNotes", Order = 31 )]

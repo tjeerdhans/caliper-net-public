@@ -8,20 +8,15 @@ using Newtonsoft.Json;
 
 namespace ImsGlobal.Caliper.Entities.Lis {
 
-	public class LisCourseSection : LisOrganization, ICaliperAgent {
+	public class CourseSection : Organization {
 
-		private const string TYPE_URI = "http://purl.imsglobal.org/caliper/v1/LISCourseSection";
-
-		public LisCourseSection()
-			: base() {
-
-			this.Type = TYPE_URI;
+		public CourseSection( string id )
+			: this( id, null ) {
 		}
 
-		public LisCourseSection( string id, LisOrganization parentOrg )
-			: base(id, parentOrg) {
-
-			this.Type = TYPE_URI;
+		public CourseSection( string id, Organization parentOrg )
+			: base( id, parentOrg ) {
+			this.Type = OrganizationType.CourseSection.Uri;
 		}
 
 		[JsonProperty( "label", Order = 21 )]

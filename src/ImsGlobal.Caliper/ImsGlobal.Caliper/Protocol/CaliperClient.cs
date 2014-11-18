@@ -18,7 +18,7 @@ namespace ImsGlobal.Caliper.Protocol {
 			_options = options;
 		}
 
-		public async Task<bool> Send( CaliperEvent @event ) {
+		public async Task<bool> Send( Event @event ) {
 
 			var message = new CaliperMessage {
 				Id = "caliper-net_" + Guid.NewGuid(),
@@ -45,7 +45,7 @@ namespace ImsGlobal.Caliper.Protocol {
 			return true;
 		}
 
-		public async Task<bool> Describe( CaliperEntity entity ) {
+		public async Task<bool> Describe( Entity entity ) {
 			return false;
 		}
 

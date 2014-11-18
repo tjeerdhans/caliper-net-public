@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 namespace ImsGlobal.Caliper.Entities {
 
 	/// <summary>
-	/// Represents a learning objective.
+	/// Represents the context of an activity, e.g. an assignment.
 	/// </summary>
-	public class LearningObjective : Entity {
+	public class ActivityContext : Entity {
 
-		public LearningObjective( string id )
+		public ActivityContext( string id )
 			: base( id ) {
-			this.Type = EntityType.LearningObjective.Uri;
+			this.Type = EntityType.ActivityContext.Uri;
 		}
 
 	}

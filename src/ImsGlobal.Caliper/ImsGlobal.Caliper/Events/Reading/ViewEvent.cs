@@ -5,20 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ImsGlobal.Caliper.Events.Reading {
+	using ImsGlobal.Caliper.Actions;
 
 	/// <summary>
 	/// Event raised when an actor views a resource.
 	/// </summary>
-	public class ViewedEvent : CaliperEvent {
+	public class ViewEvent : Event {
 
-		public ViewedEvent()
-			: base() {
-
-			this.Context = "http://purl.imsglobal.org/ctx/caliper/v1/ViewedEvent";
-			this.Type = "http://purl.imsglobal.org/caliper/v1/ViewedEvent";
-			this.Action = "viewed";
+		public ViewEvent() {
+			this.Context = EventContext.View.Uri;
+			this.Type = EventType.View.Uri;
+			this.Action = ReadingAction.Viewed.Value;
 		}
 
 	}
-
 }

@@ -11,8 +11,7 @@ namespace ImsGlobal.Caliper.Entities.Annotation {
 
 		public HighlightAnnotation( string id )
 			: base( id ) {
-
-			this.Type = "http://purl.imsglobal.org/caliper/v1/HighlightAnnotation";
+			this.Type = AnnotationType.Highlight.Uri;
 			this.Selection = new TextPositionSelector();
 		}
 

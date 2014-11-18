@@ -28,7 +28,7 @@ namespace ImsGlobal.Caliper {
 		/// Sends an event to the configured Caliper endpoint.
 		/// </summary>
 		/// <param name="event">The CaliperEvent to be sent.</param>
-		public async Task<bool> SendAsync( CaliperEvent @event ) {
+		public async Task<bool> SendAsync( Event @event ) {
 			return await _client.Send( @event );
 		}
 
@@ -36,7 +36,7 @@ namespace ImsGlobal.Caliper {
 		/// Sends an entity to the configured Caliper endpoint.
 		/// </summary>
 		/// <param name="entity">The CaliperEntity to be sent.</param>
-		public async Task<bool> Describe( CaliperEntity entity ) {
+		public async Task<bool> Describe( Entity entity ) {
 			return await _client.Describe( entity );
 		}
 

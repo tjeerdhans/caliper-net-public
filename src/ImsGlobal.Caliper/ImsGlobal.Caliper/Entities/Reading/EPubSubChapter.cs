@@ -5,22 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ImsGlobal.Caliper.Entities.Reading {
-	using ImsGlobal.Caliper.Entities.SchemaDotOrg;
 
 	/// <summary>
 	/// Representation of an EPUB 3 Sub-chapter.
 	/// 
 	/// A major sub-division of a chapter.
-	/// 
 	/// http://www.idpf.org/epub/vocab/structure/#subchapter
 	/// </summary>
-	public class EPubSubChapter : CaliperDigitalResource, ICreativeWork {
+	public class EPubSubChapter : DigitalResource {
 
 		public EPubSubChapter( string id )
-			: base() {
-
-			this.Id = id;
-			this.Type = "http://www.idpf.org/epub/vocab/structure/#subchapter";
+			: base( id ) {
+			this.Type = DigitalResourceType.EpubSubChapter.Uri;
 		}
 
 	}

@@ -13,7 +13,45 @@ namespace ImsGlobal.Caliper.Events {
 	/// <summary>
 	/// Base class for all Caliper events.
 	/// </summary>
-	public class CaliperEvent {
+	public abstract class Event {
+
+		public sealed class EventContext {
+
+			public static readonly EventContext Annotation = new EventContext( "http://purl.imsglobal.org/ctx/caliper/v1/AnnotationEvent" );
+			public static readonly EventContext Assessment = new EventContext( "http://purl.imsglobal.org/ctx/caliper/v1/AssessmentEvent" );
+			public static readonly EventContext AssessmentItem = new EventContext( "http://purl.imsglobal.org/ctx/caliper/v1/AssessmentItemEvent" );
+			public static readonly EventContext Assignable = new EventContext( "http://purl.imsglobal.org/ctx/caliper/v1/AssignableEvent" );
+			public static readonly EventContext Event = new EventContext( "http://purl.imsglobal.org/ctx/caliper/v1/Event" );
+			public static readonly EventContext Media = new EventContext( "http://purl.imsglobal.org/ctx/caliper/v1/MediaEvent" );
+			public static readonly EventContext Navigation = new EventContext( "http://purl.imsglobal.org/ctx/caliper/v1/NavigationEvent" );
+			public static readonly EventContext Outcome = new EventContext( "http://purl.imsglobal.org/ctx/caliper/v1/OutcomeEvent" );
+			public static readonly EventContext View = new EventContext( "http://purl.imsglobal.org/ctx/caliper/v1/ViewEvent" );
+
+			private EventContext( string uri ) {
+				this.Uri = uri;
+			}
+
+			public string Uri { get; private set; }
+		}
+
+		public sealed class EventType {
+
+			public static readonly EventType Annotation = new EventType( "http://purl.imsglobal.org/caliper/v1/AnnotationEvent" );
+			public static readonly EventType Assessment = new EventType( "http://purl.imsglobal.org/caliper/v1/AssessmentEvent" );
+			public static readonly EventType AssessmentItem = new EventType( "http://purl.imsglobal.org/caliper/v1/AssessmentItemEvent" );
+			public static readonly EventType Assignable = new EventType( "http://purl.imsglobal.org/caliper/v1/AssignableEvent" );
+			public static readonly EventType Event = new EventType( "http://purl.imsglobal.org/caliper/v1/Event" );
+			public static readonly EventType Media = new EventType( "http://purl.imsglobal.org/caliper/v1/MediaEvent" );
+			public static readonly EventType Navigation = new EventType( "http://purl.imsglobal.org/caliper/v1/NavigationEvent" );
+			public static readonly EventType Outcome = new EventType( "http://purl.imsglobal.org/caliper/v1/OutcomeEvent" );
+			public static readonly EventType View = new EventType( "http://purl.imsglobal.org/caliper/v1/ViewEvent" );
+
+			private EventType( string uri ) {
+				this.Uri = uri;
+			}
+
+			public string Uri { get; private set; }
+		}
 
 		// ------ Core Properties ------
 
@@ -33,13 +71,13 @@ namespace ImsGlobal.Caliper.Events {
 		/// Required - Agent (User, System) that performed the action
 		/// </summary>
 		[JsonProperty( "actor", Order = 3 )]
-		public ICaliperAgent Actor { get; set; }
+		public Agent Actor { get; set; }
 
 		/// <summary>
 		/// Required - Action performed by the agent - from Metric Profile
 		/// </summary>
 		[JsonProperty( "action", Order = 4 )]
-		public string Action { get; set; }
+		public string Action { get; protected set; }
 
 		/// <summary>
 		/// Required - "Activity Context" - from Metric Profile
@@ -94,7 +132,7 @@ namespace ImsGlobal.Caliper.Events {
 		/// Group context
 		/// </summary>
 		[JsonProperty( "group", Order = 12 )]
-		public LisOrganization LisOrg { get; set; }
+		public Organization LisOrg { get; set; }
 
 	}
 
