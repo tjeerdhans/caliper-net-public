@@ -60,6 +60,7 @@
     <Compile Include="Entities\Reading\View.cs" />
     <Compile Include="Entities\Reading\Reading.cs" />
     <Compile Include="Entities\Reading\Frame.cs" />
+    <Compile Include="Entities\Annotation\ShareAnnotation.cs" />
     <Compile Include="Events\Annotation\AnnotationEvent.cs" />
     <Compile Include="Actions\ReadingAction.cs" />
     <Compile Include="Events\Reading\ViewEvent.cs" />
