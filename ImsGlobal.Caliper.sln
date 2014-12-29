@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImsGlobal.Caliper", "ImsGlobal.Caliper\ImsGlobal.Caliper.csproj", "{9AAEF49D-F8C3-4C31-B9C5-20CAE780D7DF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImsGlobal.Caliper", "src\ImsGlobal.Caliper\ImsGlobal.Caliper.csproj", "{9AAEF49D-F8C3-4C31-B9C5-20CAE780D7DF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A4F13222-401A-4B4F-9A9B-FF0860F264A5}"
 	ProjectSection(SolutionItems) = preProject
