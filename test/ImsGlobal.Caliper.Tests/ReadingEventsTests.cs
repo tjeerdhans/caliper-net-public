@@ -38,6 +38,31 @@ namespace ImsGlobal.Caliper.Tests {
 			Assert.Null( diff.OldValues );
 		}
 
+		[Fact]
+		public void ViewEvent_MatchesReferenceJson() {
+
+			var viewEvent = new ViewEvent {
+				EdApp = TestEntities.Readium,
+				LisOrg = TestEntities.AmRev101,
+				Actor = TestEntities.Student554433,
+				Object = TestEntities.EpubVolume43,
+				Target = TestEntities.EpubSubChap431_Frame,
+				StartedAt = 1402965614516L
+			};
+
+			var eventJson = JObject.FromObject( viewEvent );
+			var refJsonString = TestUtils.LoadReferenceJsonFile( "caliperViewEvent" );
+			var refJson = JObject.Parse( refJsonString );
+
+			var diff = ObjectDiffPatch.GenerateDiff( refJson, eventJson );
+
+			System.Diagnostics.Trace.WriteLine( diff.NewValues );
+			System.Diagnostics.Trace.WriteLine( diff.OldValues );
+
+			Assert.Null( diff.NewValues );
+			Assert.Null( diff.OldValues );
+		}
+
 	}
 
 }

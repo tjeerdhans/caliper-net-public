@@ -66,6 +66,7 @@
   <ItemGroup>
     <None Include="packages.config" />
     <EmbeddedResource Include="ReferenceJson\caliperNavigationEvent.json" />
+    <EmbeddedResource Include="ReferenceJson\caliperViewEvent.json" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\ImsGlobal.Caliper\ImsGlobal.Caliper.csproj">
