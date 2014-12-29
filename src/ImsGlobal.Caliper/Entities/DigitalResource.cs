@@ -40,6 +40,7 @@ namespace ImsGlobal.Caliper.Entities {
 		public DigitalResource( string id )
 			: base( id ) {
 			this.Type = EntityType.DigitalResource.Uri;
+			this.ObjectTypes = new List<string>();
 			this.AlignedLearningObjectives = new List<LearningObjective>();
 			this.Keywords = new List<string>();
 		}
@@ -48,7 +49,7 @@ namespace ImsGlobal.Caliper.Entities {
 		/// The object type of the resource.
 		/// </summary>
 		[JsonProperty( "objectType", Order = 11 )]
-		public dynamic ObjectType { get; set; }
+		public IList<string> ObjectTypes { get; set; }
 
 		/// <summary>
 		/// List of learning objectives aligned with this resource.

@@ -34,9 +34,6 @@ namespace ImsGlobal.Caliper.Entities.Lis {
 		[JsonProperty( "parentOrg", Order = 11 )]
 		public Organization ParentOrg { get; set; }
 
-		[JsonProperty( "title", Order = 12 )]
-		public string Title { get; set; }
-
 	}
 
 }
