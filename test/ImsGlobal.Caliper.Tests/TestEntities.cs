@@ -52,6 +52,45 @@ namespace ImsGlobal.Caliper.Tests {
 			LastModifiedAt = 1402965614516L
 		};
 
+		public static EPubSubChapter EpubSubChap432 = new EPubSubChapter( "https://github.com/readium/readium-js-viewer/book/34843#epubcfi(/4/3/2)" ) {
+			Name = "Key Figures: Lord North",
+			ParentRef = EpubVolume43,
+			LastModifiedAt = 1402965614516L
+		};
+
+		public static Frame EpubSubChap432_Frame = new Frame( EpubSubChap432.Id ) {
+			Name = EpubSubChap432.Name,
+			ParentRef = EpubVolume43,
+			Index = 2,
+			LastModifiedAt = 1402965614516L
+		};
+
+		public static EPubSubChapter EpubSubChap433 = new EPubSubChapter( "https://github.com/readium/readium-js-viewer/book/34843#epubcfi(/4/3/3)" ) {
+			Name = "Key Figures: John Adams",
+			ParentRef = EpubVolume43,
+			LastModifiedAt = 1402965614516L
+		};
+
+		public static Frame EpubSubChap433_Frame = new Frame( EpubSubChap433.Id ) {
+			Name = EpubSubChap433.Name,
+			ParentRef = EpubVolume43,
+			Index = 3,
+			LastModifiedAt = 1402965614516L
+		};
+
+		public static EPubSubChapter EpubSubChap434 = new EPubSubChapter( "https://github.com/readium/readium-js-viewer/book/34843#epubcfi(/4/3/4)" ) {
+			Name = "The Stamp Act Crisis",
+			ParentRef = EpubVolume43,
+			LastModifiedAt = 1402965614516L
+		};
+
+		public static Frame EpubSubChap434_Frame = new Frame( EpubSubChap434.Id ) {
+			Name = EpubSubChap434.Name,
+			ParentRef = EpubVolume43,
+			Index = 4,
+			LastModifiedAt = 1402965614516L
+		};
+
 	}
 
 }

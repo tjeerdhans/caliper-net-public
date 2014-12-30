@@ -12,7 +12,7 @@ namespace ImsGlobal.Caliper.Entities.Annotation {
 
         public ShareAnnotation(string id)
 			: base( id ) {
-			this.Type = AnnotationType.Shared.Uri;
+			this.Type = AnnotationType.Share.Uri;
             this.WithAgents = new List<IAgent>();
 		}
 

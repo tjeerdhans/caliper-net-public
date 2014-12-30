@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Events\Annotation\AnnotationAction.cs" />
     <Compile Include="Entities\Annotation\TagAnnotation.cs" />
     <Compile Include="Entities\LearningContext.cs" />
     <Compile Include="Entities\Annotation\BookmarkAnnotation.cs" />

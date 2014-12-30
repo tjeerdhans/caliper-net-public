@@ -20,7 +20,7 @@ namespace ImsGlobal.Caliper.Entities.Annotation {
 			public static readonly AnnotationType Annotation = new AnnotationType( "http://purl.imsglobal.org/caliper/v1/Annotation" );
 			public static readonly AnnotationType Bookmark = new AnnotationType( "http://purl.imsglobal.org/caliper/v1/BookmarkAnnotation" );
 			public static readonly AnnotationType Highlight = new AnnotationType( "http://purl.imsglobal.org/caliper/v1/HighlightAnnotation" );
-			public static readonly AnnotationType Shared = new AnnotationType( "http://purl.imsglobal.org/caliper/v1/SharedAnnotation" );
+			public static readonly AnnotationType Share = new AnnotationType( "http://purl.imsglobal.org/caliper/v1/SharedAnnotation" );
 			public static readonly AnnotationType Tag = new AnnotationType( "http://purl.imsglobal.org/caliper/v1/TagAnnotation" );
 
 			private AnnotationType( string uri ) {
@@ -35,6 +35,7 @@ namespace ImsGlobal.Caliper.Entities.Annotation {
 			this.Type = AnnotationType.Annotation.Uri;
 		}
 
+		[JsonIgnore]
 		[JsonProperty( "target", Order = 21 )]
 		public object Target { get; set; }
 

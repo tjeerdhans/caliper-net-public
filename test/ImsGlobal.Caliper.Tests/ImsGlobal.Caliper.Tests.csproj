@@ -57,6 +57,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnnotationEventsTests.cs" />
     <Compile Include="ReadingEventsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleHelpers\ObjectDiffPatch.cs" />
@@ -67,6 +68,10 @@
     <None Include="packages.config" />
     <EmbeddedResource Include="ReferenceJson\caliperNavigationEvent.json" />
     <EmbeddedResource Include="ReferenceJson\caliperViewEvent.json" />
+    <EmbeddedResource Include="ReferenceJson\caliperBookmarkAnnotationEvent.json" />
+    <EmbeddedResource Include="ReferenceJson\caliperHighlightAnnotationEvent.json" />
+    <EmbeddedResource Include="ReferenceJson\caliperTagAnnotationEvent.json" />
+    <EmbeddedResource Include="ReferenceJson\caliperShareAnnotationEvent.json" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\ImsGlobal.Caliper\ImsGlobal.Caliper.csproj">
