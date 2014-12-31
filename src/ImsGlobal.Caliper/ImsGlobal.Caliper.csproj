@@ -50,6 +50,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Media\MediaLocation.cs" />
+    <Compile Include="Entities\Media\MediaObject.cs" />
+    <Compile Include="Entities\Media\ImageObject.cs" />
+    <Compile Include="Entities\Media\AudioObject.cs" />
+    <Compile Include="Entities\Media\VideoObject.cs" />
+    <Compile Include="Entities\SchemaDotOrg\IAudioObject.cs" />
+    <Compile Include="Entities\SchemaDotOrg\IImageObject.cs" />
+    <Compile Include="Entities\SchemaDotOrg\IVideoObject.cs" />
+    <Compile Include="Entities\SchemaDotOrg\IMediaObject.cs" />
     <Compile Include="Events\Annotation\AnnotationAction.cs" />
     <Compile Include="Entities\Annotation\TagAnnotation.cs" />
     <Compile Include="Entities\LearningContext.cs" />
@@ -64,6 +73,8 @@
     <Compile Include="Entities\Annotation\ShareAnnotation.cs" />
     <Compile Include="Events\Annotation\AnnotationEvent.cs" />
     <Compile Include="Actions\ReadingAction.cs" />
+    <Compile Include="Events\Media\MediaAction.cs" />
+    <Compile Include="Events\Media\MediaEvent.cs" />
     <Compile Include="Events\Reading\ViewEvent.cs" />
     <Compile Include="Protocol\CaliperClient.cs" />
     <Compile Include="CaliperOptions.cs" />
@@ -92,6 +103,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

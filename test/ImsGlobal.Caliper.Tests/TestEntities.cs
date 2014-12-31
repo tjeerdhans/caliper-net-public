@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace ImsGlobal.Caliper.Tests {
 	using ImsGlobal.Caliper.Entities;
 	using ImsGlobal.Caliper.Entities.Lis;
+	using ImsGlobal.Caliper.Entities.Media;
 	using ImsGlobal.Caliper.Entities.Reading;
 
 	internal static class TestEntities {
@@ -89,6 +90,24 @@ namespace ImsGlobal.Caliper.Tests {
 			ParentRef = EpubVolume43,
 			Index = 4,
 			LastModifiedAt = 1402965614516L
+		};
+
+		public static SoftwareApplication SuperMediaTool = new SoftwareApplication( "https://com.sat/super-media-tool" ) {
+			Name = "Super Media Tool",
+			LastModifiedAt = 1402965614516L
+		};
+
+		public static VideoObject VideoWithLearningObjective = new VideoObject( "https://com.sat/super-media-tool/video/video1" ) {
+			Name = "American Revolution - Key Figures Video",
+			AlignedLearningObjectives = new[] { 
+				new LearningObjective( "http://americanrevolution.com/personalities/learn" )
+			},
+			Duration = 1420,
+			LastModifiedAt = 1402965614516L
+		};
+
+		public static MediaLocation VideoWithLearningObjective_Location710 = new MediaLocation( VideoWithLearningObjective.Id ) {
+			CurrentTime = 710
 		};
 
 	}
