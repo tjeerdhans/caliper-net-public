@@ -58,6 +58,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnnotationEventsTests.cs" />
+    <Compile Include="AssignableEventsTests.cs" />
+    <Compile Include="AssessmentOutcomeEventsTests.cs" />
+    <Compile Include="AssessmentItemEventsTests.cs" />
+    <Compile Include="AssessmentEventsTests.cs" />
     <Compile Include="MediaEventsTests.cs" />
     <Compile Include="ReadingEventsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -74,6 +78,10 @@
     <EmbeddedResource Include="ReferenceJson\caliperTagAnnotationEvent.json" />
     <EmbeddedResource Include="ReferenceJson\caliperShareAnnotationEvent.json" />
     <EmbeddedResource Include="ReferenceJson\caliperMediaEvent.json" />
+    <EmbeddedResource Include="ReferenceJson\caliperAssessmentEvent.json" />
+    <EmbeddedResource Include="ReferenceJson\caliperAssessmentItemEvent.json" />
+    <EmbeddedResource Include="ReferenceJson\caliperAssessmentOutcomeEvent.json" />
+    <EmbeddedResource Include="ReferenceJson\caliperAssignableEvent.json" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\ImsGlobal.Caliper\ImsGlobal.Caliper.csproj">

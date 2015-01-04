@@ -50,11 +50,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Assessment\AssessmentItem.cs" />
+    <Compile Include="Entities\Assessment\Assessment.cs" />
+    <Compile Include="Entities\Assignable\AssignableDigitalResource.cs" />
+    <Compile Include="Entities\Assignable\Attempt.cs" />
+    <Compile Include="Entities\Assignable\IAssignable.cs" />
     <Compile Include="Entities\Media\MediaLocation.cs" />
     <Compile Include="Entities\Media\MediaObject.cs" />
     <Compile Include="Entities\Media\ImageObject.cs" />
     <Compile Include="Entities\Media\AudioObject.cs" />
     <Compile Include="Entities\Media\VideoObject.cs" />
+    <Compile Include="Entities\Outcome\Result.cs" />
+    <Compile Include="Entities\Qti\IAssessmentItem.cs" />
+    <Compile Include="Entities\Qti\IAssessment.cs" />
     <Compile Include="Entities\SchemaDotOrg\IAudioObject.cs" />
     <Compile Include="Entities\SchemaDotOrg\IImageObject.cs" />
     <Compile Include="Entities\SchemaDotOrg\IVideoObject.cs" />
@@ -73,8 +81,16 @@
     <Compile Include="Entities\Annotation\ShareAnnotation.cs" />
     <Compile Include="Events\Annotation\AnnotationEvent.cs" />
     <Compile Include="Actions\ReadingAction.cs" />
+    <Compile Include="Events\Assessment\AssessmentItemAction.cs" />
+    <Compile Include="Events\Assessment\AssessmentItemEvent.cs" />
+    <Compile Include="Events\Assessment\AssessmentEvent.cs" />
+    <Compile Include="Events\Assessment\AssessmentAction.cs" />
+    <Compile Include="Events\Assignable\AssignableAction.cs" />
+    <Compile Include="Events\Assignable\AssignableEvent.cs" />
     <Compile Include="Events\Media\MediaAction.cs" />
     <Compile Include="Events\Media\MediaEvent.cs" />
+    <Compile Include="Events\Outcome\OutcomeAction.cs" />
+    <Compile Include="Events\Outcome\OutcomeEvent.cs" />
     <Compile Include="Events\Reading\ViewEvent.cs" />
     <Compile Include="Protocol\CaliperClient.cs" />
     <Compile Include="CaliperOptions.cs" />

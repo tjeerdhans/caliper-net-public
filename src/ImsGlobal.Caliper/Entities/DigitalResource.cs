@@ -68,7 +68,7 @@ namespace ImsGlobal.Caliper.Entities {
 		/// A reference to the parent resource, if any.
 		/// </summary>
 		[JsonProperty( "partOf", Order = 14 )]
-		public dynamic ParentRef { get; set; }
+		public object PartOf { get; set; }
 
 	}
 
