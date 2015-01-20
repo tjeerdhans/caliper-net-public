@@ -64,6 +64,7 @@
     <Compile Include="Entities\Qti\IAssessmentItem.cs" />
     <Compile Include="Entities\Qti\IAssessment.cs" />
     <Compile Include="Entities\SchemaDotOrg\IAudioObject.cs" />
+    <Compile Include="Entities\SchemaDotOrg\ISoftwareApplication.cs" />
     <Compile Include="Entities\SchemaDotOrg\IImageObject.cs" />
     <Compile Include="Entities\SchemaDotOrg\IVideoObject.cs" />
     <Compile Include="Entities\SchemaDotOrg\IMediaObject.cs" />

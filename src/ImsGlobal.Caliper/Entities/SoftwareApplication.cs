@@ -5,12 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ImsGlobal.Caliper.Entities {
+	using ImsGlobal.Caliper.Entities.Foaf;
+	using ImsGlobal.Caliper.Entities.SchemaDotOrg;
 
-	public class SoftwareApplication : Agent {
+	public class SoftwareApplication : Entity, IAgent, ISoftwareApplication {
 
 		public SoftwareApplication( string id )
 			: base( id ) {
-			this.Type = AgentType.SoftwareApplication.Uri;
+			this.Type = Agent.AgentType.SoftwareApplication.Uri;
 		}
 	}
 
