@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace ImsGlobal.Caliper.Entities.Reading {
+	using ImsGlobal.Caliper.Entities.Foaf;
 
 	/// <summary>
 	/// Representation of a View. Views are generated as part of or
@@ -23,7 +24,7 @@ namespace ImsGlobal.Caliper.Entities.Reading {
 		public Frame Frame { get; set; }
 
 		[JsonProperty( "actor", Order = 12 )]
-		public Agent Actor { get; set; }
+		public IAgent Actor { get; set; }
 
 		[JsonProperty( "startedAtTime", Order = 13 )]
 		public long StartedAt { get; set; }

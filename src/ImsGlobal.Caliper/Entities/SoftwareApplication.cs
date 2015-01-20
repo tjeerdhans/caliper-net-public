@@ -12,7 +12,7 @@ namespace ImsGlobal.Caliper.Entities {
 
 		public SoftwareApplication( string id )
 			: base( id ) {
-			this.Type = Agent.AgentType.SoftwareApplication.Uri;
+			this.Type = EntityType.SoftwareApplication.Uri;
 		}
 	}
 

@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ImsGlobal.Caliper.Entities.Lis {
+	using ImsGlobal.Caliper.Entities.Foaf;
 
-	public class Person : Agent {
+	public class Person : Entity, IAgent {
 
 		public Person( string id )
 			: base( id ) {
-			this.Type = AgentType.LisPerson.Uri;
+			this.Type = EntityType.LisPerson.Uri;
 		}
 
 	}

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace ImsGlobal.Caliper.Entities {
+	using ImsGlobal.Caliper.Entities.Foaf;
 	using ImsGlobal.Caliper.Entities.Lis;
 
 	/// <summary>
@@ -21,7 +22,7 @@ namespace ImsGlobal.Caliper.Entities {
 		public Organization LisOrganization { get; set; }
 
 		[JsonProperty( "agent", Order = 3 )]
-		public Agent Agent { get; set; }
+		public IAgent Agent { get; set; }
 	
 	}
 

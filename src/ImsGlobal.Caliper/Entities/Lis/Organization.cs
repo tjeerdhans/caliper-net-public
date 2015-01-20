@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace ImsGlobal.Caliper.Entities.Lis {
+	using ImsGlobal.Caliper.Entities.Foaf;
 
-	public class Organization : Agent {
+	public class Organization : Entity, IAgent {
 
 		public sealed class OrganizationType {
 
@@ -27,7 +28,7 @@ namespace ImsGlobal.Caliper.Entities.Lis {
 
 		public Organization( string id, Organization parentOrg )
 			: base( id ) {
-			this.Type = AgentType.LisOrganization.Uri;
+			this.Type = EntityType.LisOrganization.Uri;
 			this.ParentOrg = parentOrg;
 		}
 

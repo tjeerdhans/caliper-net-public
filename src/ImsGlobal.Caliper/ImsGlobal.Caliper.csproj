@@ -99,7 +99,6 @@
     <Compile Include="Entities\DigitalResource.cs" />
     <Compile Include="Entities\Entity.cs" />
     <Compile Include="Entities\Foaf\IAgent.cs" />
-    <Compile Include="Entities\Agent.cs" />
     <Compile Include="Entities\LearningObjective.cs" />
     <Compile Include="Entities\Lis\CourseSection.cs" />
     <Compile Include="Entities\Lis\Person.cs" />

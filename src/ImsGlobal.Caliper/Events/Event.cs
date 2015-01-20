@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 
 namespace ImsGlobal.Caliper.Events {
 	using ImsGlobal.Caliper.Entities;
+	using ImsGlobal.Caliper.Entities.Foaf;
 	using ImsGlobal.Caliper.Entities.Lis;
 
 	/// <summary>
@@ -71,7 +72,7 @@ namespace ImsGlobal.Caliper.Events {
 		/// Required - Agent (User, System) that performed the action
 		/// </summary>
 		[JsonProperty( "actor", Order = 3 )]
-		public Agent Actor { get; set; }
+		public IAgent Actor { get; set; }
 
 		/// <summary>
 		/// Required - Action performed by the agent - from Metric Profile

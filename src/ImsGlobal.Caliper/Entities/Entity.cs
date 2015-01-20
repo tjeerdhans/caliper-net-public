@@ -21,8 +21,11 @@ namespace ImsGlobal.Caliper.Entities {
 			public static readonly EntityType DigitalResource = new EntityType( "http://purl.imsglobal.org/caliper/v1/DigitalResource" );
 			public static readonly EntityType Entity = new EntityType( "http://purl.imsglobal.org/caliper/v1/Entity" );
 			public static readonly EntityType LearningObjective = new EntityType( "http://purl.imsglobal.org/caliper/v1/LearningObjective" );
+			public static readonly EntityType LisPerson = new EntityType( "http://purl.imsglobal.org/caliper/v1/lis/Person" );
+			public static readonly EntityType LisOrganization = new EntityType( "http://purl.imsglobal.org/caliper/v1/lis/Organization" );
 			public static readonly EntityType MediaLocation = new EntityType( "http://purl.imsglobal.org/caliper/v1/MediaLocation" );
 			public static readonly EntityType Result = new EntityType( "http://purl.imsglobal.org/caliper/v1/Result" );
+			public static readonly EntityType SoftwareApplication = new EntityType( "http://purl.imsglobal.org/caliper/v1/SoftwareApplication" );
 			public static readonly EntityType View = new EntityType( "http://purl.imsglobal.org/caliper/v1/View" );
 
 			private EntityType( string uri ) {
