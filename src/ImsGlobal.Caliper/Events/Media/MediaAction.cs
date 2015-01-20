@@ -22,7 +22,7 @@ namespace ImsGlobal.Caliper.Events.Media {
 		public static readonly MediaAction RewindedTo = new MediaAction( "rewinded to" );
 		public static readonly MediaAction Started = new MediaAction( "started" );
 		public static readonly MediaAction ChangedResolution = new MediaAction( "changed resolution" );
-		public static readonly MediaAction ChangedViewerSize = new MediaAction( "changed viewer size" );
+		public static readonly MediaAction ChangedSize = new MediaAction( "changed viewer size" );
 		public static readonly MediaAction EnteredFullScreen = new MediaAction( "entered full screen" );
 		public static readonly MediaAction OpenedPopout = new MediaAction( "opened popout" );
 		public static readonly MediaAction ExitedFullScreen = new MediaAction( "exited full screen" );
