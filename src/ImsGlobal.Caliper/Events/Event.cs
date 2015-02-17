@@ -26,6 +26,7 @@ namespace ImsGlobal.Caliper.Events {
 			public static readonly EventContext Media = new EventContext( "http://purl.imsglobal.org/ctx/caliper/v1/MediaEvent" );
 			public static readonly EventContext Navigation = new EventContext( "http://purl.imsglobal.org/ctx/caliper/v1/NavigationEvent" );
 			public static readonly EventContext Outcome = new EventContext( "http://purl.imsglobal.org/ctx/caliper/v1/OutcomeEvent" );
+			public static readonly EventContext Session = new EventContext( "http://purl.imsglobal.org/ctx/caliper/v1/SessionEvent" );
 			public static readonly EventContext View = new EventContext( "http://purl.imsglobal.org/ctx/caliper/v1/ViewEvent" );
 
 			private EventContext( string uri ) {
@@ -45,6 +46,7 @@ namespace ImsGlobal.Caliper.Events {
 			public static readonly EventType Media = new EventType( "http://purl.imsglobal.org/caliper/v1/MediaEvent" );
 			public static readonly EventType Navigation = new EventType( "http://purl.imsglobal.org/caliper/v1/NavigationEvent" );
 			public static readonly EventType Outcome = new EventType( "http://purl.imsglobal.org/caliper/v1/OutcomeEvent" );
+			public static readonly EventType Session = new EventType( "http://purl.imsglobal.org/caliper/v1/SessionEvent" );
 			public static readonly EventType View = new EventType( "http://purl.imsglobal.org/caliper/v1/ViewEvent" );
 
 			private EventType( string uri ) {

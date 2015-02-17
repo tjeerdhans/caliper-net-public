@@ -55,6 +55,7 @@
     <Compile Include="Entities\Assignable\AssignableDigitalResource.cs" />
     <Compile Include="Entities\Assignable\Attempt.cs" />
     <Compile Include="Entities\Assignable\IAssignable.cs" />
+    <Compile Include="Entities\Session\Session.cs" />
     <Compile Include="Entities\Media\MediaLocation.cs" />
     <Compile Include="Entities\Media\MediaObject.cs" />
     <Compile Include="Entities\Media\ImageObject.cs" />
@@ -88,6 +89,8 @@
     <Compile Include="Events\Assessment\AssessmentAction.cs" />
     <Compile Include="Events\Assignable\AssignableAction.cs" />
     <Compile Include="Events\Assignable\AssignableEvent.cs" />
+    <Compile Include="Events\Session\SessionAction.cs" />
+    <Compile Include="Events\Session\SessionEvent.cs" />
     <Compile Include="Events\Media\MediaAction.cs" />
     <Compile Include="Events\Media\MediaEvent.cs" />
     <Compile Include="Events\Outcome\OutcomeAction.cs" />

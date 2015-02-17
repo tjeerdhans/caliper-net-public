@@ -12,6 +12,7 @@ namespace ImsGlobal.Caliper.Tests {
 	using ImsGlobal.Caliper.Entities.Media;
 	using ImsGlobal.Caliper.Entities.Outcome;
 	using ImsGlobal.Caliper.Entities.Reading;
+	using ImsGlobal.Caliper.Entities.Session;
 
 	internal static class TestEntities {
 
@@ -174,6 +175,21 @@ namespace ImsGlobal.Caliper.Tests {
 			Comment = "Well done.",
 		//	ScoredBy = SuperAssessmentTool,
 			LastModifiedAt = 1402965614516L
+		};
+
+		public static Session SessionStart = new Session( "https://github.com/readium/session-123456789" ) {
+			Name = "session-123456789",
+			Actor = Student554433,
+			LastModifiedAt = 1402965614516L,
+			StartedAt = 1402965614516L
+		};
+
+		public static Session SessionEnd = new Session( "https://github.com/readium/session-123456789" ) {
+			Name = "session-123456789",
+			Actor = Student554433,
+			LastModifiedAt = 1402965614516L,
+			StartedAt = 1402965614516L,
+			EndedAt = 1402965614516L
 		};
 
 	}

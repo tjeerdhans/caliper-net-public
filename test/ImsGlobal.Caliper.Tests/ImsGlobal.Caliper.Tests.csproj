@@ -57,6 +57,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SessionEventsTests.cs" />
     <Compile Include="AnnotationEventsTests.cs" />
     <Compile Include="AssignableEventsTests.cs" />
     <Compile Include="AssessmentOutcomeEventsTests.cs" />
@@ -82,6 +83,9 @@
     <EmbeddedResource Include="ReferenceJson\caliperAssessmentItemEvent.json" />
     <EmbeddedResource Include="ReferenceJson\caliperAssessmentOutcomeEvent.json" />
     <EmbeddedResource Include="ReferenceJson\caliperAssignableEvent.json" />
+    <EmbeddedResource Include="ReferenceJson\caliperSessionLoginEvent.json" />
+    <EmbeddedResource Include="ReferenceJson\caliperSessionLogoutEvent.json" />
+    <EmbeddedResource Include="ReferenceJson\caliperSessionTimeoutEvent.json" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\ImsGlobal.Caliper\ImsGlobal.Caliper.csproj">
