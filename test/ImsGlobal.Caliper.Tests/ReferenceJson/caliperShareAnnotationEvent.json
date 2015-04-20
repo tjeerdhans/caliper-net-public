@@ -7,7 +7,7 @@
         "name": null,
         "lastModifiedTime": 1402965614516
     },
-    "action": "shared",
+    "action": "http://purl.imsglobal.org/vocab/caliper/v1/action#Shared",
     "object": {
         "@id": "https://someEduApp.edu/shared/9999",
         "@type": "http://purl.imsglobal.org/caliper/v1/SharedAnnotation",

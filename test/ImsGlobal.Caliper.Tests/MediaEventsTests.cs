@@ -16,7 +16,7 @@ namespace ImsGlobal.Caliper.Tests {
 		[Fact]
 		public void MediaEvent_MatchesReferenceJson() {
 
-			var mediaEvent = new MediaEvent( MediaAction.Paused ) {
+			var mediaEvent = new MediaEvent( Events.Action.Paused ) {
 				EdApp = TestEntities.SuperMediaTool,
 				LisOrg = TestEntities.AmRev101,
 				Actor = TestEntities.Student554433,

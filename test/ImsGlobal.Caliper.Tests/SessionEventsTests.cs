@@ -15,7 +15,7 @@ namespace ImsGlobal.Caliper.Tests {
 		[Fact]
 		public void SessionLoggedInEvent_MatchesReferenceJson() {
 
-			var loggedInEvent = new SessionEvent( SessionAction.LoggedIn ) {
+			var loggedInEvent = new SessionEvent( Events.Action.LoggedIn ) {
 				EdApp = TestEntities.Readium,
 				LisOrg = TestEntities.AmRev101,
 				Actor = TestEntities.Student554433,
@@ -41,7 +41,7 @@ namespace ImsGlobal.Caliper.Tests {
 		[Fact]
 		public void SessionLoggedOutEvent_MatchesReferenceJson() {
 
-			var loggedOutEvent = new SessionEvent( SessionAction.LoggedOut ) {
+			var loggedOutEvent = new SessionEvent( Events.Action.LoggedOut ) {
 				EdApp = TestEntities.Readium,
 				LisOrg = TestEntities.AmRev101,
 				Actor = TestEntities.Student554433,
@@ -67,7 +67,7 @@ namespace ImsGlobal.Caliper.Tests {
 		[Fact]
 		public void SessionTimedOutEvent_MatchesReferenceJson() {
 
-			var timedOutEvent = new SessionEvent( SessionAction.TimedOut ) {
+			var timedOutEvent = new SessionEvent( Events.Action.TimedOut ) {
 				EdApp = TestEntities.Readium,
 				LisOrg = TestEntities.AmRev101,
 				Actor = TestEntities.Readium,

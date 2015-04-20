@@ -14,10 +14,10 @@ namespace ImsGlobal.Caliper.Events.Annotation {
 	public class AnnotationEvent : Event {
 
 		private static readonly Dictionary<string, string> _annotationTypeToAction = new Dictionary<string, string> {
-			{ AnnotationType.Bookmark.Uri, AnnotationAction.Bookmarked.Value },
-			{ AnnotationType.Highlight.Uri, AnnotationAction.Highlighted.Value },
-			{ AnnotationType.Share.Uri, AnnotationAction.Shared.Value },
-			{ AnnotationType.Tag.Uri, AnnotationAction.Tagged.Value }
+			{ AnnotationType.Bookmark.Uri, Events.Action.Bookmarked.Value },
+			{ AnnotationType.Highlight.Uri, Events.Action.Highlighted.Value },
+			{ AnnotationType.Share.Uri, Events.Action.Shared.Value },
+			{ AnnotationType.Tag.Uri, Events.Action.Tagged.Value }
 		};
 
 		public AnnotationEvent( Annotation annotation )

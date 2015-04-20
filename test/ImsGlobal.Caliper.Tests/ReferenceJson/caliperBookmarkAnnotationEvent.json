@@ -7,7 +7,7 @@
         "name": null,
         "lastModifiedTime": 1402965614516
     },
-    "action": "bookmarked",
+    "action": "http://purl.imsglobal.org/vocab/caliper/v1/action#Bookmarked",
     "object": {
         "@id": "https://someEduApp.edu/bookmarks/00001",
         "@type": "http://purl.imsglobal.org/caliper/v1/BookmarkAnnotation",

@@ -7,7 +7,7 @@
         "name": null,
         "lastModifiedTime": 1402965614516
     },
-    "action": "tagged",
+    "action": "http://purl.imsglobal.org/vocab/caliper/v1/action#Tagged",
     "object": {
         "@id": "https://someEduApp.edu/tags/7654",
         "@type": "http://purl.imsglobal.org/caliper/v1/TagAnnotation",

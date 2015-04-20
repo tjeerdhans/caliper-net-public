@@ -16,7 +16,7 @@ namespace ImsGlobal.Caliper.Tests {
 		[Fact]
 		public void AssessmentItemEvent_MatchesReferenceJson() {
 
-			var assessmentItemEvent = new AssessmentItemEvent( AssessmentItemAction.Started ) {
+			var assessmentItemEvent = new AssessmentItemEvent( Events.Action.Started ) {
 				EdApp = TestEntities.SuperAssessmentTool,
 				LisOrg = TestEntities.AmRev101,
 				Actor = TestEntities.Student554433,

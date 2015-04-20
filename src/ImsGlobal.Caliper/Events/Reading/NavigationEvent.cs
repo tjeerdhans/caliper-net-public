@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace ImsGlobal.Caliper.Events.Reading {
-	using ImsGlobal.Caliper.Actions;
+	using ImsGlobal.Caliper.Events;
 	using ImsGlobal.Caliper.Entities;
 
 	/// <summary>
@@ -18,7 +18,7 @@ namespace ImsGlobal.Caliper.Events.Reading {
 		public NavigationEvent() {
 			this.Context = EventContext.Navigation.Uri;
 			this.Type = EventType.Navigation.Uri;
-			this.Action = ReadingAction.NavigatedTo.Value;
+			this.Action = Events.Action.NavigatedTo.Value;
 		}
 
 		/// <summary>

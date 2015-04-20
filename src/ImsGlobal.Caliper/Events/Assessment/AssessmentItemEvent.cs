@@ -11,7 +11,7 @@ namespace ImsGlobal.Caliper.Events.Assessment {
 	/// </summary>
 	public class AssessmentItemEvent : Event {
 
-		public AssessmentItemEvent( AssessmentItemAction action ) {
+		public AssessmentItemEvent( Action action ) {
 			this.Context = EventContext.AssessmentItem.Uri;
 			this.Type = EventType.AssessmentItem.Uri;
 			this.Action = action.Value;

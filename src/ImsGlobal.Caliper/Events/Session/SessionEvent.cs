@@ -8,7 +8,7 @@ namespace ImsGlobal.Caliper.Events.Session {
 
 	public class SessionEvent : Event {
 
-		public SessionEvent( SessionAction action ) {
+		public SessionEvent( Action action ) {
 			this.Context = EventContext.Session.Uri;
 			this.Type = EventType.Session.Uri;
 			this.Action = action.Value;

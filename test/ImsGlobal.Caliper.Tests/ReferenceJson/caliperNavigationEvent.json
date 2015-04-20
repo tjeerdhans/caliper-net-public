@@ -7,7 +7,7 @@
         "name": null,
         "lastModifiedTime": 1402965614516
     },
-    "action": "navigated to",
+    "action": "http://purl.imsglobal.org/vocab/caliper/v1/action#NavigatedTo",
     "object": {
         "@id": "https://github.com/readium/readium-js-viewer/book/34843#epubcfi(/4/3)",
         "@type": "http://www.idpf.org/epub/vocab/structure/#volume",

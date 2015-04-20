@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Events\Action.cs" />
     <Compile Include="Entities\Assessment\AssessmentItem.cs" />
     <Compile Include="Entities\Assessment\Assessment.cs" />
     <Compile Include="Entities\Assignable\AssignableDigitalResource.cs" />
@@ -69,7 +70,6 @@
     <Compile Include="Entities\SchemaDotOrg\IImageObject.cs" />
     <Compile Include="Entities\SchemaDotOrg\IVideoObject.cs" />
     <Compile Include="Entities\SchemaDotOrg\IMediaObject.cs" />
-    <Compile Include="Events\Annotation\AnnotationAction.cs" />
     <Compile Include="Entities\Annotation\TagAnnotation.cs" />
     <Compile Include="Entities\LearningContext.cs" />
     <Compile Include="Entities\Annotation\BookmarkAnnotation.cs" />
@@ -82,18 +82,11 @@
     <Compile Include="Entities\Reading\Frame.cs" />
     <Compile Include="Entities\Annotation\ShareAnnotation.cs" />
     <Compile Include="Events\Annotation\AnnotationEvent.cs" />
-    <Compile Include="Actions\ReadingAction.cs" />
-    <Compile Include="Events\Assessment\AssessmentItemAction.cs" />
     <Compile Include="Events\Assessment\AssessmentItemEvent.cs" />
     <Compile Include="Events\Assessment\AssessmentEvent.cs" />
-    <Compile Include="Events\Assessment\AssessmentAction.cs" />
-    <Compile Include="Events\Assignable\AssignableAction.cs" />
     <Compile Include="Events\Assignable\AssignableEvent.cs" />
-    <Compile Include="Events\Session\SessionAction.cs" />
     <Compile Include="Events\Session\SessionEvent.cs" />
-    <Compile Include="Events\Media\MediaAction.cs" />
     <Compile Include="Events\Media\MediaEvent.cs" />
-    <Compile Include="Events\Outcome\OutcomeAction.cs" />
     <Compile Include="Events\Outcome\OutcomeEvent.cs" />
     <Compile Include="Events\Reading\ViewEvent.cs" />
     <Compile Include="Protocol\CaliperClient.cs" />

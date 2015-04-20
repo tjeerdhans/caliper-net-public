@@ -7,7 +7,7 @@
     "name": null,
     "lastModifiedTime": 1402965614516
   },
-  "action": "logged out",
+  "action": "http://purl.imsglobal.org/vocab/caliper/v1/action#LoggedOut",
   "object": {
     "@id": "https://github.com/readium/readium-js-viewer",
     "@type":"http://purl.imsglobal.org/caliper/v1/SoftwareApplication",

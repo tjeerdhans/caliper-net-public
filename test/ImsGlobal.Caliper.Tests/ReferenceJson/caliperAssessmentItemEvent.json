@@ -7,7 +7,7 @@
         "name": null,
         "lastModifiedTime": 1402965614516
     },
-    "action": "started",
+    "action": "http://purl.imsglobal.org/vocab/caliper/v1/action#Started",
     "object": {
         "@id": "https://some-university.edu/politicalScience/2014/american-revolution-101/assessment1/item1",
         "@type": "http://purl.imsglobal.org/caliper/v1/AssessmentItem",

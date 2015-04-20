@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ImsGlobal.Caliper.Events.Reading {
-	using ImsGlobal.Caliper.Actions;
 
 	/// <summary>
 	/// Event raised when an actor views a resource.
@@ -15,7 +14,7 @@ namespace ImsGlobal.Caliper.Events.Reading {
 		public ViewEvent() {
 			this.Context = EventContext.View.Uri;
 			this.Type = EventType.View.Uri;
-			this.Action = ReadingAction.Viewed.Value;
+			this.Action = Events.Action.Viewed.Value;
 		}
 
 	}

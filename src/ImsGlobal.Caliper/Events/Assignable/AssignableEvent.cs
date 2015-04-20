@@ -11,7 +11,7 @@ namespace ImsGlobal.Caliper.Events.Assignable {
 	/// </summary>
 	public class AssignableEvent : Event {
 
-		public AssignableEvent( AssignableAction action ) {
+		public AssignableEvent( Action action ) {
 			this.Context = EventContext.Assignable.Uri;
 			this.Type = EventType.Assignable.Uri;
 			this.Action = action.Value;
