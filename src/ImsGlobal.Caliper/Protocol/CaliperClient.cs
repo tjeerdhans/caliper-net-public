@@ -12,9 +12,9 @@ namespace ImsGlobal.Caliper.Protocol {
 
 	internal class CaliperClient {
 
-		private readonly CaliperOptions _options;
+		private readonly CaliperEndpointOptions _options;
 
-		public CaliperClient( CaliperOptions options ) {
+		public CaliperClient( CaliperEndpointOptions options ) {
 			_options = options;
 		}
 

@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 namespace ImsGlobal.Caliper {
 
 	/// <summary>
-	/// Options for initializing a CaliperClient.
+	/// Options for registering a Caliper endpoint with the Caliper sensor.
 	/// </summary>
-	public class CaliperOptions {
+	public class CaliperEndpointOptions {
 
 		private const int DEFAULT_TIMEOUT = 10000;
 
-		public CaliperOptions( Uri host, string apiKey = null, int timeout = DEFAULT_TIMEOUT ) {
+		public CaliperEndpointOptions( Uri host, string apiKey = null, int timeout = DEFAULT_TIMEOUT ) {
 			if( host == null ) {
 				throw new ArgumentNullException( "host" );
 			}

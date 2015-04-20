@@ -97,7 +97,7 @@
     <Compile Include="Events\Outcome\OutcomeEvent.cs" />
     <Compile Include="Events\Reading\ViewEvent.cs" />
     <Compile Include="Protocol\CaliperClient.cs" />
-    <Compile Include="CaliperOptions.cs" />
+    <Compile Include="CaliperEndpointOptions.cs" />
     <Compile Include="CaliperSensor.cs" />
     <Compile Include="Entities\DigitalResource.cs" />
     <Compile Include="Entities\Entity.cs" />
