@@ -28,7 +28,7 @@ namespace ImsGlobal.Caliper.Entities.Lis {
 
 		public Organization( string id, Organization parentOrg )
 			: base( id ) {
-			this.Type = EntityType.LisOrganization.Uri;
+			this.Type = EntityType.Organization.Uri;
 			this.ParentOrg = parentOrg;
 		}
 

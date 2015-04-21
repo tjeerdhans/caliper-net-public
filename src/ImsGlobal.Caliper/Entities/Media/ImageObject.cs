@@ -13,7 +13,7 @@ namespace ImsGlobal.Caliper.Entities.Media {
 	public class ImageObject : MediaObject, IImageObject {
 
 		public ImageObject( string id )
-			: base( id, MediaType.Image ) {
+			: base( id, MediaObjectType.ImageObject ) {
 		}
 
 	}

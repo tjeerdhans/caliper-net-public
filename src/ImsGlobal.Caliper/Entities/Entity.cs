@@ -15,18 +15,25 @@ namespace ImsGlobal.Caliper.Entities {
 
 		public sealed class EntityType {
 
-			public static readonly EntityType ActivityContext = new EntityType( "http://purl.imsglobal.org/caliper/v1/ActivityContext" );
 			public static readonly EntityType Agent = new EntityType( "http://purl.imsglobal.org/caliper/v1/Agent" );
+			public static readonly EntityType Annotation = new EntityType( "http://purl.imsglobal.org/caliper/v1/Annotation" );
 			public static readonly EntityType Attempt = new EntityType( "http://purl.imsglobal.org/caliper/v1/Attempt" );
+			public static readonly EntityType CourseOffering = new EntityType( "http://purl.imsglobal.org/caliper/v1/lis/CourseOffering" );
+			public static readonly EntityType CourseSection = new EntityType( "http://purl.imsglobal.org/caliper/v1/lis/CourseSection" );
 			public static readonly EntityType DigitalResource = new EntityType( "http://purl.imsglobal.org/caliper/v1/DigitalResource" );
 			public static readonly EntityType Entity = new EntityType( "http://purl.imsglobal.org/caliper/v1/Entity" );
+			public static readonly EntityType Generated = new EntityType( "http://purl.imsglobal.org/caliper/v1/Generated" );
+			public static readonly EntityType Group = new EntityType( "http://purl.imsglobal.org/caliper/v1/lis/Group" );
 			public static readonly EntityType LearningObjective = new EntityType( "http://purl.imsglobal.org/caliper/v1/LearningObjective" );
-			public static readonly EntityType LisPerson = new EntityType( "http://purl.imsglobal.org/caliper/v1/lis/Person" );
-			public static readonly EntityType LisOrganization = new EntityType( "http://purl.imsglobal.org/caliper/v1/lis/Organization" );
-			public static readonly EntityType MediaLocation = new EntityType( "http://purl.imsglobal.org/caliper/v1/MediaLocation" );
+			public static readonly EntityType MediaObject = new EntityType( "http://purl.imsglobal.org/caliper/v1/MediaObject" );
+			public static readonly EntityType Membership = new EntityType( "http://purl.imsglobal.org/caliper/v1/lis/Membership" );
+			public static readonly EntityType Person = new EntityType( "http://purl.imsglobal.org/caliper/v1/lis/Person" );
+			public static readonly EntityType Organization = new EntityType( "http://purl.imsglobal.org/caliper/v1/lis/Organization" );
+			public static readonly EntityType Response = new EntityType( "http://purl.imsglobal.org/caliper/v1/Response" );
 			public static readonly EntityType Result = new EntityType( "http://purl.imsglobal.org/caliper/v1/Result" );
 			public static readonly EntityType Session = new EntityType( "http://purl.imsglobal.org/caliper/v1/Session" );
 			public static readonly EntityType SoftwareApplication = new EntityType( "http://purl.imsglobal.org/caliper/v1/SoftwareApplication" );
+			public static readonly EntityType Target = new EntityType( "http://purl.imsglobal.org/caliper/v1/Target" );
 			public static readonly EntityType View = new EntityType( "http://purl.imsglobal.org/caliper/v1/View" );
 
 			private EntityType( string uri ) {
@@ -50,12 +57,17 @@ namespace ImsGlobal.Caliper.Entities {
 		[JsonProperty( "name", Order = 3 )]
 		public string Name { get; set; }
 
-		[JsonProperty( "lastModifiedTime", Order = 99 )]
-		public long LastModifiedAt { get; set; }
+		[JsonProperty( "description", Order = 4 )]
+		public string Description { get; set; }
 
-		[JsonIgnore]
-		[JsonProperty( "properties", Order = 99 )]
-		public dynamic Properties { get; set; }
+		[JsonProperty( "extensions", Order = 51 )]
+		public IDictionary<string, string> Extensions { get; set; }
+
+		[JsonProperty( "dateCreated", Order = 52 )]
+		public long DateCreated { get; set; }
+
+		[JsonProperty( "dateModified", Order = 53 )]
+		public long DateModified { get; set; }
 
 	}
 

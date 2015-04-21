@@ -10,7 +10,7 @@ namespace ImsGlobal.Caliper.Entities.Assessment {
 	using ImsGlobal.Caliper.Entities.Assignable;
 	using ImsGlobal.Caliper.Entities.Qti;
 
-	public class AssessmentItem : AssignableDigitalResource, IAssignable, IAssessmentItem {
+	public class AssessmentItem : AssignableDigitalResource, IAssessmentItem {
 
 		public AssessmentItem( string id )
 			: base( id ) {

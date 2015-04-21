@@ -13,7 +13,7 @@ namespace ImsGlobal.Caliper.Entities.Media {
 	public class AudioObject : MediaObject, IAudioObject {
 
 		public AudioObject( string id )
-			: base( id, MediaType.Audio ) {
+			: base( id, MediaObjectType.AudioObject ) {
 		}
 
 	}

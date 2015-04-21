@@ -26,8 +26,6 @@ namespace ImsGlobal.Caliper.Entities {
 			public static readonly DigitalResourceType EpubSubChapter = new DigitalResourceType( "http://www.idpf.org/epub/vocab/structure/#subchapter" );
 			public static readonly DigitalResourceType EpubVolume = new DigitalResourceType( "http://www.idpf.org/epub/vocab/structure/#volume" );
 			public static readonly DigitalResourceType Frame = new DigitalResourceType( "http://purl.imsglobal.org/caliper/v1/Frame" );
-			public static readonly DigitalResourceType MediaLocation = new DigitalResourceType( "http://purl.imsglobal.org/caliper/v1/MediaLocation" );
-			public static readonly DigitalResourceType MediaObject = new DigitalResourceType( "http://purl.imsglobal.org/caliper/v1/MediaObject" );
 			public static readonly DigitalResourceType Reading = new DigitalResourceType( "http://www.idpf.org/epub/vocab/structure" );
 			public static readonly DigitalResourceType WebPage = new DigitalResourceType( "http://purl.imsglobal.org/caliper/v1/WebPage" );
 
@@ -61,14 +59,26 @@ namespace ImsGlobal.Caliper.Entities {
 		/// <summary>
 		/// List of keywords that describe this resource.
 		/// </summary>
-		[JsonProperty( "keyword", Order = 13 )]
+		[JsonProperty( "keywords", Order = 13 )]
 		public IList<string> Keywords { get; set; }
 
 		/// <summary>
 		/// A reference to the parent resource, if any.
 		/// </summary>
-		[JsonProperty( "partOf", Order = 14 )]
-		public object PartOf { get; set; }
+		[JsonProperty( "isPartOf", Order = 61 )]
+		public object IsPartOf { get; set; }
+
+		/// <summary>
+		/// The date the digital resource was published.
+		/// </summary>
+		[JsonProperty( "datePublished", Order = 62 )]
+		public long DatePublished { get; set; }
+
+		/// <summary>
+		/// The current version of the digital resource.
+		/// </summary>
+		[JsonProperty( "version", Order = 63 )]
+		public long Version { get; set; }
 
 	}
 

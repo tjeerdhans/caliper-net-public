@@ -11,7 +11,7 @@ namespace ImsGlobal.Caliper.Entities.Lis {
 
 		public Person( string id )
 			: base( id ) {
-			this.Type = EntityType.LisPerson.Uri;
+			this.Type = EntityType.Person.Uri;
 		}
 
 	}

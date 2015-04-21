@@ -13,7 +13,7 @@ namespace ImsGlobal.Caliper.Entities.Media {
 	public class VideoObject : MediaObject, IVideoObject {
 
 		public VideoObject( string id )
-			: base( id, MediaType.Video ) {
+			: base( id, MediaObjectType.VideoObject ) {
 		}
 
 	}

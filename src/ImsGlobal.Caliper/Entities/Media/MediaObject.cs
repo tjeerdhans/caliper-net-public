@@ -10,25 +10,31 @@ namespace ImsGlobal.Caliper.Entities.Media {
 
 	public abstract class MediaObject : DigitalResource, IMediaObject {
 
-		public sealed class MediaType {
+		public sealed class MediaObjectType {
 
-			public static readonly MediaType Audio = new MediaType( "http://purl.imsglobal.org/caliper/v1/AudioObject" );
-			public static readonly MediaType Image = new MediaType( "http://purl.imsglobal.org/caliper/v1/ImageObject" );
-			public static readonly MediaType Video = new MediaType( "http://purl.imsglobal.org/caliper/v1/VideoObject" );
+			public static readonly MediaObjectType AudioObject = new MediaObjectType( "http://purl.imsglobal.org/caliper/v1/AudioObject" );
+			public static readonly MediaObjectType ImageObject = new MediaObjectType( "http://purl.imsglobal.org/caliper/v1/ImageObject" );
+			public static readonly MediaObjectType VideoObject = new MediaObjectType( "http://purl.imsglobal.org/caliper/v1/VideoObject" );
+			public static readonly MediaObjectType MediaLocation = new MediaObjectType( "http://purl.imsglobal.org/caliper/v1/MediaLocation" );
 
-			private MediaType( string uri ) {
+			private MediaObjectType( string uri ) {
 				this.Uri = uri;
 			}
 
 			public string Uri { get; private set; }
 		}
 
-		public MediaObject( string id, MediaType type )
+		public MediaObject( string id )
+			: base( id ) {
+			this.Type = EntityType.MediaObject.Uri;
+		}
+
+		public MediaObject( string id, MediaObjectType type )
 			: base( id ) {
 			this.Type = type.Uri;
 		}
 
-		[JsonProperty( "duration", Order = 21 )]
+		[JsonProperty( "duration", Order = 71 )]
 		public long Duration { get; set; }
 
 	}

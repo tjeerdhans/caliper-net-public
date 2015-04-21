@@ -17,7 +17,6 @@ namespace ImsGlobal.Caliper.Entities.Annotation {
 
 		public sealed class AnnotationType {
 
-			public static readonly AnnotationType Annotation = new AnnotationType( "http://purl.imsglobal.org/caliper/v1/Annotation" );
 			public static readonly AnnotationType Bookmark = new AnnotationType( "http://purl.imsglobal.org/caliper/v1/BookmarkAnnotation" );
 			public static readonly AnnotationType Highlight = new AnnotationType( "http://purl.imsglobal.org/caliper/v1/HighlightAnnotation" );
 			public static readonly AnnotationType Share = new AnnotationType( "http://purl.imsglobal.org/caliper/v1/SharedAnnotation" );
@@ -32,7 +31,7 @@ namespace ImsGlobal.Caliper.Entities.Annotation {
 
 		public Annotation( string id )
 			: base( id ) {
-			this.Type = AnnotationType.Annotation.Uri;
+			this.Type = EntityType.Annotation.Uri;
 		}
 
 		[JsonIgnore]

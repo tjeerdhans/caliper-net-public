@@ -12,7 +12,7 @@ namespace ImsGlobal.Caliper.Entities.Media {
 
 		public MediaLocation( string id )
 			: base( id ) {
-			this.Type = DigitalResource.DigitalResourceType.MediaLocation.Uri;
+			this.Type = MediaObject.MediaObjectType.MediaLocation.Uri;
 		}
 
 		/// <summary>
