@@ -19,7 +19,7 @@ namespace ImsGlobal.Caliper.Entities.Media {
 		/// The time value (from beginning of media) that indicates the
 		/// current location.
 		/// </summary>
-		[JsonProperty( "currentTime", Order = 21 )]
+		[JsonProperty( "currentTime", Order = 71 )]
 		public long CurrentTime { get; set; }
 
 	}
