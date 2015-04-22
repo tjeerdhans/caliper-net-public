@@ -19,7 +19,7 @@ namespace ImsGlobal.Caliper.Tests {
 
 			var mediaEvent = new MediaEvent( Action.Paused ) {
 				EdApp = TestEntities.SuperMediaTool,
-				Group = TestEntities.AmRev101,
+				Group = TestEntities.AmRev101_Group001,
 				Actor = TestEntities.Student554433,
 				Object = TestEntities.VideoWithLearningObjective,
 				Target = TestEntities.VideoWithLearningObjective_Location710,

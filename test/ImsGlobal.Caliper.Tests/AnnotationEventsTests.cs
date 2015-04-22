@@ -26,7 +26,7 @@ namespace ImsGlobal.Caliper.Tests {
 
 			var bookmarkEvent = new AnnotationEvent( bookmarkAnnotation ) {
 				EdApp = TestEntities.Readium,
-				Group = TestEntities.AmRev101,
+				Group = TestEntities.AmRev101_CourseOffering,
 				Actor = TestEntities.Student554433,
 				Target = TestEntities.EpubSubChap432_Frame,
 				StartedAt = 1402965614516L
@@ -57,7 +57,7 @@ namespace ImsGlobal.Caliper.Tests {
 
 			var bookmarkEvent = new AnnotationEvent( highlightAnnotation ) {
 				EdApp = TestEntities.Readium,
-				Group = TestEntities.AmRev101,
+				Group = TestEntities.AmRev101_CourseOffering,
 				Actor = TestEntities.Student554433,
 				Target = TestEntities.EpubSubChap431_Frame,
 				StartedAt = 1402965614516L
@@ -90,7 +90,7 @@ namespace ImsGlobal.Caliper.Tests {
 
 			var bookmarkEvent = new AnnotationEvent( shareAnnotation ) {
 				EdApp = TestEntities.Readium,
-				Group = TestEntities.AmRev101,
+				Group = TestEntities.AmRev101_CourseOffering,
 				Actor = TestEntities.Student554433,
 				Target = TestEntities.EpubSubChap433_Frame,
 				StartedAt = 1402965614516L
@@ -120,7 +120,7 @@ namespace ImsGlobal.Caliper.Tests {
 
 			var tagEvent = new AnnotationEvent( tagAnnotation ) {
 				EdApp = TestEntities.Readium,
-				Group = TestEntities.AmRev101,
+				Group = TestEntities.AmRev101_CourseOffering,
 				Actor = TestEntities.Student554433,
 				Target = TestEntities.EpubSubChap434_Frame,
 				StartedAt = 1402965614516L

@@ -3,19 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ImsGlobal.Caliper.Entities.Lis {
+using Newtonsoft.Json;
 
-	public sealed class Status {
+namespace ImsGlobal.Caliper.Entities.Lis {
+	using ImsGlobal.Caliper.Entities.W3c;
+	using ImsGlobal.Caliper.Util;
+
+	[JsonConverter( typeof( JsonValueConverter<Status> ) )]
+	public sealed class Status : IStatus, IType, IJsonValue {
 
 		public static readonly Status Active = new Status( "http://purl.imsglobal.org/vocab/lis/v2/status#Active" );
 		public static readonly Status Deleted = new Status( "http://purl.imsglobal.org/vocab/lis/v2/status#Deleted" );
 		public static readonly Status Inactive = new Status( "http://purl.imsglobal.org/vocab/lis/v2/status#Inactive" );
 
-		private Status( string value ) {
+		public Status() {}
+
+		public Status( string value ) {
 			this.Value = value;
 		}
 
-		public string Value { get; private set; }
+		public string Value { get; set; }
 	}
 
 }

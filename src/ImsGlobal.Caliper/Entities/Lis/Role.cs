@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ImsGlobal.Caliper.Entities.Lis {
+using Newtonsoft.Json;
 
-	public sealed class Role {
+namespace ImsGlobal.Caliper.Entities.Lis {
+	using ImsGlobal.Caliper.Entities.W3c;
+	using ImsGlobal.Caliper.Util;
+
+	[JsonConverter( typeof( JsonValueConverter<Role> ) )]
+	public sealed class Role : IRole, IJsonValue {
 
 		public static readonly Role  Learner = new Role( "http://purl.imsglobal.org/vocab/lis/v2/membership#Learner" );
 		public static readonly Role  ExternalLearner = new Role( "http://purl.imsglobal.org/vocab/lis/v2/membership/Learner#ExternalLearner" );
@@ -69,11 +74,13 @@ namespace ImsGlobal.Caliper.Entities.Lis {
 		public static readonly Role  TeachingAssistantTeachingAssistantTemplate = new Role( "http://purl.imsglobal.org/vocab/lis/v2/membership/TeachingAssistant#TeachingAssistantTemplate" );
 		public static readonly Role  TeachingAssistantTeachingAssistantGroup = new Role( "http://purl.imsglobal.org/vocab/lis/v2/membership/TeachingAssistant#TeachingAssistantGroup" );
 
-		private Role( string value ) {
+		public Role() {}
+
+		public Role( string value ) {
 			this.Value = value;
 		}
 
-		public string Value { get; private set; }
+		public string Value { get; set; }
 	}
 
 }

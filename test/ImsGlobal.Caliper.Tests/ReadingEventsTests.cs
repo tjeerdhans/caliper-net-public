@@ -18,7 +18,7 @@ namespace ImsGlobal.Caliper.Tests {
 
 			var navigationEvent = new NavigationEvent {
 				EdApp = TestEntities.Readium,
-				Group = TestEntities.AmRev101,
+				Group = TestEntities.AmRev101_CourseOffering,
 				Actor = TestEntities.Student554433,
 				Object = TestEntities.EpubVolume43,
 				Target = TestEntities.EpubSubChap431_Frame,
@@ -44,7 +44,7 @@ namespace ImsGlobal.Caliper.Tests {
 
 			var viewEvent = new ViewEvent {
 				EdApp = TestEntities.Readium,
-				Group = TestEntities.AmRev101,
+				Group = TestEntities.AmRev101_CourseOffering,
 				Actor = TestEntities.Student554433,
 				Object = TestEntities.EpubVolume43,
 				Target = TestEntities.EpubSubChap431_Frame,

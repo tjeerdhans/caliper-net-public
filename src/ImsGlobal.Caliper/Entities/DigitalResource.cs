@@ -59,7 +59,7 @@ namespace ImsGlobal.Caliper.Entities {
 		/// The current version of the digital resource.
 		/// </summary>
 		[JsonProperty( "version", Order = 63 )]
-		public long Version { get; set; }
+		public string Version { get; set; }
 
 	}
 }

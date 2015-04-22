@@ -26,6 +26,7 @@ namespace ImsGlobal.Caliper.Entities.Lis {
 
 		public CourseSection( string id )
 			: base( id ) {
+			this.Type = EntityType.CourseSection;
 		}
 
 		[JsonProperty( "category", Order = 20 )]

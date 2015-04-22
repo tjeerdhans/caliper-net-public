@@ -15,6 +15,7 @@ namespace ImsGlobal.Caliper.Entities {
 		public Entity( string id ) {
 			this.Id = id;
 			this.Type = EntityType.Entity;
+			this.Extensions = new Dictionary<string, string>();
 		}
 
 		[JsonProperty( "@id", Order = 1 )]

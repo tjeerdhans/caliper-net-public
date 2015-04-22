@@ -14,28 +14,86 @@ namespace ImsGlobal.Caliper.Tests {
 	using ImsGlobal.Caliper.Entities.Outcome;
 	using ImsGlobal.Caliper.Entities.Reading;
 	using ImsGlobal.Caliper.Entities.Session;
+	using ImsGlobal.Caliper.Entities.W3c;
 
 	internal static class TestEntities {
 
+		public static readonly string Student554433_Id = "https://some-university.edu/user/554433";
+		public static readonly string AmRev101_CourseOffering_Id = "https://some-university.edu/politicalScience/2015/american-revolution-101";
+		public static readonly string AmRev101_CourseSection001_Id = "https://some-university.edu/politicalScience/2015/american-revolution-101/section/001";
+		public static readonly string AmRev101_Group001_Id = "https://some-university.edu/politicalScience/2015/american-revolution-101/section/001/group/001";
+
 		public static SoftwareApplication Readium = new SoftwareApplication( "https://github.com/readium/readium-js-viewer" ) {
 			Name = "Readium",
+			DateCreated = 1402965614516L,
 			DateModified = 1402965614516L
 		};
 
-		public static Person Student554433 = new Person( "https://some-university.edu/user/554433" ) {
+		public static readonly IMembership Student554433_AmRev101_CourseOffering_Membership =
+			new Membership( "https://some-university.edu/membership/001" ) {
+				MemberId = Student554433_Id,
+				OrganizationId = AmRev101_CourseOffering_Id,
+				Roles = new IRole[] { Role.Learner },
+				Status = Status.Active,
+				DateCreated = 1402965614516L
+			};
+		public static readonly IMembership Student554433_AmRev101_CourseSection001_Membership =
+			new Membership( "https://some-university.edu/membership/002" ) {
+				MemberId = Student554433_Id,
+				OrganizationId = AmRev101_CourseSection001_Id,
+				Roles = new IRole[] { Role.Learner },
+				Status = Status.Active,
+				DateCreated = 1402965614516L
+			};
+		public static readonly IMembership Student554433_AmRev101_Group001_Membership =
+			new Membership( "https://some-university.edu/membership/003" ) {
+				MemberId = Student554433_Id,
+				OrganizationId = AmRev101_Group001_Id,
+				Roles = new IRole[] { Role.Learner },
+				Status = Status.Active,
+				DateCreated = 1402965614516L
+			};
+
+		public static IList<IMembership> Student554433_Memberships = new IMembership[] {
+			Student554433_AmRev101_CourseOffering_Membership,
+			Student554433_AmRev101_CourseSection001_Membership,
+			Student554433_AmRev101_Group001_Membership
+		};
+
+		public static Person Student554433 = new Person( Student554433_Id ) {
+			Memberships = Student554433_Memberships,
+			DateCreated = 1402965614516L,
 			DateModified = 1402965614516L
 		};
 
-		public static CourseSection AmRev101 = new CourseSection( "https://some-university.edu/politicalScience/2014/american-revolution-101" ) {
-			AcademicSession = "Spring-2014",
-			CourseNumber = "AmRev-101",
+		public static CourseOffering AmRev101_CourseOffering = new CourseOffering( AmRev101_CourseOffering_Id ) {
+			CourseNumber = "POL101",
+			Name = "Political Science 101: The American Revolution",
+			AcademicSession = "Fall-2015",
+			DateCreated = 1402965614516L,
+			DateModified = 1402965614516L
+		};
+
+		public static CourseSection AmRev101_CourseSection001 = new CourseSection( AmRev101_CourseSection001_Id ) {
+			CourseNumber = "POL101",
 			Name = "American Revolution 101",
+			AcademicSession = "Fall-2015",
+			Membership = new IMembership[] { Student554433_AmRev101_CourseSection001_Membership },
+			SubOrganizationOf = AmRev101_CourseOffering,
+			DateCreated = 1402965614516L,
 			DateModified = 1402965614516L
+		};
+
+		public static Group AmRev101_Group001 = new Group( AmRev101_Group001_Id ) {
+			Name = "Discussion Group 001",
+			Membership = new IMembership[] { Student554433_AmRev101_Group001_Membership },
+			SubOrganizationOf = AmRev101_CourseSection001,
+			DateCreated = 1402965614516L
 		};
 
 		public static WebPage AmRev101LandingPage = new WebPage( "AmRev-101-landingPage" ) {
 			Name = "American Revolution 101 Landing Page",
-			IsPartOf = AmRev101,
+			IsPartOf = AmRev101_CourseOffering,
 			DateModified = 1402965614516L
 		};
 
@@ -104,14 +162,20 @@ namespace ImsGlobal.Caliper.Tests {
 		public static VideoObject VideoWithLearningObjective = new VideoObject( "https://com.sat/super-media-tool/video/video1" ) {
 			Name = "American Revolution - Key Figures Video",
 			AlignedLearningObjectives = new[] { 
-				new LearningObjective( "http://americanrevolution.com/personalities/learn" )
+				new LearningObjective( "http://americanrevolution.com/personalities/learn" ) {
+					DateCreated = 1402965614516L
+				}
 			},
 			Duration = 1420,
+			Version = "1.0",
+			DateCreated = 1402965614516L,
 			DateModified = 1402965614516L
 		};
 
 		public static MediaLocation VideoWithLearningObjective_Location710 = new MediaLocation( VideoWithLearningObjective.Id ) {
-			CurrentTime = 710
+			CurrentTime = 710,
+			Version = "1.0",
+			DateCreated = 1402965614516L
 		};
 
 		public static SoftwareApplication SuperAssessmentTool = new SoftwareApplication( "https://com.sat/super-assessment-tool" ) {
@@ -119,11 +183,11 @@ namespace ImsGlobal.Caliper.Tests {
 			DateModified = 1402965614516L
 		};
 
-		private static string Assessment1_Id = "https://some-university.edu/politicalScience/2014/american-revolution-101/assessment1";
+		private static string Assessment1_Id = "https://some-university.edu/politicalScience/2015/american-revolution-101/assessment1";
 
 		public static Assessment Assessment1 = new Assessment( Assessment1_Id ) {
 			Name = "American Revolution - Key Figures Assessment",
-			IsPartOf = AmRev101.Id,
+			IsPartOf = AmRev101_CourseOffering.Id,
 			DateCreated = 1402965614516L,
 			DatePublished = 1402965614516L,
 			DateToActivate = 1402965614516L,
@@ -134,21 +198,21 @@ namespace ImsGlobal.Caliper.Tests {
 			MaxSubmits = 2,
 			MaxScore = 3.0,
 			AssessmentItems = new[] {
-				new AssessmentItem( "https://some-university.edu/politicalScience/2014/american-revolution-101/assessment1/item1" ) {
+				new AssessmentItem( "https://some-university.edu/politicalScience/2015/american-revolution-101/assessment1/item1" ) {
 					Name = "Assessment Item 1",
 					IsPartOf = Assessment1_Id,
 					MaxAttempts = 2,
 					MaxSubmits = 2,
 					MaxScore = 1.0
 				},
-				new AssessmentItem( "https://some-university.edu/politicalScience/2014/american-revolution-101/assessment1/item2" ) {
+				new AssessmentItem( "https://some-university.edu/politicalScience/2015/american-revolution-101/assessment1/item2" ) {
 					Name = "Assessment Item 2",
 					IsPartOf = Assessment1_Id,
 					MaxAttempts = 2,
 					MaxSubmits = 2,
 					MaxScore = 1.0
 				},
-				new AssessmentItem( "https://some-university.edu/politicalScience/2014/american-revolution-101/assessment1/item3" ) {
+				new AssessmentItem( "https://some-university.edu/politicalScience/2015/american-revolution-101/assessment1/item3" ) {
 					Name = "Assessment Item 3",
 					IsPartOf = Assessment1_Id,
 					MaxAttempts = 2,
