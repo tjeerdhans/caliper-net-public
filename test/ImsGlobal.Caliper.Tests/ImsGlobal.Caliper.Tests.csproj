@@ -77,15 +77,16 @@
     <EmbeddedResource Include="ReferenceJson\caliperBookmarkAnnotationEvent.json" />
     <EmbeddedResource Include="ReferenceJson\caliperHighlightAnnotationEvent.json" />
     <EmbeddedResource Include="ReferenceJson\caliperTagAnnotationEvent.json" />
-    <EmbeddedResource Include="ReferenceJson\caliperShareAnnotationEvent.json" />
     <EmbeddedResource Include="ReferenceJson\caliperMediaEvent.json" />
     <EmbeddedResource Include="ReferenceJson\caliperAssessmentEvent.json" />
-    <EmbeddedResource Include="ReferenceJson\caliperAssessmentItemEvent.json" />
     <EmbeddedResource Include="ReferenceJson\caliperAssessmentOutcomeEvent.json" />
     <EmbeddedResource Include="ReferenceJson\caliperAssignableEvent.json" />
     <EmbeddedResource Include="ReferenceJson\caliperSessionLoginEvent.json" />
     <EmbeddedResource Include="ReferenceJson\caliperSessionLogoutEvent.json" />
     <EmbeddedResource Include="ReferenceJson\caliperSessionTimeoutEvent.json" />
+    <EmbeddedResource Include="ReferenceJson\caliperAssessmentItemCompletedEvent.json" />
+    <EmbeddedResource Include="ReferenceJson\caliperAssessmentItemStartedEvent.json" />
+    <EmbeddedResource Include="ReferenceJson\caliperSharedAnnotationEvent.json" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\ImsGlobal.Caliper\ImsGlobal.Caliper.csproj">

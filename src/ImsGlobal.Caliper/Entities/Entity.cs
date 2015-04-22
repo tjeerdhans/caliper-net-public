@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace ImsGlobal.Caliper.Entities {
+	using ImsGlobal.Caliper.Util;
 
 	/// <summary>
 	/// The base Caliper Entity. Analogous to a schema.org Thing.
 	/// </summary>
-	public class Entity {
+	public class Entity : IJsonId {
 
 		public Entity( string id ) {
 			this.Id = id;

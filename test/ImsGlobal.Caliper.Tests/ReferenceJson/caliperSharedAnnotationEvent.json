@@ -47,11 +47,11 @@
         "dateCreated": "2015-08-01T06:00:00.000Z",
         "dateModified": "2015-09-02T11:30:00.000Z"
     },
-    "action": "http://purl.imsglobal.org/vocab/caliper/v1/action#Tagged",
+    "action": "http://purl.imsglobal.org/vocab/caliper/v1/action#Shared",
     "object": {
-        "@id": "https://github.com/readium/readium-js-viewer/book/34843#epubcfi(/4/3/4)",
+        "@id": "https://github.com/readium/readium-js-viewer/book/34843#epubcfi(/4/3/3)",
         "@type": "http://purl.imsglobal.org/caliper/v1/Frame",
-        "name": "The Stamp Act Crisis",
+        "name": "Key Figures: John Adams",
         "description": null,
         "objectType": [],
         "alignedLearningObjective": [],
@@ -62,19 +62,37 @@
         "dateModified": "2015-09-02T11:30:00.000Z",
         "datePublished": null,
         "version": "2nd ed.",
-        "index": 4
+        "index": 3
     },
     "target": null,
     "generated": {
-        "@id": "https://someEduApp.edu/tags/7654",
-        "@type": "http://purl.imsglobal.org/caliper/v1/TagAnnotation",
+        "@id": "https://someEduApp.edu/shared/9999",
+        "@type": "http://purl.imsglobal.org/caliper/v1/SharedAnnotation",
         "name": null,
         "description": null,
         "extensions": {},
         "dateCreated": "2015-08-01T06:00:00.000Z",
         "dateModified": "2015-09-02T11:30:00.000Z",
-        "annotated": "https://github.com/readium/readium-js-viewer/book/34843#epubcfi(/4/3/4)",
-        "tags": ["to-read", "1765", "shared-with-project-team"]
+        "annotated": "https://github.com/readium/readium-js-viewer/book/34843#epubcfi(/4/3/3)",
+        "withAgents": [{
+            "@id": "https://some-university.edu/students/657585",
+            "@type": "http://purl.imsglobal.org/caliper/v1/lis/Person",
+            "name": null,
+            "description": null,
+            "hasMembership": [],
+            "extensions": {},
+            "dateCreated": "2015-08-01T06:00:00.000Z",
+            "dateModified": "2015-09-02T11:30:00.000Z"
+            },{
+            "@id": "https://some-university.edu/students/667788",
+            "@type": "http://purl.imsglobal.org/caliper/v1/lis/Person",
+            "name": null,
+            "description": null,
+            "hasMembership": [],
+            "extensions": {},
+            "dateCreated": "2015-08-01T06:00:00.000Z",
+            "dateModified": "2015-09-02T11:30:00.000Z"
+            }]
         },
     "startedAtTime": "2015-09-15T10:15:00.000Z",
     "endedAtTime": null,

@@ -19,16 +19,17 @@ namespace ImsGlobal.Caliper.Tests {
 		public void BookmarkAnnotationEvent_MatchesReferenceJson() {
 
 			var bookmarkAnnotation = new BookmarkAnnotation( "https://someEduApp.edu/bookmarks/00001" ) {
-				Target = TestEntities.EpubSubChap432,
+				Annotated = TestEntities.EpubSubChap432,
 				BookmarkNotes = "The Intolerable Acts (1774)--bad idea Lord North",
+				DateCreated = TestEntities.DefaultDateCreated,
 				DateModified = TestEntities.DefaultDateModified
 			};
 
 			var bookmarkEvent = new AnnotationEvent( bookmarkAnnotation ) {
 				EdApp = TestEntities.Readium,
-				Group = TestEntities.AmRev101_CourseOffering,
+				Group = TestEntities.AmRev101_Group001,
 				Actor = TestEntities.Student554433,
-				Target = TestEntities.EpubSubChap432_Frame,
+				Object = TestEntities.EpubSubChap432_Frame,
 				StartedAt = TestEntities.DefaultStartedAtTime
 			};
 
@@ -49,17 +50,18 @@ namespace ImsGlobal.Caliper.Tests {
 		public void HighlightAnnotationEvent_MatchesReferenceJson() {
 
 			var highlightAnnotation = new HighlightAnnotation( "https://someEduApp.edu/highlights/12345" ) {
-				Target = TestEntities.EpubSubChap431,
+				Annotated = TestEntities.EpubSubChap431,
 				Selection = new TextPositionSelector { Start = "455", End = "489" },
 				SelectionText = "Life, Liberty and the pursuit of Happiness",
+				DateCreated = TestEntities.DefaultDateCreated,
 				DateModified = TestEntities.DefaultDateModified
 			};
 
 			var bookmarkEvent = new AnnotationEvent( highlightAnnotation ) {
 				EdApp = TestEntities.Readium,
-				Group = TestEntities.AmRev101_CourseOffering,
+				Group = TestEntities.AmRev101_Group001,
 				Actor = TestEntities.Student554433,
-				Target = TestEntities.EpubSubChap431_Frame,
+				Object = TestEntities.EpubSubChap431_Frame,
 				StartedAt = TestEntities.DefaultStartedAtTime
 			};
 
@@ -80,24 +82,31 @@ namespace ImsGlobal.Caliper.Tests {
 		public void ShareAnnotationEvent_MatchesReferenceJson() {
 
 			var shareAnnotation = new ShareAnnotation( "https://someEduApp.edu/shared/9999" ) {
-				Target = TestEntities.EpubSubChap433,
+				Annotated = TestEntities.EpubSubChap433,
 				WithAgents = new [] {
-					new Person( "https://some-university.edu/students/657585" ) { DateModified = TestEntities.DefaultDateModified },
-					new Person( "https://some-university.edu/students/667788" ) { DateModified = TestEntities.DefaultDateModified }
+					new Person( "https://some-university.edu/students/657585" ) {
+						DateCreated = TestEntities.DefaultDateCreated,
+						DateModified = TestEntities.DefaultDateModified
+					},
+					new Person( "https://some-university.edu/students/667788" ) {
+						DateCreated = TestEntities.DefaultDateCreated,
+						DateModified = TestEntities.DefaultDateModified
+					}
 				},
+				DateCreated = TestEntities.DefaultDateCreated,
 				DateModified = TestEntities.DefaultDateModified
 			};
 
 			var bookmarkEvent = new AnnotationEvent( shareAnnotation ) {
 				EdApp = TestEntities.Readium,
-				Group = TestEntities.AmRev101_CourseOffering,
+				Group = TestEntities.AmRev101_Group001,
 				Actor = TestEntities.Student554433,
-				Target = TestEntities.EpubSubChap433_Frame,
+				Object = TestEntities.EpubSubChap433_Frame,
 				StartedAt = TestEntities.DefaultStartedAtTime
 			};
 
 			var eventJson = JObject.FromObject( bookmarkEvent );
-			var refJsonString = TestUtils.LoadReferenceJsonFile( "caliperShareAnnotationEvent" );
+			var refJsonString = TestUtils.LoadReferenceJsonFile( "caliperSharedAnnotationEvent" );
 			var refJson = JObject.Parse( refJsonString );
 
 			var diff = ObjectDiffPatch.GenerateDiff( refJson, eventJson );
@@ -113,16 +122,17 @@ namespace ImsGlobal.Caliper.Tests {
 		public void TagAnnotationEvent_MatchesReferenceJson() {
 
 			var tagAnnotation = new TagAnnotation( "https://someEduApp.edu/tags/7654" ) {
-				Target = TestEntities.EpubSubChap434,
+				Annotated = TestEntities.EpubSubChap434,
 				Tags = new [] { "to-read", "1765", "shared-with-project-team" },
+				DateCreated = TestEntities.DefaultDateCreated,
 				DateModified = TestEntities.DefaultDateModified
 			};
 
 			var tagEvent = new AnnotationEvent( tagAnnotation ) {
 				EdApp = TestEntities.Readium,
-				Group = TestEntities.AmRev101_CourseOffering,
+				Group = TestEntities.AmRev101_Group001,
 				Actor = TestEntities.Student554433,
-				Target = TestEntities.EpubSubChap434_Frame,
+				Object = TestEntities.EpubSubChap434_Frame,
 				StartedAt = TestEntities.DefaultStartedAtTime
 			};
 

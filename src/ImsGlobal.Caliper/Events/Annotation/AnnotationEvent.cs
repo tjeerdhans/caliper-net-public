@@ -26,7 +26,7 @@ namespace ImsGlobal.Caliper.Events.Annotation {
 			this.Context = EventContext.Annotation;
 			this.Type = EventType.Annotation;
 			this.Action = MapAnnotationEntityToAction( annotation );
-			this.Object = annotation;
+			this.Generated = annotation;
 		}
 
 		private static Action MapAnnotationEntityToAction( Annotation annotation ) {

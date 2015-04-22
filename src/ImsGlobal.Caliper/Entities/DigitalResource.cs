@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using ImsGlobal.Caliper.Util;
 using Newtonsoft.Json;
 
 namespace ImsGlobal.Caliper.Entities {
@@ -47,6 +47,7 @@ namespace ImsGlobal.Caliper.Entities {
 		/// A reference to the parent resource, if any.
 		/// </summary>
 		[JsonProperty( "isPartOf", Order = 61 )]
+		[JsonConverter( typeof( JsonIdConverter<Entity> ) )]
 		public object IsPartOf { get; set; }
 
 		/// <summary>

@@ -7,6 +7,7 @@ using Newtonsoft.Json;
 
 namespace ImsGlobal.Caliper.Entities.Annotation {
 	using ImsGlobal.Caliper.Entities.SchemaDotOrg;
+	using ImsGlobal.Caliper.Util;
 
 	/// <summary>
 	/// Base type for all annotation types. Direct sub-types, such as
@@ -19,9 +20,9 @@ namespace ImsGlobal.Caliper.Entities.Annotation {
 			this.Type = EntityType.Annotation;
 		}
 
-		[JsonIgnore]
-		[JsonProperty( "target", Order = 21 )]
-		public object Target { get; set; }
+		[JsonProperty( "annotated", Order = 21 )]
+		[JsonConverter( typeof( JsonIdConverter<DigitalResource> ) )]
+		public DigitalResource Annotated { get; set; }
 
 	}
 }
