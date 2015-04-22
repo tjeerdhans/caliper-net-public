@@ -21,7 +21,7 @@ namespace ImsGlobal.Caliper.Tests {
 			var bookmarkAnnotation = new BookmarkAnnotation( "https://someEduApp.edu/bookmarks/00001" ) {
 				Target = TestEntities.EpubSubChap432,
 				BookmarkNotes = "The Intolerable Acts (1774)--bad idea Lord North",
-				DateModified = 1402965614516L
+				DateModified = TestEntities.DefaultDateModified
 			};
 
 			var bookmarkEvent = new AnnotationEvent( bookmarkAnnotation ) {
@@ -29,7 +29,7 @@ namespace ImsGlobal.Caliper.Tests {
 				Group = TestEntities.AmRev101_CourseOffering,
 				Actor = TestEntities.Student554433,
 				Target = TestEntities.EpubSubChap432_Frame,
-				StartedAt = 1402965614516L
+				StartedAt = TestEntities.DefaultStartedAtTime
 			};
 
 			var eventJson = JObject.FromObject( bookmarkEvent );
@@ -52,7 +52,7 @@ namespace ImsGlobal.Caliper.Tests {
 				Target = TestEntities.EpubSubChap431,
 				Selection = new TextPositionSelector { Start = "455", End = "489" },
 				SelectionText = "Life, Liberty and the pursuit of Happiness",
-				DateModified = 1402965614516L
+				DateModified = TestEntities.DefaultDateModified
 			};
 
 			var bookmarkEvent = new AnnotationEvent( highlightAnnotation ) {
@@ -60,7 +60,7 @@ namespace ImsGlobal.Caliper.Tests {
 				Group = TestEntities.AmRev101_CourseOffering,
 				Actor = TestEntities.Student554433,
 				Target = TestEntities.EpubSubChap431_Frame,
-				StartedAt = 1402965614516L
+				StartedAt = TestEntities.DefaultStartedAtTime
 			};
 
 			var eventJson = JObject.FromObject( bookmarkEvent );
@@ -82,10 +82,10 @@ namespace ImsGlobal.Caliper.Tests {
 			var shareAnnotation = new ShareAnnotation( "https://someEduApp.edu/shared/9999" ) {
 				Target = TestEntities.EpubSubChap433,
 				WithAgents = new [] {
-					new Person( "https://some-university.edu/students/657585" ) { DateModified = 1402965614516L },
-					new Person( "https://some-university.edu/students/667788" ) { DateModified = 1402965614516L }
+					new Person( "https://some-university.edu/students/657585" ) { DateModified = TestEntities.DefaultDateModified },
+					new Person( "https://some-university.edu/students/667788" ) { DateModified = TestEntities.DefaultDateModified }
 				},
-				DateModified = 1402965614516L
+				DateModified = TestEntities.DefaultDateModified
 			};
 
 			var bookmarkEvent = new AnnotationEvent( shareAnnotation ) {
@@ -93,7 +93,7 @@ namespace ImsGlobal.Caliper.Tests {
 				Group = TestEntities.AmRev101_CourseOffering,
 				Actor = TestEntities.Student554433,
 				Target = TestEntities.EpubSubChap433_Frame,
-				StartedAt = 1402965614516L
+				StartedAt = TestEntities.DefaultStartedAtTime
 			};
 
 			var eventJson = JObject.FromObject( bookmarkEvent );
@@ -115,7 +115,7 @@ namespace ImsGlobal.Caliper.Tests {
 			var tagAnnotation = new TagAnnotation( "https://someEduApp.edu/tags/7654" ) {
 				Target = TestEntities.EpubSubChap434,
 				Tags = new [] { "to-read", "1765", "shared-with-project-team" },
-				DateModified = 1402965614516L
+				DateModified = TestEntities.DefaultDateModified
 			};
 
 			var tagEvent = new AnnotationEvent( tagAnnotation ) {
@@ -123,7 +123,7 @@ namespace ImsGlobal.Caliper.Tests {
 				Group = TestEntities.AmRev101_CourseOffering,
 				Actor = TestEntities.Student554433,
 				Target = TestEntities.EpubSubChap434_Frame,
-				StartedAt = 1402965614516L
+				StartedAt = TestEntities.DefaultStartedAtTime
 			};
 
 			var eventJson = JObject.FromObject( tagEvent );

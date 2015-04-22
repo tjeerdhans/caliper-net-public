@@ -8,12 +8,10 @@ namespace ImsGlobal.Caliper.Entities.Assignable {
 
 	public interface IAssignable {
 
-		long DateCreated { get; }
-		long DatePublished { get; }
-		long DateToStartOn { get; }
-		long DateToActivate { get; }
-		long DateToShow { get; }
-		long DateToSubmit { get; }
+		DateTime? DateToActivate { get; }
+		DateTime? DateToShow { get; }
+		DateTime? DateToStartOn { get; }
+		DateTime? DateToSubmit { get; }
 		int MaxAttempts { get; }
 		int MaxSubmits { get; }
 

@@ -23,7 +23,7 @@ namespace ImsGlobal.Caliper.Tests {
 				Object = TestEntities.Readium,
 				Target = TestEntities.EpubSubChap431_Frame,
 				Generated = TestEntities.SessionStart,
-				StartedAt = 1402965614516L
+				StartedAt = TestEntities.DefaultStartedAtTime
 			};
 
 			var eventJson = JObject.FromObject( loggedInEvent );
@@ -48,8 +48,8 @@ namespace ImsGlobal.Caliper.Tests {
 				Actor = TestEntities.Student554433,
 				Object = TestEntities.Readium,
 				Target = TestEntities.SessionEnd,
-				StartedAt = 1402965614516L,
-				EndedAt = 1402965614516L
+				StartedAt = TestEntities.DefaultStartedAtTime,
+				EndedAt = TestEntities.DefaultEndedAtTime
 			};
 
 			var eventJson = JObject.FromObject( loggedOutEvent );
@@ -74,8 +74,8 @@ namespace ImsGlobal.Caliper.Tests {
 				Actor = TestEntities.Readium,
 				Object = TestEntities.Readium,
 				Target = TestEntities.SessionEnd,
-				StartedAt = 1402965614516L,
-				EndedAt = 1402965614516L
+				StartedAt = TestEntities.DefaultStartedAtTime,
+				EndedAt = TestEntities.DefaultEndedAtTime
 			};
 
 			var eventJson = JObject.FromObject( timedOutEvent );

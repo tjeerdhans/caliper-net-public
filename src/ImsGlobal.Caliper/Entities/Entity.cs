@@ -12,6 +12,7 @@ namespace ImsGlobal.Caliper.Entities {
 	/// The base Caliper Entity. Analogous to a schema.org Thing.
 	/// </summary>
 	public class Entity {
+
 		public Entity( string id ) {
 			this.Id = id;
 			this.Type = EntityType.Entity;
@@ -34,10 +35,10 @@ namespace ImsGlobal.Caliper.Entities {
 		public IDictionary<string, string> Extensions { get; set; }
 
 		[JsonProperty( "dateCreated", Order = 52 )]
-		public long DateCreated { get; set; }
+		public DateTime? DateCreated { get; set; }
 
 		[JsonProperty( "dateModified", Order = 53 )]
-		public long DateModified { get; set; }
+		public DateTime? DateModified { get; set; }
 
 	}
 

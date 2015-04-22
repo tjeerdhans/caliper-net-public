@@ -23,7 +23,7 @@ namespace ImsGlobal.Caliper.Tests {
 				Actor = TestEntities.Student554433,
 				Object = TestEntities.Assessment1_Attempt1,
 				Generated = TestEntities.Assessment1_Attempt1_Result,
-				StartedAt = 1402965614516L
+				StartedAt = TestEntities.DefaultStartedAtTime
 			};
 
 			var eventJson = JObject.FromObject( outcomeEvent );

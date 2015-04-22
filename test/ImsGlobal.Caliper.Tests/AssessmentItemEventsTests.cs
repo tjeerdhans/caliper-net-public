@@ -22,7 +22,7 @@ namespace ImsGlobal.Caliper.Tests {
 				Group = TestEntities.AmRev101_CourseOffering,
 				Actor = TestEntities.Student554433,
 				Object = TestEntities.Assessment1.AssessmentItems[0],
-				StartedAt = 1402965614516L
+				StartedAt = TestEntities.DefaultStartedAtTime
 			};
 
 			var eventJson = JObject.FromObject( assessmentItemEvent );

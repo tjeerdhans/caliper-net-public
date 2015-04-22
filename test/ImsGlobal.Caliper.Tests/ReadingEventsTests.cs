@@ -23,7 +23,7 @@ namespace ImsGlobal.Caliper.Tests {
 				Object = TestEntities.EpubVolume43,
 				Target = TestEntities.EpubSubChap431_Frame,
 				FromResource = TestEntities.AmRev101LandingPage,
-				StartedAt = 1402965614516L
+				StartedAt = TestEntities.DefaultStartedAtTime
 			};
 
 			var eventJson = JObject.FromObject( navigationEvent );
@@ -48,7 +48,7 @@ namespace ImsGlobal.Caliper.Tests {
 				Actor = TestEntities.Student554433,
 				Object = TestEntities.EpubVolume43,
 				Target = TestEntities.EpubSubChap431_Frame,
-				StartedAt = 1402965614516L
+				StartedAt = TestEntities.DefaultStartedAtTime
 			};
 
 			var eventJson = JObject.FromObject( viewEvent );

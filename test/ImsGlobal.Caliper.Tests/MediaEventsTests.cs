@@ -23,7 +23,7 @@ namespace ImsGlobal.Caliper.Tests {
 				Actor = TestEntities.Student554433,
 				Object = TestEntities.VideoWithLearningObjective,
 				Target = TestEntities.VideoWithLearningObjective_Location710,
-				StartedAt = 1402965614516L
+				StartedAt = TestEntities.DefaultStartedAtTime
 			};
 
 			var eventJson = JObject.FromObject( mediaEvent );

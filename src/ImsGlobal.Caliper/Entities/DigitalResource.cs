@@ -53,7 +53,7 @@ namespace ImsGlobal.Caliper.Entities {
 		/// The date the digital resource was published.
 		/// </summary>
 		[JsonProperty( "datePublished", Order = 62 )]
-		public long DatePublished { get; set; }
+		public DateTime? DatePublished { get; set; }
 
 		/// <summary>
 		/// The current version of the digital resource.

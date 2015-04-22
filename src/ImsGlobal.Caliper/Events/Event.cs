@@ -63,13 +63,13 @@ namespace ImsGlobal.Caliper.Events {
 		/// Required - time in milliseconds that the event was started at
 		/// </summary>
 		[JsonProperty( "startedAtTime", Order = 8 )]
-		public long StartedAt { get; set; }
+		public DateTime? StartedAt { get; set; }
 
 		/// <summary>
 		/// An optional time in milliseconds that the event ended at
 		/// </summary>
 		[JsonProperty( "endedAtTime", Order = 9 )]
-		public long EndedAt { get; set; }
+		public DateTime? EndedAt { get; set; }
 
 		/// <summary>
 		/// An xsd:duration (http://books.xmlschemata.org/relaxng/ch19-77073.html)
