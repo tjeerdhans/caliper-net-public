@@ -18,7 +18,7 @@ namespace ImsGlobal.Caliper.Tests {
 
 			var assignableEvent = new AssignableEvent( Events.Action.Activated ) {
 				EdApp = TestEntities.SuperAssessmentTool,
-				LisOrg = TestEntities.AmRev101,
+				Group = TestEntities.AmRev101,
 				Actor = TestEntities.Student554433,
 				Object = TestEntities.Assessment1,
 				Generated = TestEntities.Assessment1_Attempt1,

@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using Newtonsoft.Json.Linq;
 using Xunit;
 
 namespace ImsGlobal.Caliper.Tests {
 	using ImsGlobal.Caliper.Tests.SimpleHelpers;
+	using ImsGlobal.Caliper.Entities.Agent;
 	using ImsGlobal.Caliper.Entities.Annotation;
 	using ImsGlobal.Caliper.Events.Annotation;
-	using ImsGlobal.Caliper.Entities.Lis;
 
 	public class AnnotationEventsTests {
 
@@ -25,7 +26,7 @@ namespace ImsGlobal.Caliper.Tests {
 
 			var bookmarkEvent = new AnnotationEvent( bookmarkAnnotation ) {
 				EdApp = TestEntities.Readium,
-				LisOrg = TestEntities.AmRev101,
+				Group = TestEntities.AmRev101,
 				Actor = TestEntities.Student554433,
 				Target = TestEntities.EpubSubChap432_Frame,
 				StartedAt = 1402965614516L
@@ -56,7 +57,7 @@ namespace ImsGlobal.Caliper.Tests {
 
 			var bookmarkEvent = new AnnotationEvent( highlightAnnotation ) {
 				EdApp = TestEntities.Readium,
-				LisOrg = TestEntities.AmRev101,
+				Group = TestEntities.AmRev101,
 				Actor = TestEntities.Student554433,
 				Target = TestEntities.EpubSubChap431_Frame,
 				StartedAt = 1402965614516L
@@ -89,7 +90,7 @@ namespace ImsGlobal.Caliper.Tests {
 
 			var bookmarkEvent = new AnnotationEvent( shareAnnotation ) {
 				EdApp = TestEntities.Readium,
-				LisOrg = TestEntities.AmRev101,
+				Group = TestEntities.AmRev101,
 				Actor = TestEntities.Student554433,
 				Target = TestEntities.EpubSubChap433_Frame,
 				StartedAt = 1402965614516L
@@ -119,7 +120,7 @@ namespace ImsGlobal.Caliper.Tests {
 
 			var tagEvent = new AnnotationEvent( tagAnnotation ) {
 				EdApp = TestEntities.Readium,
-				LisOrg = TestEntities.AmRev101,
+				Group = TestEntities.AmRev101,
 				Actor = TestEntities.Student554433,
 				Target = TestEntities.EpubSubChap434_Frame,
 				StartedAt = 1402965614516L

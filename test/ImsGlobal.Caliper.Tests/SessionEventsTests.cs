@@ -17,7 +17,7 @@ namespace ImsGlobal.Caliper.Tests {
 
 			var loggedInEvent = new SessionEvent( Events.Action.LoggedIn ) {
 				EdApp = TestEntities.Readium,
-				LisOrg = TestEntities.AmRev101,
+				Group = TestEntities.AmRev101,
 				Actor = TestEntities.Student554433,
 				Object = TestEntities.Readium,
 				Target = TestEntities.EpubSubChap431_Frame,
@@ -43,7 +43,7 @@ namespace ImsGlobal.Caliper.Tests {
 
 			var loggedOutEvent = new SessionEvent( Events.Action.LoggedOut ) {
 				EdApp = TestEntities.Readium,
-				LisOrg = TestEntities.AmRev101,
+				Group = TestEntities.AmRev101,
 				Actor = TestEntities.Student554433,
 				Object = TestEntities.Readium,
 				Target = TestEntities.SessionEnd,
@@ -69,7 +69,7 @@ namespace ImsGlobal.Caliper.Tests {
 
 			var timedOutEvent = new SessionEvent( Events.Action.TimedOut ) {
 				EdApp = TestEntities.Readium,
-				LisOrg = TestEntities.AmRev101,
+				Group = TestEntities.AmRev101,
 				Actor = TestEntities.Readium,
 				Object = TestEntities.Readium,
 				Target = TestEntities.SessionEnd,

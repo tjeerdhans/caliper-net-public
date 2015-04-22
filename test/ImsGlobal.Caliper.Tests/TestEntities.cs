@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ImsGlobal.Caliper.Tests {
 	using ImsGlobal.Caliper.Entities;
+	using ImsGlobal.Caliper.Entities.Agent;
 	using ImsGlobal.Caliper.Entities.Assessment;
 	using ImsGlobal.Caliper.Entities.Assignable;
 	using ImsGlobal.Caliper.Entities.Lis;
@@ -26,9 +27,8 @@ namespace ImsGlobal.Caliper.Tests {
 		};
 
 		public static CourseSection AmRev101 = new CourseSection( "https://some-university.edu/politicalScience/2014/american-revolution-101" ) {
-			Semester = "Spring-2014",
+			AcademicSession = "Spring-2014",
 			CourseNumber = "AmRev-101",
-			Label = "Am Rev 101",
 			Name = "American Revolution 101",
 			DateModified = 1402965614516L
 		};

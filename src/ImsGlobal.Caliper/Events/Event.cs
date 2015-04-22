@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace ImsGlobal.Caliper.Events {
-	using ImsGlobal.Caliper.Entities;
+	using ImsGlobal.Caliper.Entities.Agent;
 	using ImsGlobal.Caliper.Entities.Foaf;
-	using ImsGlobal.Caliper.Entities.Lis;
+	using ImsGlobal.Caliper.Entities.W3c;
 
 	/// <summary>
 	/// Base class for all Caliper events.
@@ -135,7 +135,7 @@ namespace ImsGlobal.Caliper.Events {
 		/// Group context
 		/// </summary>
 		[JsonProperty( "group", Order = 12 )]
-		public Organization LisOrg { get; set; }
+		public IOrganization Group { get; set; }
 
 	}
 

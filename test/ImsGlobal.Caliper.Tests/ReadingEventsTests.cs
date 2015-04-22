@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using Newtonsoft.Json.Linq;
 using Xunit;
 
@@ -17,7 +18,7 @@ namespace ImsGlobal.Caliper.Tests {
 
 			var navigationEvent = new NavigationEvent {
 				EdApp = TestEntities.Readium,
-				LisOrg = TestEntities.AmRev101,
+				Group = TestEntities.AmRev101,
 				Actor = TestEntities.Student554433,
 				Object = TestEntities.EpubVolume43,
 				Target = TestEntities.EpubSubChap431_Frame,
@@ -43,7 +44,7 @@ namespace ImsGlobal.Caliper.Tests {
 
 			var viewEvent = new ViewEvent {
 				EdApp = TestEntities.Readium,
-				LisOrg = TestEntities.AmRev101,
+				Group = TestEntities.AmRev101,
 				Actor = TestEntities.Student554433,
 				Object = TestEntities.EpubVolume43,
 				Target = TestEntities.EpubSubChap431_Frame,

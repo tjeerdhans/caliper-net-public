@@ -50,6 +50,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Lis\Membership.cs" />
+    <Compile Include="Entities\Lis\Group.cs" />
+    <Compile Include="Entities\Lis\CourseOffering.cs" />
+    <Compile Include="Entities\Lis\ICourse.cs" />
+    <Compile Include="Entities\Lis\Role.cs" />
+    <Compile Include="Entities\Lis\Status.cs" />
+    <Compile Include="Entities\W3c\IStatus.cs" />
+    <Compile Include="Entities\W3c\IRole.cs" />
+    <Compile Include="Entities\W3c\IMembership.cs" />
+    <Compile Include="Entities\W3c\IOrganization.cs" />
     <Compile Include="Events\Action.cs" />
     <Compile Include="Entities\Assessment\AssessmentItem.cs" />
     <Compile Include="Entities\Assessment\Assessment.cs" />
@@ -71,7 +81,6 @@
     <Compile Include="Entities\SchemaDotOrg\IVideoObject.cs" />
     <Compile Include="Entities\SchemaDotOrg\IMediaObject.cs" />
     <Compile Include="Entities\Annotation\TagAnnotation.cs" />
-    <Compile Include="Entities\LearningContext.cs" />
     <Compile Include="Entities\Annotation\BookmarkAnnotation.cs" />
     <Compile Include="Entities\Annotation\HighlightAnnotation.cs" />
     <Compile Include="Entities\Annotation\Annotation.cs" />
@@ -96,8 +105,8 @@
     <Compile Include="Entities\Foaf\IAgent.cs" />
     <Compile Include="Entities\LearningObjective.cs" />
     <Compile Include="Entities\Lis\CourseSection.cs" />
-    <Compile Include="Entities\Lis\Person.cs" />
-    <Compile Include="Entities\Lis\Organization.cs" />
+    <Compile Include="Entities\Agent\Person.cs" />
+    <Compile Include="Entities\Agent\Organization.cs" />
     <Compile Include="Entities\Reading\EPubSubChapter.cs" />
     <Compile Include="Entities\Reading\EPubPart.cs" />
     <Compile Include="Entities\Reading\EPubChapter.cs" />
@@ -105,7 +114,7 @@
     <Compile Include="Entities\SchemaDotOrg\ICreativeWork.cs" />
     <Compile Include="Entities\SchemaDotOrg\IThing.cs" />
     <Compile Include="Entities\WebPage.cs" />
-    <Compile Include="Entities\SoftwareApplication.cs" />
+    <Compile Include="Entities\Agent\SoftwareApplication.cs" />
     <Compile Include="Events\Event.cs" />
     <Compile Include="Events\Reading\NavigationEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

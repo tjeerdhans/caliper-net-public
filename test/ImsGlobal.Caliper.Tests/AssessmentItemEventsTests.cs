@@ -18,7 +18,7 @@ namespace ImsGlobal.Caliper.Tests {
 
 			var assessmentItemEvent = new AssessmentItemEvent( Events.Action.Started ) {
 				EdApp = TestEntities.SuperAssessmentTool,
-				LisOrg = TestEntities.AmRev101,
+				Group = TestEntities.AmRev101,
 				Actor = TestEntities.Student554433,
 				Object = TestEntities.Assessment1.AssessmentItems[0],
 				StartedAt = 1402965614516L
