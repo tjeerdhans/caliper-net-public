@@ -13,11 +13,11 @@ namespace ImsGlobal.Caliper.Events.Annotation {
 	/// </summary>
 	public class AnnotationEvent : Event {
 
-		private static readonly Dictionary<string, string> _annotationTypeToAction = new Dictionary<string, string> {
-			{ AnnotationType.Bookmark.Uri, Events.Action.Bookmarked.Value },
-			{ AnnotationType.Highlight.Uri, Events.Action.Highlighted.Value },
-			{ AnnotationType.Share.Uri, Events.Action.Shared.Value },
-			{ AnnotationType.Tag.Uri, Events.Action.Tagged.Value }
+		private static readonly Dictionary<string, Action> _annotationTypeToAction = new Dictionary<string, Action> {
+			{ AnnotationType.Bookmark.Uri, Events.Action.Bookmarked },
+			{ AnnotationType.Highlight.Uri, Events.Action.Highlighted },
+			{ AnnotationType.Share.Uri, Events.Action.Shared },
+			{ AnnotationType.Tag.Uri, Events.Action.Tagged }
 		};
 
 		public AnnotationEvent( Annotation annotation )
@@ -29,8 +29,8 @@ namespace ImsGlobal.Caliper.Events.Annotation {
 			this.Object = annotation;
 		}
 
-		private string MapAnnotationEntityToAction( Annotation annotation ) {
-			string action = null;
+		private Action MapAnnotationEntityToAction( Annotation annotation ) {
+			Action action;
 			_annotationTypeToAction.TryGetValue( annotation.Type, out action );
 			return action;
 		}

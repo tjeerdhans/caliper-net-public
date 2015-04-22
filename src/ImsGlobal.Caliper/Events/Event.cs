@@ -80,7 +80,7 @@ namespace ImsGlobal.Caliper.Events {
 		/// Required - Action performed by the agent - from Metric Profile
 		/// </summary>
 		[JsonProperty( "action", Order = 4 )]
-		public string Action { get; protected set; }
+		public Action Action { get; protected set; }
 
 		/// <summary>
 		/// Required - "Activity Context" - from Metric Profile

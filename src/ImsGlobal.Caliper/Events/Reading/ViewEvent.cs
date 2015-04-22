@@ -14,7 +14,7 @@ namespace ImsGlobal.Caliper.Events.Reading {
 		public ViewEvent() {
 			this.Context = EventContext.View.Uri;
 			this.Type = EventType.View.Uri;
-			this.Action = Events.Action.Viewed.Value;
+			this.Action = Action.Viewed;
 		}
 
 	}

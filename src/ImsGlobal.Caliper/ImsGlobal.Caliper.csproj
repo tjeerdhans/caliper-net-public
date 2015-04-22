@@ -97,6 +97,8 @@
     <Compile Include="Events\Media\MediaEvent.cs" />
     <Compile Include="Events\Outcome\OutcomeEvent.cs" />
     <Compile Include="Events\Reading\ViewEvent.cs" />
+    <Compile Include="Util\IJsonValue.cs" />
+    <Compile Include="Util\JsonValueConverter.cs" />
     <Compile Include="Protocol\CaliperClient.cs" />
     <Compile Include="CaliperEndpointOptions.cs" />
     <Compile Include="CaliperSensor.cs" />

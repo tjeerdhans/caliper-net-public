@@ -18,7 +18,7 @@ namespace ImsGlobal.Caliper.Events.Reading {
 		public NavigationEvent() {
 			this.Context = EventContext.Navigation.Uri;
 			this.Type = EventType.Navigation.Uri;
-			this.Action = Events.Action.NavigatedTo.Value;
+			this.Action = Action.NavigatedTo;
 		}
 
 		/// <summary>

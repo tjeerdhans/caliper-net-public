@@ -14,7 +14,7 @@ namespace ImsGlobal.Caliper.Events.Outcome {
 		public OutcomeEvent( Action action ) {
 			this.Context = EventContext.Outcome.Uri;
 			this.Type = EventType.Outcome.Uri;
-			this.Action = action.Value;
+			this.Action = action;
 		}
 
 	}

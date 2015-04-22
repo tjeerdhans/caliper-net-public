@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ImsGlobal.Caliper.Events {
+using Newtonsoft.Json;
 
-	public sealed class Action {
+namespace ImsGlobal.Caliper.Events {
+	using ImsGlobal.Caliper.Util;
+
+	[JsonConverter( typeof( JsonValueConverter<Action> ) )]
+	public sealed class Action : IJsonValue {
 
 		public static readonly Action Abandoned = new Action( "http://purl.imsglobal.org/vocab/caliper/v1/action#Abandoned" );
 		public static readonly Action Activated = new Action( "http://purl.imsglobal.org/vocab/caliper/v1/action#Activated" );
@@ -62,11 +66,14 @@ namespace ImsGlobal.Caliper.Events {
 		public static readonly Action Viewed = new Action( "http://purl.imsglobal.org/vocab/caliper/v1/action#Viewed" );
 		public static readonly Action Unmuted = new Action( "http://purl.imsglobal.org/vocab/caliper/v1/action#Unmuted" );
 
+		public Action() {}
+
 		private Action( string action ) {
 			this.Value = action;
 		}
 
-		public string Value { get; private set; }
+		public string Value { get; set; }
+
 	}
 
 }

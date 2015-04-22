@@ -9,6 +9,7 @@ using Xunit;
 
 namespace ImsGlobal.Caliper.Tests {
 	using ImsGlobal.Caliper.Tests.SimpleHelpers;
+	using ImsGlobal.Caliper.Events;
 	using ImsGlobal.Caliper.Events.Assessment;
 
 	public class AssessmentEventsTests {
@@ -16,7 +17,7 @@ namespace ImsGlobal.Caliper.Tests {
 		[Fact]
 		public void AssessmentEvent_MatchesReferenceJson() {
 
-			var assessmentEvent = new AssessmentEvent( Events.Action.Started ) {
+			var assessmentEvent = new AssessmentEvent( Action.Started ) {
 				EdApp = TestEntities.SuperAssessmentTool,
 				Group = TestEntities.AmRev101,
 				Actor = TestEntities.Student554433,

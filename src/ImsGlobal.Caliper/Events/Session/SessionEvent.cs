@@ -11,7 +11,7 @@ namespace ImsGlobal.Caliper.Events.Session {
 		public SessionEvent( Action action ) {
 			this.Context = EventContext.Session.Uri;
 			this.Type = EventType.Session.Uri;
-			this.Action = action.Value;
+			this.Action = action;
 		}
 
 	}

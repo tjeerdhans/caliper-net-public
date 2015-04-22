@@ -8,6 +8,7 @@ using Xunit;
 
 namespace ImsGlobal.Caliper.Tests {
 	using ImsGlobal.Caliper.Tests.SimpleHelpers;
+	using ImsGlobal.Caliper.Events;
 	using ImsGlobal.Caliper.Events.Session;
 
 	public class SessionEventsTests {
@@ -15,7 +16,7 @@ namespace ImsGlobal.Caliper.Tests {
 		[Fact]
 		public void SessionLoggedInEvent_MatchesReferenceJson() {
 
-			var loggedInEvent = new SessionEvent( Events.Action.LoggedIn ) {
+			var loggedInEvent = new SessionEvent( Action.LoggedIn ) {
 				EdApp = TestEntities.Readium,
 				Group = TestEntities.AmRev101,
 				Actor = TestEntities.Student554433,
@@ -41,7 +42,7 @@ namespace ImsGlobal.Caliper.Tests {
 		[Fact]
 		public void SessionLoggedOutEvent_MatchesReferenceJson() {
 
-			var loggedOutEvent = new SessionEvent( Events.Action.LoggedOut ) {
+			var loggedOutEvent = new SessionEvent( Action.LoggedOut ) {
 				EdApp = TestEntities.Readium,
 				Group = TestEntities.AmRev101,
 				Actor = TestEntities.Student554433,
@@ -67,7 +68,7 @@ namespace ImsGlobal.Caliper.Tests {
 		[Fact]
 		public void SessionTimedOutEvent_MatchesReferenceJson() {
 
-			var timedOutEvent = new SessionEvent( Events.Action.TimedOut ) {
+			var timedOutEvent = new SessionEvent( Action.TimedOut ) {
 				EdApp = TestEntities.Readium,
 				Group = TestEntities.AmRev101,
 				Actor = TestEntities.Readium,

@@ -14,7 +14,7 @@ namespace ImsGlobal.Caliper.Events.Assessment {
 		public AssessmentEvent( Action action ) {
 			this.Context = EventContext.Assessment.Uri;
 			this.Type = EventType.Assessment.Uri;
-			this.Action = action.Value;
+			this.Action = action;
 		}
 
 	}

@@ -14,7 +14,7 @@ namespace ImsGlobal.Caliper.Events.Media {
 		public MediaEvent( Action action ) {
 			this.Context = EventContext.Media.Uri;
 			this.Type = EventType.Media.Uri;
-			this.Action = action.Value;
+			this.Action = action;
 		}
 
 	}
