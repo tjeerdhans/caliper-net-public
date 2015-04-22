@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using ImsGlobal.Caliper.Util;
 using Newtonsoft.Json;
 
 namespace ImsGlobal.Caliper.Events {
@@ -80,7 +80,8 @@ namespace ImsGlobal.Caliper.Events {
 		/// or P1Y-1M (all parts must be positive).</remarks>
 		/// </summary>
 		[JsonProperty( "duration", Order = 10 )]
-		public string Duration { get; set; }
+		[JsonConverter( typeof( JsonDurationConverter ) )]
+		public NodaTime.Period Duration { get; set; }
 
 		// ------ Contextual Properties ------
 

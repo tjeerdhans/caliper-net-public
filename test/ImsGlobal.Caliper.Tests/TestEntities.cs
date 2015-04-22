@@ -269,16 +269,19 @@ namespace ImsGlobal.Caliper.Tests {
 		public static Session SessionStart = new Session( "https://github.com/readium/session-123456789" ) {
 			Name = "session-123456789",
 			Actor = Student554433,
+			DateCreated = DefaultDateCreated,
 			DateModified = DefaultDateModified,
-			StartedAt = 1402965614516L
+			StartedAt = DefaultStartedAtTime
 		};
 
 		public static Session SessionEnd = new Session( "https://github.com/readium/session-123456789" ) {
 			Name = "session-123456789",
 			Actor = Student554433,
+			DateCreated = DefaultDateCreated,
 			DateModified = DefaultDateModified,
-			StartedAt = 1402965614516L,
-			EndedAt = 1402965614516L
+			StartedAt = DefaultStartedAtTime,
+			EndedAt = DefaultEndedAtTime,
+			Duration = NodaTime.Period.FromSeconds( 3000 )
 		};
 
 	}

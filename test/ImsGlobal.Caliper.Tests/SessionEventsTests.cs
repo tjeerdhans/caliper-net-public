@@ -18,7 +18,7 @@ namespace ImsGlobal.Caliper.Tests {
 
 			var loggedInEvent = new SessionEvent( Action.LoggedIn ) {
 				EdApp = TestEntities.Readium,
-				Group = TestEntities.AmRev101_CourseOffering,
+				Group = TestEntities.AmRev101_Group001,
 				Actor = TestEntities.Student554433,
 				Object = TestEntities.Readium,
 				Target = TestEntities.EpubSubChap431_Frame,
@@ -44,12 +44,13 @@ namespace ImsGlobal.Caliper.Tests {
 
 			var loggedOutEvent = new SessionEvent( Action.LoggedOut ) {
 				EdApp = TestEntities.Readium,
-				Group = TestEntities.AmRev101_CourseOffering,
+				Group = TestEntities.AmRev101_Group001,
 				Actor = TestEntities.Student554433,
 				Object = TestEntities.Readium,
 				Target = TestEntities.SessionEnd,
 				StartedAt = TestEntities.DefaultStartedAtTime,
-				EndedAt = TestEntities.DefaultEndedAtTime
+				EndedAt = TestEntities.DefaultEndedAtTime,
+				Duration = TestEntities.SessionEnd.Duration
 			};
 
 			var eventJson = JObject.FromObject( loggedOutEvent );
@@ -70,12 +71,13 @@ namespace ImsGlobal.Caliper.Tests {
 
 			var timedOutEvent = new SessionEvent( Action.TimedOut ) {
 				EdApp = TestEntities.Readium,
-				Group = TestEntities.AmRev101_CourseOffering,
+				Group = TestEntities.AmRev101_Group001,
 				Actor = TestEntities.Readium,
 				Object = TestEntities.Readium,
 				Target = TestEntities.SessionEnd,
 				StartedAt = TestEntities.DefaultStartedAtTime,
-				EndedAt = TestEntities.DefaultEndedAtTime
+				EndedAt = TestEntities.DefaultEndedAtTime,
+				Duration = TestEntities.SessionEnd.Duration
 			};
 
 			var eventJson = JObject.FromObject( timedOutEvent );
