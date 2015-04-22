@@ -20,7 +20,7 @@ namespace ImsGlobal.Caliper.Entities.Agent {
 
 		public Organization( string id )
 			: base( id ) {
-			this.Type = EntityType.Organization.Uri;
+			this.Type = EntityType.Organization;
 			this.Membership = new List<IMembership>();
 		}
 

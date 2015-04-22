@@ -14,7 +14,7 @@ namespace ImsGlobal.Caliper.Entities.Assessment {
 
 		public Assessment( string id )
 			: base( id ) {
-			this.Type = AssignableDigitalResourceType.Assessment.Uri;
+			this.Type = AssignableDigitalResourceType.Assessment;
 		}
 
 		/// <summary>

@@ -20,7 +20,7 @@ namespace ImsGlobal.Caliper.Entities.Lis {
 
 		public Membership( string id )
 			: base( id ) {
-			this.Type = EntityType.Membership.Uri;
+			this.Type = EntityType.Membership;
 			this.Roles = new List<IRole>();
 		}
 

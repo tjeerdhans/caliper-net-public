@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Newtonsoft.Json;
-
 namespace ImsGlobal.Caliper.Entities.Assessment {
 	using ImsGlobal.Caliper.Entities.Assignable;
 	using ImsGlobal.Caliper.Entities.Qti;
@@ -14,7 +12,7 @@ namespace ImsGlobal.Caliper.Entities.Assessment {
 
 		public AssessmentItem( string id )
 			: base( id ) {
-			this.Type = AssignableDigitalResourceType.AssessmentItem.Uri;
+			this.Type = AssignableDigitalResourceType.AssessmentItem;
 		}
 
 	}

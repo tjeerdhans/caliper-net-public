@@ -5,19 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ImsGlobal.Caliper.Events.Annotation {
+	using ImsGlobal.Caliper.Entities;
+	using ImsGlobal.Caliper.Entities.Annotation;
 	using Annotation = ImsGlobal.Caliper.Entities.Annotation.Annotation;
-	using AnnotationType = ImsGlobal.Caliper.Entities.Annotation.Annotation.AnnotationType;
 
 	/// <summary>
 	/// Event raised when an actor annotates a resource.
 	/// </summary>
 	public class AnnotationEvent : Event {
 
-		private static readonly Dictionary<string, Action> _annotationTypeToAction = new Dictionary<string, Action> {
-			{ AnnotationType.Bookmark.Uri, Action.Bookmarked },
-			{ AnnotationType.Highlight.Uri, Action.Highlighted },
-			{ AnnotationType.Share.Uri, Action.Shared },
-			{ AnnotationType.Tag.Uri, Action.Tagged }
+		private static readonly Dictionary<IType, Action> _annotationTypeToAction = new Dictionary<IType, Action> {
+			{ AnnotationType.Bookmark, Action.Bookmarked },
+			{ AnnotationType.Highlight, Action.Highlighted },
+			{ AnnotationType.Share, Action.Shared },
+			{ AnnotationType.Tag, Action.Tagged }
 		};
 
 		public AnnotationEvent( Annotation annotation ) {

@@ -12,7 +12,7 @@ namespace ImsGlobal.Caliper.Entities.Reading {
 
 		public Frame( string id )
 			: base( id ) {
-			this.Type = DigitalResourceType.Frame.Uri;
+			this.Type = DigitalResourceType.Frame;
 		}
 
 		[JsonIgnore]

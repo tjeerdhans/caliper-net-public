@@ -12,7 +12,7 @@ namespace ImsGlobal.Caliper.Entities.Reading {
 
 		public Reading( string id )
 			: base( id ) {
-			this.Type = DigitalResourceType.Reading.Uri;
+			this.Type = DigitalResourceType.Reading;
 		}
 
 		[JsonProperty( "learningResourceType", Order = 21 )]

@@ -9,22 +9,9 @@ using Newtonsoft.Json;
 namespace ImsGlobal.Caliper.Entities.Assignable {
 
 	public class AssignableDigitalResource : DigitalResource, IAssignable {
-
-		public sealed class AssignableDigitalResourceType {
-
-			public static readonly AssignableDigitalResourceType Assessment = new AssignableDigitalResourceType( "http://purl.imsglobal.org/caliper/v1/Assessment" );
-			public static readonly AssignableDigitalResourceType AssessmentItem = new AssignableDigitalResourceType( "http://purl.imsglobal.org/caliper/v1/AssessmentItem" );
-
-			private AssignableDigitalResourceType( string uri ) {
-				this.Uri = uri;
-			}
-
-			public string Uri { get; private set; }
-		}
-
 		public AssignableDigitalResource( string id )
 			: base( id ) {
-			this.Type = DigitalResourceType.AssignableDigitalResource.Uri;
+			this.Type = DigitalResourceType.AssignableDigitalResource;
 		}
 
 		[JsonProperty( "dateCreated", Order = 21 )]
@@ -55,5 +42,4 @@ namespace ImsGlobal.Caliper.Entities.Assignable {
 		public double MaxScore { get; set; }
 
 	}
-
 }

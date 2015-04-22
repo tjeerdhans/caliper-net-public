@@ -11,7 +11,7 @@ namespace ImsGlobal.Caliper.Entities.Annotation {
 
 		public BookmarkAnnotation( string id )
 			: base( id ) {
-			this.Type = AnnotationType.Bookmark.Uri;
+			this.Type = AnnotationType.Bookmark;
 		}
 
 		[JsonProperty( "bookmarkNotes", Order = 31 )]

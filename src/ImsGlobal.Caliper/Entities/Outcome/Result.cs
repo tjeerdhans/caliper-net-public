@@ -13,7 +13,7 @@ namespace ImsGlobal.Caliper.Entities.Outcome {
 
 		public Result( string id )
 			: base( id ) {
-			this.Type = EntityType.Result.Uri;
+			this.Type = EntityType.Result;
 		}
 
 		[JsonProperty( "normalScore", Order = 11 )]

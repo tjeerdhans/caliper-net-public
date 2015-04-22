@@ -15,7 +15,7 @@ namespace ImsGlobal.Caliper.Entities.Agent {
 
 		public SoftwareApplication( string id )
 			: base( id ) {
-			this.Type = EntityType.SoftwareApplication.Uri;
+			this.Type = EntityType.SoftwareApplication;
 			this.Memberships = new List<IMembership>();
 		}
 

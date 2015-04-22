@@ -10,7 +10,7 @@ namespace ImsGlobal.Caliper.Entities {
 
 		public WebPage( string id )
 			: base( id ) {
-			this.Type = DigitalResourceType.WebPage.Uri;
+			this.Type = DigitalResourceType.WebPage;
 		}
 
 	}

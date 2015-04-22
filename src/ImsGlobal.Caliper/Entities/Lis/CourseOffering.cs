@@ -19,7 +19,7 @@ namespace ImsGlobal.Caliper.Entities.Lis {
 
 		public CourseOffering( string id )
 			: base( id ) {
-			this.Type = EntityType.CourseOffering.Uri;
+			this.Type = EntityType.CourseOffering;
 			this.Membership = new List<IMembership>();
 		}
 

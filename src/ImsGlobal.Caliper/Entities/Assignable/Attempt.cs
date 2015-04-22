@@ -17,7 +17,7 @@ namespace ImsGlobal.Caliper.Entities.Assignable {
 
 		public Attempt( string id )
 			: base( id ) {
-			this.Type = EntityType.Attempt.Uri;
+			this.Type = EntityType.Attempt;
 		}
 
 		[JsonIgnore]

@@ -16,7 +16,7 @@ namespace ImsGlobal.Caliper.Entities.Reading {
 
 		public EPubChapter( string id )
 			: base( id ) {
-			this.Type = DigitalResourceType.EpubChapter.Uri;
+			this.Type = DigitalResourceType.EpubChapter;
 		}
 
 	}

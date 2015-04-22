@@ -17,28 +17,9 @@ namespace ImsGlobal.Caliper.Entities {
 	/// <see cref="String"/> keywords.
 	/// </summary>
 	public class DigitalResource : Entity, ICreativeWork {
-
-		public sealed class DigitalResourceType {
-
-			public static readonly DigitalResourceType AssignableDigitalResource = new DigitalResourceType( "http://purl.imsglobal.org/caliper/v1/AssignableDigitalResource" );
-			public static readonly DigitalResourceType EpubChapter = new DigitalResourceType( "http://www.idpf.org/epub/vocab/structure/#chapter" );
-			public static readonly DigitalResourceType EpubPart = new DigitalResourceType( "http://www.idpf.org/epub/vocab/structure/#part" );
-			public static readonly DigitalResourceType EpubSubChapter = new DigitalResourceType( "http://www.idpf.org/epub/vocab/structure/#subchapter" );
-			public static readonly DigitalResourceType EpubVolume = new DigitalResourceType( "http://www.idpf.org/epub/vocab/structure/#volume" );
-			public static readonly DigitalResourceType Frame = new DigitalResourceType( "http://purl.imsglobal.org/caliper/v1/Frame" );
-			public static readonly DigitalResourceType Reading = new DigitalResourceType( "http://www.idpf.org/epub/vocab/structure" );
-			public static readonly DigitalResourceType WebPage = new DigitalResourceType( "http://purl.imsglobal.org/caliper/v1/WebPage" );
-
-			private DigitalResourceType( string uri ) {
-				this.Uri = uri;
-			}
-
-			public string Uri { get; private set; }
-		}
-
 		public DigitalResource( string id )
 			: base( id ) {
-			this.Type = EntityType.DigitalResource.Uri;
+			this.Type = EntityType.DigitalResource;
 			this.ObjectTypes = new List<string>();
 			this.AlignedLearningObjectives = new List<LearningObjective>();
 			this.Keywords = new List<string>();
@@ -81,5 +62,4 @@ namespace ImsGlobal.Caliper.Entities {
 		public long Version { get; set; }
 
 	}
-
 }

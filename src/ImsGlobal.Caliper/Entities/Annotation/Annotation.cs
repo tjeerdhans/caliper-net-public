@@ -14,24 +14,9 @@ namespace ImsGlobal.Caliper.Entities.Annotation {
 	/// Annotation Metric Profile.
 	/// </summary>
 	public class Annotation : Entity, IThing {
-
-		public sealed class AnnotationType {
-
-			public static readonly AnnotationType Bookmark = new AnnotationType( "http://purl.imsglobal.org/caliper/v1/BookmarkAnnotation" );
-			public static readonly AnnotationType Highlight = new AnnotationType( "http://purl.imsglobal.org/caliper/v1/HighlightAnnotation" );
-			public static readonly AnnotationType Share = new AnnotationType( "http://purl.imsglobal.org/caliper/v1/SharedAnnotation" );
-			public static readonly AnnotationType Tag = new AnnotationType( "http://purl.imsglobal.org/caliper/v1/TagAnnotation" );
-
-			private AnnotationType( string uri ) {
-				this.Uri = uri;
-			}
-
-			public string Uri { get; private set; }
-		}
-
 		public Annotation( string id )
 			: base( id ) {
-			this.Type = EntityType.Annotation.Uri;
+			this.Type = EntityType.Annotation;
 		}
 
 		[JsonIgnore]
@@ -39,5 +24,4 @@ namespace ImsGlobal.Caliper.Entities.Annotation {
 		public object Target { get; set; }
 
 	}
-
 }

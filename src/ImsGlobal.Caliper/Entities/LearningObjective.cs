@@ -13,7 +13,7 @@ namespace ImsGlobal.Caliper.Entities {
 
 		public LearningObjective( string id )
 			: base( id ) {
-			this.Type = EntityType.LearningObjective.Uri;
+			this.Type = EntityType.LearningObjective;
 		}
 
 	}

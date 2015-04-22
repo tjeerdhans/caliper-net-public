@@ -50,12 +50,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Annotation\AnnotationType.cs" />
+    <Compile Include="Entities\Assignable\AssignableDigitalResourceType.cs" />
+    <Compile Include="Entities\DigitalResourceType.cs" />
+    <Compile Include="Entities\EntityType.cs" />
+    <Compile Include="Entities\IType.cs" />
     <Compile Include="Entities\Lis\Membership.cs" />
     <Compile Include="Entities\Lis\Group.cs" />
     <Compile Include="Entities\Lis\CourseOffering.cs" />
     <Compile Include="Entities\Lis\ICourse.cs" />
     <Compile Include="Entities\Lis\Role.cs" />
     <Compile Include="Entities\Lis\Status.cs" />
+    <Compile Include="Entities\Media\MediaObjectType.cs" />
     <Compile Include="Entities\W3c\IStatus.cs" />
     <Compile Include="Entities\W3c\IRole.cs" />
     <Compile Include="Entities\W3c\IMembership.cs" />

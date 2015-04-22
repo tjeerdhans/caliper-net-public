@@ -17,7 +17,7 @@ namespace ImsGlobal.Caliper.Entities.Reading {
 
 		public View( string id )
 			: base( id ) {
-			this.Type = EntityType.View.Uri;
+			this.Type = EntityType.View;
 		}
 
 		[JsonProperty( "frame", Order = 11 )]

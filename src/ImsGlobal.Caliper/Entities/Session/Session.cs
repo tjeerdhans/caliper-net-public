@@ -13,7 +13,7 @@ namespace ImsGlobal.Caliper.Entities.Session {
 
 		public Session( string id )
 			: base( id ) {
-			this.Type = EntityType.Session.Uri;
+			this.Type = EntityType.Session;
 		}
 
 		[JsonProperty( "actor", Order = 11 )]

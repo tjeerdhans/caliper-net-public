@@ -17,7 +17,7 @@ namespace ImsGlobal.Caliper.Entities.Lis {
 
 		public Group( string id )
 			: base( id ) {
-			this.Type = EntityType.Group.Uri;
+			this.Type = EntityType.Group;
 			this.Membership = new List<IMembership>();
 		}
 
