@@ -68,7 +68,7 @@ namespace ImsGlobal.Caliper.Events {
 
 		public Action() {}
 
-		private Action( string action ) {
+		public Action( string action ) {
 			this.Value = action;
 		}
 

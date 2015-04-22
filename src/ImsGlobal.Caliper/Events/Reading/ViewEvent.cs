@@ -12,8 +12,8 @@ namespace ImsGlobal.Caliper.Events.Reading {
 	public class ViewEvent : Event {
 
 		public ViewEvent() {
-			this.Context = EventContext.View.Uri;
-			this.Type = EventType.View.Uri;
+			this.Context = EventContext.View;
+			this.Type = EventType.View;
 			this.Action = Action.Viewed;
 		}
 

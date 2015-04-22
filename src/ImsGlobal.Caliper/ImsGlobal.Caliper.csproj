@@ -93,6 +93,8 @@
     <Compile Include="Events\Assessment\AssessmentItemEvent.cs" />
     <Compile Include="Events\Assessment\AssessmentEvent.cs" />
     <Compile Include="Events\Assignable\AssignableEvent.cs" />
+    <Compile Include="Events\EventContext.cs" />
+    <Compile Include="Events\EventType.cs" />
     <Compile Include="Events\Session\SessionEvent.cs" />
     <Compile Include="Events\Media\MediaEvent.cs" />
     <Compile Include="Events\Outcome\OutcomeEvent.cs" />

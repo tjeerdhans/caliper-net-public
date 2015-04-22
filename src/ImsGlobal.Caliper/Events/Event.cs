@@ -15,60 +15,19 @@ namespace ImsGlobal.Caliper.Events {
 	/// Base class for all Caliper events.
 	/// </summary>
 	public abstract class Event {
-
-		public sealed class EventContext {
-
-			public static readonly EventContext Annotation = new EventContext( "http://purl.imsglobal.org/ctx/caliper/v1/AnnotationEvent" );
-			public static readonly EventContext Assessment = new EventContext( "http://purl.imsglobal.org/ctx/caliper/v1/AssessmentEvent" );
-			public static readonly EventContext AssessmentItem = new EventContext( "http://purl.imsglobal.org/ctx/caliper/v1/AssessmentItemEvent" );
-			public static readonly EventContext Assignable = new EventContext( "http://purl.imsglobal.org/ctx/caliper/v1/AssignableEvent" );
-			public static readonly EventContext Event = new EventContext( "http://purl.imsglobal.org/ctx/caliper/v1/Event" );
-			public static readonly EventContext Media = new EventContext( "http://purl.imsglobal.org/ctx/caliper/v1/MediaEvent" );
-			public static readonly EventContext Navigation = new EventContext( "http://purl.imsglobal.org/ctx/caliper/v1/NavigationEvent" );
-			public static readonly EventContext Outcome = new EventContext( "http://purl.imsglobal.org/ctx/caliper/v1/OutcomeEvent" );
-			public static readonly EventContext Session = new EventContext( "http://purl.imsglobal.org/ctx/caliper/v1/SessionEvent" );
-			public static readonly EventContext View = new EventContext( "http://purl.imsglobal.org/ctx/caliper/v1/ViewEvent" );
-
-			private EventContext( string uri ) {
-				this.Uri = uri;
-			}
-
-			public string Uri { get; private set; }
-		}
-
-		public sealed class EventType {
-
-			public static readonly EventType Annotation = new EventType( "http://purl.imsglobal.org/caliper/v1/AnnotationEvent" );
-			public static readonly EventType Assessment = new EventType( "http://purl.imsglobal.org/caliper/v1/AssessmentEvent" );
-			public static readonly EventType AssessmentItem = new EventType( "http://purl.imsglobal.org/caliper/v1/AssessmentItemEvent" );
-			public static readonly EventType Assignable = new EventType( "http://purl.imsglobal.org/caliper/v1/AssignableEvent" );
-			public static readonly EventType Event = new EventType( "http://purl.imsglobal.org/caliper/v1/Event" );
-			public static readonly EventType Media = new EventType( "http://purl.imsglobal.org/caliper/v1/MediaEvent" );
-			public static readonly EventType Navigation = new EventType( "http://purl.imsglobal.org/caliper/v1/NavigationEvent" );
-			public static readonly EventType Outcome = new EventType( "http://purl.imsglobal.org/caliper/v1/OutcomeEvent" );
-			public static readonly EventType Session = new EventType( "http://purl.imsglobal.org/caliper/v1/SessionEvent" );
-			public static readonly EventType View = new EventType( "http://purl.imsglobal.org/caliper/v1/ViewEvent" );
-
-			private EventType( string uri ) {
-				this.Uri = uri;
-			}
-
-			public string Uri { get; private set; }
-		}
-
 		// ------ Core Properties ------
 
 		/// <summary>
 		/// Required - JSON-LD context for the CaliperEvent
 		/// </summary>
 		[JsonProperty( "@context", Order = 1 )]
-		public string Context { get; set; }
+		public EventContext Context { get; set; }
 
 		/// <summary>
 		/// Required - Type of the CaliperEvent
 		/// </summary>
 		[JsonProperty( "@type", Order = 2 )]
-		public string Type { get; set; }
+		public EventType Type { get; set; }
 
 		/// <summary>
 		/// Required - Agent (User, System) that performed the action

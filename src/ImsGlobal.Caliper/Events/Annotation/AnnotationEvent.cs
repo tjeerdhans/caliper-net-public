@@ -14,22 +14,21 @@ namespace ImsGlobal.Caliper.Events.Annotation {
 	public class AnnotationEvent : Event {
 
 		private static readonly Dictionary<string, Action> _annotationTypeToAction = new Dictionary<string, Action> {
-			{ AnnotationType.Bookmark.Uri, Events.Action.Bookmarked },
-			{ AnnotationType.Highlight.Uri, Events.Action.Highlighted },
-			{ AnnotationType.Share.Uri, Events.Action.Shared },
-			{ AnnotationType.Tag.Uri, Events.Action.Tagged }
+			{ AnnotationType.Bookmark.Uri, Action.Bookmarked },
+			{ AnnotationType.Highlight.Uri, Action.Highlighted },
+			{ AnnotationType.Share.Uri, Action.Shared },
+			{ AnnotationType.Tag.Uri, Action.Tagged }
 		};
 
-		public AnnotationEvent( Annotation annotation )
-			: base() {
+		public AnnotationEvent( Annotation annotation ) {
 
-			this.Context = "http://purl.imsglobal.org/ctx/caliper/v1/AnnotationEvent";
-			this.Type = "http://purl.imsglobal.org/caliper/v1/AnnotationEvent";
+			this.Context = EventContext.Annotation;
+			this.Type = EventType.Annotation;
 			this.Action = MapAnnotationEntityToAction( annotation );
 			this.Object = annotation;
 		}
 
-		private Action MapAnnotationEntityToAction( Annotation annotation ) {
+		private static Action MapAnnotationEntityToAction( Annotation annotation ) {
 			Action action;
 			_annotationTypeToAction.TryGetValue( annotation.Type, out action );
 			return action;
