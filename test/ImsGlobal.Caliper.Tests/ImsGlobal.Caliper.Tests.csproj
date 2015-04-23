@@ -64,11 +64,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssessmentItemCompletedEventsTests.cs" />
     <Compile Include="SessionEventsTests.cs" />
     <Compile Include="AnnotationEventsTests.cs" />
     <Compile Include="AssignableEventsTests.cs" />
     <Compile Include="AssessmentOutcomeEventsTests.cs" />
-    <Compile Include="AssessmentItemEventsTests.cs" />
+    <Compile Include="AssessmentItemStartedEventsTests.cs" />
     <Compile Include="AssessmentEventsTests.cs" />
     <Compile Include="MediaEventsTests.cs" />
     <Compile Include="ReadingEventsTests.cs" />

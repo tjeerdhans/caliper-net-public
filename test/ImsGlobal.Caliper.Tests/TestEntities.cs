@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using ImsGlobal.Caliper.Entities.Response;
 using NodaTime;
 
 namespace ImsGlobal.Caliper.Tests {
@@ -213,7 +213,7 @@ namespace ImsGlobal.Caliper.Tests {
 		private static string Assessment1_Id = "https://some-university.edu/politicalScience/2015/american-revolution-101/assessment1";
 
 		public static AssessmentItem AssessmentItem1 =
-			new AssessmentItem( "https://some-university.edu/politicalScience/2015/american-revolution-101/assessment1/item1" ) {
+			new AssessmentItem( Assessment1_Id + "/item1" ) {
 				Name = "Assessment Item 1",
 				Version = "1.0",
 				IsPartOf = new Assessment( Assessment1_Id ),
@@ -223,7 +223,7 @@ namespace ImsGlobal.Caliper.Tests {
 				IsTimeDependent = false
 			};
 		public static AssessmentItem AssessmentItem2 =
-			new AssessmentItem( "https://some-university.edu/politicalScience/2015/american-revolution-101/assessment1/item2" ) {
+			new AssessmentItem( Assessment1_Id + "/item2" ) {
 				Name = "Assessment Item 2",
 				Version = "1.0",
 				IsPartOf = new Assessment( Assessment1_Id ),
@@ -233,7 +233,7 @@ namespace ImsGlobal.Caliper.Tests {
 				IsTimeDependent = false
 			};
 		public static AssessmentItem AssessmentItem3 =
-			new AssessmentItem( "https://some-university.edu/politicalScience/2015/american-revolution-101/assessment1/item3" ) {
+			new AssessmentItem( Assessment1_Id + "/item3" ) {
 				Name = "Assessment Item 3",
 				Version = "1.0",
 				IsPartOf = new Assessment( Assessment1_Id ),
@@ -267,6 +267,23 @@ namespace ImsGlobal.Caliper.Tests {
 			Assignable = Assessment1,
 			Actor = Student554433,
 			Count = 1,
+			DateCreated = DefaultDateCreated,
+			StartedAtTime = DefaultStartedAtTime
+		};
+
+		public static Attempt Assessment1_Item1_Attempt1 = new Attempt( AssessmentItem1.Id + "/attempt1" ) {
+			Assignable = Assessment1,
+			Actor = Student554433,
+			Count = 1,
+			DateCreated = DefaultDateCreated,
+			StartedAtTime = DefaultStartedAtTime
+		};
+
+		public static FillInBlankResponse Assessment1_Item1_Attempt1_Response = new FillInBlankResponse( AssessmentItem1.Id + "/response1" ) {
+			Assignable = Assessment1,
+			Actor = Student554433,
+			Attempt = Assessment1_Item1_Attempt1,
+			Values = new [] { "2 July 1776" },
 			DateCreated = DefaultDateCreated,
 			StartedAtTime = DefaultStartedAtTime
 		};

@@ -7,19 +7,16 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using NodaTime;
 
-namespace ImsGlobal.Caliper.Entities.Assignable {
+namespace ImsGlobal.Caliper.Entities.Response {
+	using ImsGlobal.Caliper.Entities.Assignable;
 	using ImsGlobal.Caliper.Entities.Foaf;
 	using ImsGlobal.Caliper.Util;
 
-	/// <summary>
-	/// Representation of an Attempt. Attempts are generated as part of or
-	/// are the object of an interaction represented by an AssignableEvent.
-	/// </summary>
-	public class Attempt : Entity {
+	public class Response : Entity {
 
-		public Attempt( string id )
+		public Response( string id )
 			: base( id ) {
-			this.Type = EntityType.Attempt;
+			this.Type = EntityType.Response;
 		}
 
 		[JsonProperty( "assignable", Order = 11 )]
@@ -30,8 +27,8 @@ namespace ImsGlobal.Caliper.Entities.Assignable {
 		[JsonConverter( typeof( JsonIdConverter<IAgent> ) )]
 		public IAgent Actor { get; set; }
 
-		[JsonProperty( "count", Order = 13 )]
-		public int Count { get; set; }
+		[JsonProperty( "attempt", Order = 13 )]
+		public Attempt Attempt { get; set; }
 
 		[JsonProperty( "startedAtTime", Order = 14 )]
 		public Instant? StartedAtTime { get; set; }

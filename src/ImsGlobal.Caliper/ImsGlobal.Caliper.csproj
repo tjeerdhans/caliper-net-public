@@ -68,6 +68,13 @@
     <Compile Include="Entities\Lis\Role.cs" />
     <Compile Include="Entities\Lis\Status.cs" />
     <Compile Include="Entities\Media\MediaObjectType.cs" />
+    <Compile Include="Entities\Response\MultipleChoiceResponse.cs" />
+    <Compile Include="Entities\Response\FillInBlankResponse.cs" />
+    <Compile Include="Entities\Response\MultipleResponseResponse.cs" />
+    <Compile Include="Entities\Response\ResponseType.cs" />
+    <Compile Include="Entities\Response\Response.cs" />
+    <Compile Include="Entities\Response\SelectTextResponse.cs" />
+    <Compile Include="Entities\Response\TrueFalseResponse.cs" />
     <Compile Include="Entities\W3c\IStatus.cs" />
     <Compile Include="Entities\W3c\IRole.cs" />
     <Compile Include="Entities\W3c\IMembership.cs" />

@@ -176,8 +176,8 @@ namespace ImsGlobal.Caliper.Tests.SimpleHelpers
             }
             else if (source.Type == Newtonsoft.Json.Linq.JTokenType.Array)
             {
-                var aS = (source as Newtonsoft.Json.Linq.JArray);
-                var aT = (target as Newtonsoft.Json.Linq.JArray);
+                var aS = (source as Newtonsoft.Json.Linq.JArray) ?? new JArray();
+				var aT = (target as Newtonsoft.Json.Linq.JArray) ?? new JArray();
 
                 if ((aS.Count == 0 || aT.Count == 0) && (aS.Count != aT.Count))
                 {
