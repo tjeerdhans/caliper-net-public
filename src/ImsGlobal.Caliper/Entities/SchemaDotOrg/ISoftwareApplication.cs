@@ -10,7 +10,7 @@ namespace ImsGlobal.Caliper.Entities.SchemaDotOrg {
 	/// A software application
 	/// Source: http://schema.org/SoftwareApplication
 	/// </summary>
-	interface ISoftwareApplication : ICreativeWork {
+	public interface ISoftwareApplication : ICreativeWork {
 	}
 
 }

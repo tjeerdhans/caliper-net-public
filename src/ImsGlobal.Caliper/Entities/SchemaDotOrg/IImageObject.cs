@@ -10,7 +10,7 @@ namespace ImsGlobal.Caliper.Entities.SchemaDotOrg {
 	/// An image object embedded in a web page.
 	/// Source: https://schema.org/ImageObject
 	/// </summary>
-	interface IImageObject : IMediaObject {
+	public interface IImageObject : IMediaObject {
 	}
 
 }

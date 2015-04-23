@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Newtonsoft.Json.Linq;
 using Xunit;
 
 namespace ImsGlobal.Caliper.Tests {
@@ -33,17 +32,7 @@ namespace ImsGlobal.Caliper.Tests {
 				StartedAt = TestEntities.DefaultStartedAtTime
 			};
 
-			var eventJson = JObject.FromObject( bookmarkEvent );
-			var refJsonString = TestUtils.LoadReferenceJsonFile( "caliperBookmarkAnnotationEvent" );
-			var refJson = JObject.Parse( refJsonString );
-
-			var diff = ObjectDiffPatch.GenerateDiff( refJson, eventJson );
-
-			System.Diagnostics.Trace.WriteLine( diff.NewValues );
-			System.Diagnostics.Trace.WriteLine( diff.OldValues );
-
-			Assert.Null( diff.NewValues );
-			Assert.Null( diff.OldValues );
+			JsonAssertions.AssertSameEventJson( bookmarkEvent, "caliperBookmarkAnnotationEvent" );
 		}
 
 		[Fact]
@@ -57,7 +46,7 @@ namespace ImsGlobal.Caliper.Tests {
 				DateModified = TestEntities.DefaultDateModified
 			};
 
-			var bookmarkEvent = new AnnotationEvent( highlightAnnotation ) {
+			var highlightEvent = new AnnotationEvent( highlightAnnotation ) {
 				EdApp = TestEntities.Readium,
 				Group = TestEntities.AmRev101_Group001,
 				Actor = TestEntities.Student554433,
@@ -65,17 +54,7 @@ namespace ImsGlobal.Caliper.Tests {
 				StartedAt = TestEntities.DefaultStartedAtTime
 			};
 
-			var eventJson = JObject.FromObject( bookmarkEvent );
-			var refJsonString = TestUtils.LoadReferenceJsonFile( "caliperHighlightAnnotationEvent" );
-			var refJson = JObject.Parse( refJsonString );
-
-			var diff = ObjectDiffPatch.GenerateDiff( refJson, eventJson );
-
-			System.Diagnostics.Trace.WriteLine( diff.NewValues );
-			System.Diagnostics.Trace.WriteLine( diff.OldValues );
-
-			Assert.Null( diff.NewValues );
-			Assert.Null( diff.OldValues );
+			JsonAssertions.AssertSameEventJson( highlightEvent, "caliperHighlightAnnotationEvent" );
 		}
 
 		[Fact]
@@ -97,7 +76,7 @@ namespace ImsGlobal.Caliper.Tests {
 				DateModified = TestEntities.DefaultDateModified
 			};
 
-			var bookmarkEvent = new AnnotationEvent( shareAnnotation ) {
+			var shareEvent = new AnnotationEvent( shareAnnotation ) {
 				EdApp = TestEntities.Readium,
 				Group = TestEntities.AmRev101_Group001,
 				Actor = TestEntities.Student554433,
@@ -105,17 +84,7 @@ namespace ImsGlobal.Caliper.Tests {
 				StartedAt = TestEntities.DefaultStartedAtTime
 			};
 
-			var eventJson = JObject.FromObject( bookmarkEvent );
-			var refJsonString = TestUtils.LoadReferenceJsonFile( "caliperSharedAnnotationEvent" );
-			var refJson = JObject.Parse( refJsonString );
-
-			var diff = ObjectDiffPatch.GenerateDiff( refJson, eventJson );
-
-			System.Diagnostics.Trace.WriteLine( diff.NewValues );
-			System.Diagnostics.Trace.WriteLine( diff.OldValues );
-
-			Assert.Null( diff.NewValues );
-			Assert.Null( diff.OldValues );
+			JsonAssertions.AssertSameEventJson( shareEvent, "caliperSharedAnnotationEvent" );
 		}
 
 		[Fact]
@@ -136,17 +105,7 @@ namespace ImsGlobal.Caliper.Tests {
 				StartedAt = TestEntities.DefaultStartedAtTime
 			};
 
-			var eventJson = JObject.FromObject( tagEvent );
-			var refJsonString = TestUtils.LoadReferenceJsonFile( "caliperTagAnnotationEvent" );
-			var refJson = JObject.Parse( refJsonString );
-
-			var diff = ObjectDiffPatch.GenerateDiff( refJson, eventJson );
-
-			System.Diagnostics.Trace.WriteLine( diff.NewValues );
-			System.Diagnostics.Trace.WriteLine( diff.OldValues );
-
-			Assert.Null( diff.NewValues );
-			Assert.Null( diff.OldValues );
+			JsonAssertions.AssertSameEventJson( tagEvent, "caliperTagAnnotationEvent" );
 		}
 
 	}

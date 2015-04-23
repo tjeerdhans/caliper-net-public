@@ -11,7 +11,7 @@ namespace ImsGlobal.Caliper.Entities.SchemaDotOrg {
 	/// photographs, software programs, etc.
 	/// Source: http://schema.org/CreativeWork
 	/// </summary>
-	interface ICreativeWork {
+	public interface ICreativeWork {
 	}
 
 }

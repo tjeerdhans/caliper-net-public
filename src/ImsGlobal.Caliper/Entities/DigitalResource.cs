@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ImsGlobal.Caliper.Util;
+
 using Newtonsoft.Json;
+using NodaTime;
 
 namespace ImsGlobal.Caliper.Entities {
 	using ImsGlobal.Caliper.Entities.SchemaDotOrg;
+	using ImsGlobal.Caliper.Util;
 
 	/// <summary>
 	/// Caliper representation of a CreativeWork (https://schema.org/CreativeWork)
@@ -48,13 +50,13 @@ namespace ImsGlobal.Caliper.Entities {
 		/// </summary>
 		[JsonProperty( "isPartOf", Order = 61 )]
 		[JsonConverter( typeof( JsonIdConverter<Entity> ) )]
-		public object IsPartOf { get; set; }
+		public ICreativeWork IsPartOf { get; set; }
 
 		/// <summary>
 		/// The date the digital resource was published.
 		/// </summary>
 		[JsonProperty( "datePublished", Order = 62 )]
-		public DateTime? DatePublished { get; set; }
+		public Instant? DatePublished { get; set; }
 
 		/// <summary>
 		/// The current version of the digital resource.

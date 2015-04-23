@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Newtonsoft.Json;
+using NodaTime;
 
 namespace ImsGlobal.Caliper.Protocol {
 
@@ -17,7 +18,7 @@ namespace ImsGlobal.Caliper.Protocol {
 		public string Type { get; set; }
 
 		[JsonProperty( "time", Order = 3 )]
-		public string Time { get; set; }
+		public Instant? Time { get; set; }
 
 		[JsonProperty( "data", Order = 4 )]
 		public object Data { get; set; }

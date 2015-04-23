@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using Newtonsoft.Json;
+using NodaTime;
 
 namespace ImsGlobal.Caliper.Entities.Session {
 	using ImsGlobal.Caliper.Entities.Foaf;
@@ -20,14 +22,13 @@ namespace ImsGlobal.Caliper.Entities.Session {
 		public IAgent Actor { get; set; }
 
 		[JsonProperty( "startedAtTime", Order = 12 )]
-		public DateTime? StartedAt { get; set; }
+		public Instant? StartedAt { get; set; }
 
 		[JsonProperty( "endedAtTime", Order = 13 )]
-		public DateTime? EndedAt { get; set; }
+		public Instant? EndedAt { get; set; }
 
 		[JsonProperty( "duration", Order = 14 )]
-		[JsonConverter( typeof( JsonDurationConverter ) )]
-		public NodaTime.Period Duration { get; set; }
+		public Period Duration { get; set; }
 
 	}
 

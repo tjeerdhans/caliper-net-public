@@ -39,6 +39,9 @@
     <Reference Include="NodaTime">
       <HintPath>..\..\packages\NodaTime.1.3.1\lib\net35-Client\NodaTime.dll</HintPath>
     </Reference>
+    <Reference Include="NodaTime.Serialization.JsonNet">
+      <HintPath>..\..\packages\NodaTime.Serialization.JsonNet.1.3.1\lib\net35-Client\NodaTime.Serialization.JsonNet.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net.Http" />
@@ -110,7 +113,6 @@
     <Compile Include="Events\Reading\ViewEvent.cs" />
     <Compile Include="Util\IJsonId.cs" />
     <Compile Include="Util\IJsonValue.cs" />
-    <Compile Include="Util\JsonTimespanConverter.cs" />
     <Compile Include="Util\JsonIdConverter.cs" />
     <Compile Include="Util\JsonValueConverter.cs" />
     <Compile Include="Protocol\CaliperClient.cs" />
@@ -135,9 +137,9 @@
     <Compile Include="Events\Reading\NavigationEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Protocol\CaliperMessage.cs" />
-    <Compile Include="Util\NodaTimeExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

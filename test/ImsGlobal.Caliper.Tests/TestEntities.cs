@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using NodaTime;
+
 namespace ImsGlobal.Caliper.Tests {
 	using ImsGlobal.Caliper.Entities;
 	using ImsGlobal.Caliper.Entities.Agent;
@@ -23,15 +25,16 @@ namespace ImsGlobal.Caliper.Tests {
 		public static readonly string AmRev101_CourseSection001_Id = "https://some-university.edu/politicalScience/2015/american-revolution-101/section/001";
 		public static readonly string AmRev101_Group001_Id = "https://some-university.edu/politicalScience/2015/american-revolution-101/section/001/group/001";
 
-		public static readonly DateTime DefaultDateCreated = DateTime.SpecifyKind( new DateTime( 2015, 8, 1, 6, 0, 0 ), DateTimeKind.Utc );
-		public static readonly DateTime DefaultDateModified = DateTime.SpecifyKind( new DateTime( 2015, 9, 2, 11, 30, 0 ), DateTimeKind.Utc );
-		public static readonly DateTime DefaultDatePublished = DateTime.SpecifyKind( new DateTime( 2015, 8, 15, 9, 30, 0 ), DateTimeKind.Utc );
-		public static readonly DateTime DefaultDateToActivate = DateTime.SpecifyKind( new DateTime( 2015, 8, 16, 5, 0, 0 ), DateTimeKind.Utc );
-		public static readonly DateTime DefaultDateToShow = DefaultDateToActivate;
-		public static readonly DateTime DefaultDateToStartOn = DefaultDateToActivate;
-		public static readonly DateTime DefaultDateToSubmit = DateTime.SpecifyKind( new DateTime( 2015, 9, 28, 11, 59, 59 ), DateTimeKind.Utc );
-		public static readonly DateTime DefaultStartedAtTime = DateTime.SpecifyKind( new DateTime( 2015, 9, 15, 10, 15, 0 ), DateTimeKind.Utc );
-		public static readonly DateTime DefaultEndedAtTime = DateTime.SpecifyKind( new DateTime( 2015, 9, 15, 11, 05, 0 ), DateTimeKind.Utc );
+		public static readonly Instant DefaultDateCreated = Instant.FromUtc( 2015, 8, 1, 6, 0, 0 );
+		public static readonly Instant DefaultDateModified = Instant.FromUtc( 2015, 9, 2, 11, 30, 0 );
+		public static readonly Instant DefaultDatePublished = Instant.FromUtc( 2015, 8, 15, 9, 30, 0 );
+		public static readonly Instant DefaultDateToActivate = Instant.FromUtc( 2015, 8, 16, 5, 0, 0 );
+		public static readonly Instant DefaultDateToShow = DefaultDateToActivate;
+		public static readonly Instant DefaultDateToStartOn = DefaultDateToActivate;
+		public static readonly Instant DefaultDateToSubmit = Instant.FromUtc( 2015, 9, 28, 11, 59, 59 );
+		public static readonly Instant DefaultStartedAtTime = Instant.FromUtc( 2015, 9, 15, 10, 15, 0 );
+		public static readonly Instant NodaDefaultStartedAtTime = Instant.FromUtc(  2015, 9, 15, 10, 15, 0 );
+		public static readonly Instant DefaultEndedAtTime = Instant.FromUtc( 2015, 9, 15, 11, 05, 0 );
 
 		public static readonly IMembership Student554433_AmRev101_CourseOffering_Membership =
 			new Membership( "https://some-university.edu/membership/001" ) {
@@ -97,7 +100,6 @@ namespace ImsGlobal.Caliper.Tests {
 
 		public static WebPage AmRev101LandingPage = new WebPage( "AmRev-101-landingPage" ) {
 			Name = "American Revolution 101 Landing Page",
-			IsPartOf = AmRev101_CourseOffering,
 			DateModified = DefaultDateModified
 		};
 
@@ -205,15 +207,45 @@ namespace ImsGlobal.Caliper.Tests {
 
 		public static SoftwareApplication SuperAssessmentTool = new SoftwareApplication( "https://com.sat/super-assessment-tool" ) {
 			Name = "Super Assessment Tool",
-			DateModified = DefaultDateModified
+			DateCreated = DefaultDateCreated
 		};
 
 		private static string Assessment1_Id = "https://some-university.edu/politicalScience/2015/american-revolution-101/assessment1";
 
+		public static AssessmentItem AssessmentItem1 =
+			new AssessmentItem( "https://some-university.edu/politicalScience/2015/american-revolution-101/assessment1/item1" ) {
+				Name = "Assessment Item 1",
+				Version = "1.0",
+				IsPartOf = new Assessment( Assessment1_Id ),
+				MaxAttempts = 2,
+				MaxSubmits = 2,
+				MaxScore = 1.0,
+				IsTimeDependent = false
+			};
+		public static AssessmentItem AssessmentItem2 =
+			new AssessmentItem( "https://some-university.edu/politicalScience/2015/american-revolution-101/assessment1/item2" ) {
+				Name = "Assessment Item 2",
+				Version = "1.0",
+				IsPartOf = new Assessment( Assessment1_Id ),
+				MaxAttempts = 2,
+				MaxSubmits = 2,
+				MaxScore = 1.0,
+				IsTimeDependent = false
+			};
+		public static AssessmentItem AssessmentItem3 =
+			new AssessmentItem( "https://some-university.edu/politicalScience/2015/american-revolution-101/assessment1/item3" ) {
+				Name = "Assessment Item 3",
+				Version = "1.0",
+				IsPartOf = new Assessment( Assessment1_Id ),
+				MaxAttempts = 2,
+				MaxSubmits = 2,
+				MaxScore = 1.0,
+				IsTimeDependent = false
+			};
+
 		public static Assessment Assessment1 = new Assessment( Assessment1_Id ) {
 			Name = "American Revolution - Key Figures Assessment",
-			IsPartOf = AmRev101_CourseOffering.Id,
-			DateCreated = DefaultDateCreated,
+			Version = "1.0",
 			DatePublished = DefaultDatePublished,
 			DateToActivate = DefaultDateToActivate,
 			DateToShow = DefaultDateToShow,
@@ -223,35 +255,20 @@ namespace ImsGlobal.Caliper.Tests {
 			MaxSubmits = 2,
 			MaxScore = 3.0,
 			AssessmentItems = new[] {
-				new AssessmentItem( "https://some-university.edu/politicalScience/2015/american-revolution-101/assessment1/item1" ) {
-					Name = "Assessment Item 1",
-					IsPartOf = Assessment1_Id,
-					MaxAttempts = 2,
-					MaxSubmits = 2,
-					MaxScore = 1.0
-				},
-				new AssessmentItem( "https://some-university.edu/politicalScience/2015/american-revolution-101/assessment1/item2" ) {
-					Name = "Assessment Item 2",
-					IsPartOf = Assessment1_Id,
-					MaxAttempts = 2,
-					MaxSubmits = 2,
-					MaxScore = 1.0
-				},
-				new AssessmentItem( "https://some-university.edu/politicalScience/2015/american-revolution-101/assessment1/item3" ) {
-					Name = "Assessment Item 3",
-					IsPartOf = Assessment1_Id,
-					MaxAttempts = 2,
-					MaxSubmits = 2,
-					MaxScore = 1.0
-				}
+				AssessmentItem1,
+				AssessmentItem2,
+				AssessmentItem3
 			},
+			DateCreated = DefaultDateCreated,
 			DateModified = DefaultDateModified
 		};
 
 		public static Attempt Assessment1_Attempt1 = new Attempt( Assessment1_Id + "/attempt1" ) {
 			Assignable = Assessment1,
 			Actor = Student554433,
-			Count = 1
+			Count = 1,
+			DateCreated = DefaultDateCreated,
+			StartedAtTime = DefaultStartedAtTime
 		};
 
 		public static Result Assessment1_Attempt1_Result = new Result( Assessment1_Attempt1.Id + "/result" ) {
@@ -271,7 +288,7 @@ namespace ImsGlobal.Caliper.Tests {
 			Actor = Student554433,
 			DateCreated = DefaultDateCreated,
 			DateModified = DefaultDateModified,
-			StartedAt = DefaultStartedAtTime
+			StartedAt = NodaDefaultStartedAtTime
 		};
 
 		public static Session SessionEnd = new Session( "https://github.com/readium/session-123456789" ) {
@@ -279,9 +296,9 @@ namespace ImsGlobal.Caliper.Tests {
 			Actor = Student554433,
 			DateCreated = DefaultDateCreated,
 			DateModified = DefaultDateModified,
-			StartedAt = DefaultStartedAtTime,
+			StartedAt = NodaDefaultStartedAtTime,
 			EndedAt = DefaultEndedAtTime,
-			Duration = NodaTime.Period.FromSeconds( 3000 )
+			Duration = Period.FromSeconds( 3000 )
 		};
 
 	}

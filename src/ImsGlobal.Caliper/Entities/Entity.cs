@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Newtonsoft.Json;
+using NodaTime;
 
 namespace ImsGlobal.Caliper.Entities {
 	using ImsGlobal.Caliper.Util;
@@ -36,10 +37,10 @@ namespace ImsGlobal.Caliper.Entities {
 		public IDictionary<string, string> Extensions { get; set; }
 
 		[JsonProperty( "dateCreated", Order = 52 )]
-		public DateTime? DateCreated { get; set; }
+		public Instant? DateCreated { get; set; }
 
 		[JsonProperty( "dateModified", Order = 53 )]
-		public DateTime? DateModified { get; set; }
+		public Instant? DateModified { get; set; }
 
 	}
 

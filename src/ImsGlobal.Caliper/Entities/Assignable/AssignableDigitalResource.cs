@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Newtonsoft.Json;
+using NodaTime;
 
 namespace ImsGlobal.Caliper.Entities.Assignable {
 
@@ -16,16 +17,16 @@ namespace ImsGlobal.Caliper.Entities.Assignable {
 		}
 
 		[JsonProperty( "dateToActivate", Order = 24 )]
-		public DateTime? DateToActivate { get; set; }
+		public Instant? DateToActivate { get; set; }
 
 		[JsonProperty( "dateToShow", Order = 25 )]
-		public DateTime? DateToShow { get; set; }
+		public Instant? DateToShow { get; set; }
 
 		[JsonProperty( "dateToStartOn", Order = 23 )]
-		public DateTime? DateToStartOn { get; set; }
+		public Instant? DateToStartOn { get; set; }
 
 		[JsonProperty( "dateToSubmit", Order = 26 )]
-		public DateTime? DateToSubmit { get; set; }
+		public Instant? DateToSubmit { get; set; }
 
 		[JsonProperty( "maxAttempts", Order = 27 )]
 		public int MaxAttempts { get; set; }

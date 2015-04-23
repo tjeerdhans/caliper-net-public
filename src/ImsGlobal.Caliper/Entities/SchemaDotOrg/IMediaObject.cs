@@ -14,7 +14,7 @@ namespace ImsGlobal.Caliper.Entities.SchemaDotOrg {
 	/// stream (2 AudioObject's).
 	/// Source: https://schema.org/MediaObject
 	/// </summary>
-	interface IMediaObject : ICreativeWork {
+	public interface IMediaObject : ICreativeWork {
 	}
 
 }

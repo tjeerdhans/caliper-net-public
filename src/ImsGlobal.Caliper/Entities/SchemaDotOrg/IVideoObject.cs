@@ -10,7 +10,7 @@ namespace ImsGlobal.Caliper.Entities.SchemaDotOrg {
 	/// A video object embedded in a web page.
 	/// Source: https://schema.org/VideoObject
 	/// </summary>
-	interface IVideoObject : IMediaObject {
+	public interface IVideoObject : IMediaObject {
 	}
 
 }

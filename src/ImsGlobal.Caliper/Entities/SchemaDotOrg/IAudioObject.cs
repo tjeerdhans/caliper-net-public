@@ -10,7 +10,7 @@ namespace ImsGlobal.Caliper.Entities.SchemaDotOrg {
 	/// An audio object embedded in a web page.
 	/// Source: https://schema.org/AudioObject
 	/// </summary>
-	interface IAudioObject : IMediaObject {
+	public interface IAudioObject : IMediaObject {
 	}
 
 }

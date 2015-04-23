@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using ImsGlobal.Caliper.Util;
 using Newtonsoft.Json;
+using NodaTime;
 
 namespace ImsGlobal.Caliper.Entities.Assignable {
 	using ImsGlobal.Caliper.Entities.Foaf;
@@ -20,31 +21,25 @@ namespace ImsGlobal.Caliper.Entities.Assignable {
 			this.Type = EntityType.Attempt;
 		}
 
-		[JsonIgnore]
-		public IAssignable Assignable { get; set; }
+		[JsonProperty( "assignable", Order = 11 )]
+		[JsonConverter( typeof( JsonIdConverter<DigitalResource> ) )]
+		public DigitalResource Assignable { get; set; }
 
-		[JsonIgnore]
+		[JsonProperty( "actor", Order = 12 )]
+		[JsonConverter( typeof( JsonIdConverter<IAgent> ) )]
 		public IAgent Actor { get; set; }
 
-		[JsonProperty( "count", Order = 11 )]
+		[JsonProperty( "count", Order = 13 )]
 		public int Count { get; set; }
 
-		[JsonProperty( "startedAtTime", Order = 12 )]
-		public long StartedAtTime { get; set; }
+		[JsonProperty( "startedAtTime", Order = 14 )]
+		public Instant? StartedAtTime { get; set; }
 
-		[JsonProperty( "endedAtTime", Order = 12 )]
-		public long EndedAtTime { get; set; }
+		[JsonProperty( "endedAtTime", Order = 15 )]
+		public Instant? EndedAtTime { get; set; }
 
-		/// <summary>
-		/// An xsd:duration (http://books.xmlschemata.org/relaxng/ch19-77073.html)
-		/// <remarks>The format is expected to be PnYnMnDTnHnMnS
-		/// Valid values include PT1004199059S, PT130S, PT2M10S, P1DT2S, -P1Y, or P1Y2M3DT5H20M30.123S.
-		/// The following values are invalid: 1Y (leading P is missing), P1S (T separator is missing), 
-		/// P-1Y (all parts must be positive), P1M2Y (parts order is significant and Y must precede M), 
-		/// or P1Y-1M (all parts must be positive).</remarks>
-		/// </summary>
-		[JsonProperty( "duration", Order = 13 )]
-		public string Duration { get; set; }
+		[JsonProperty( "duration", Order = 16 )]
+		public Period Duration { get; set; }
 
 	}
 

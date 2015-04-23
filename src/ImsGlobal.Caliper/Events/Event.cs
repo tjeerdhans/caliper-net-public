@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ImsGlobal.Caliper.Util;
 using Newtonsoft.Json;
+using NodaTime;
 
 namespace ImsGlobal.Caliper.Events {
 	using ImsGlobal.Caliper.Entities.Agent;
@@ -60,28 +61,22 @@ namespace ImsGlobal.Caliper.Events {
 		public dynamic Generated { get; set; }
 
 		/// <summary>
-		/// Required - time in milliseconds that the event was started at
+		/// Required - time that the event was started at
 		/// </summary>
 		[JsonProperty( "startedAtTime", Order = 8 )]
-		public DateTime? StartedAt { get; set; }
+		public Instant? StartedAt { get; set; }
 
 		/// <summary>
-		/// An optional time in milliseconds that the event ended at
+		/// An optional time that the event ended at
 		/// </summary>
 		[JsonProperty( "endedAtTime", Order = 9 )]
-		public DateTime? EndedAt { get; set; }
+		public Instant? EndedAt { get; set; }
 
 		/// <summary>
-		/// An xsd:duration (http://books.xmlschemata.org/relaxng/ch19-77073.html)
-		/// <remarks>The format is expected to be PnYnMnDTnHnMnS
-		/// Valid values include PT1004199059S, PT130S, PT2M10S, P1DT2S, -P1Y, or P1Y2M3DT5H20M30.123S.
-		/// The following values are invalid: 1Y (leading P is missing), P1S (T separator is missing), 
-		/// P-1Y (all parts must be positive), P1M2Y (parts order is significant and Y must precede M), 
-		/// or P1Y-1M (all parts must be positive).</remarks>
+		/// Optional - duration of the event
 		/// </summary>
 		[JsonProperty( "duration", Order = 10 )]
-		[JsonConverter( typeof( JsonDurationConverter ) )]
-		public NodaTime.Period Duration { get; set; }
+		public Period Duration { get; set; }
 
 		// ------ Contextual Properties ------
 
