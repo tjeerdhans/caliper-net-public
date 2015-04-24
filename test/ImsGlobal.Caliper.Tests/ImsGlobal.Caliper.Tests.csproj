@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssessmentItemCompletedEventsTests.cs" />
+    <Compile Include="ViewEventsTests.cs" />
     <Compile Include="SessionEventsTests.cs" />
     <Compile Include="AnnotationEventsTests.cs" />
     <Compile Include="AssignableEventsTests.cs" />
@@ -72,7 +73,7 @@
     <Compile Include="AssessmentItemStartedEventsTests.cs" />
     <Compile Include="AssessmentEventsTests.cs" />
     <Compile Include="MediaEventsTests.cs" />
-    <Compile Include="ReadingEventsTests.cs" />
+    <Compile Include="NavigationEventsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleHelpers\JsonAssertions.cs" />
     <Compile Include="SimpleHelpers\ObjectDiffPatch.cs" />

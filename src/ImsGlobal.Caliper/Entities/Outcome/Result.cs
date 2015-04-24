@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 
 namespace ImsGlobal.Caliper.Entities.Outcome {
 	using ImsGlobal.Caliper.Entities.Foaf;
+	using ImsGlobal.Caliper.Util;
 
 	public class Result : Entity {
 
@@ -15,6 +16,14 @@ namespace ImsGlobal.Caliper.Entities.Outcome {
 			: base( id ) {
 			this.Type = EntityType.Result;
 		}
+
+		[JsonProperty( "assignable", Order = 11 )]
+		[JsonConverter( typeof( JsonIdConverter<DigitalResource> ) )]
+		public DigitalResource Assignable { get; set; }
+
+		[JsonProperty( "actor", Order = 12 )]
+		[JsonConverter( typeof( JsonIdConverter<IAgent> ) )]
+		public IAgent Actor { get; set; }
 
 		[JsonProperty( "normalScore", Order = 11 )]
 		public double NormalScore { get; set; }

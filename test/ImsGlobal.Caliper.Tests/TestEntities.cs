@@ -98,8 +98,10 @@ namespace ImsGlobal.Caliper.Tests {
 			DateCreated = DefaultDateCreated
 		};
 
-		public static WebPage AmRev101LandingPage = new WebPage( "AmRev-101-landingPage" ) {
+		public static WebPage AmRev101LandingPage = new WebPage( AmRev101_CourseOffering_Id + "/index.html" ) {
 			Name = "American Revolution 101 Landing Page",
+			Version = "1.0",
+			DateCreated = DefaultDateCreated,
 			DateModified = DefaultDateModified
 		};
 
@@ -111,6 +113,8 @@ namespace ImsGlobal.Caliper.Tests {
 
 		public static EPubVolume EpubVolume43 = new EPubVolume( "https://github.com/readium/readium-js-viewer/book/34843#epubcfi(/4/3)" ) {
 			Name = "The Glorious Cause: The American Revolution, 1763-1789 (Oxford History of the United States)",
+			Version = "2nd ed.",
+			DateCreated = DefaultDateCreated,
 			DateModified = DefaultDateModified
 		};
 
@@ -289,6 +293,8 @@ namespace ImsGlobal.Caliper.Tests {
 		};
 
 		public static Result Assessment1_Attempt1_Result = new Result( Assessment1_Attempt1.Id + "/result" ) {
+			Assignable = Assessment1,
+			Actor = Student554433,
 			NormalScore = 3.0,
 			PenaltyScore = 0.0,
 			ExtraCreditScore = 0.0,
@@ -296,8 +302,8 @@ namespace ImsGlobal.Caliper.Tests {
 			CurvedTotalScore = 3.0,
 			CurveFactor = 0.0,
 			Comment = "Well done.",
-		//	ScoredBy = SuperAssessmentTool,
-			DateModified = DefaultDateModified
+			ScoredBy = SuperAssessmentTool,
+			DateCreated = DefaultDateCreated
 		};
 
 		public static Session SessionStart = new Session( "https://github.com/readium/session-123456789" ) {
