@@ -25,7 +25,7 @@ namespace ImsGlobal.Caliper.Tests {
 				StartedAt = TestEntities.DefaultStartedAtTime
 			};
 
-			JsonAssertions.AssertSameEventJson( assessmentEvent, "caliperAssessmentEvent" );
+			JsonAssertions.AssertSameObjectJson( assessmentEvent, "caliperAssessmentEvent" );
 		}
 
 	}

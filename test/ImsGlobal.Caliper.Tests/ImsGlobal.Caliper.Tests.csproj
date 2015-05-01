@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssessmentItemCompletedEventsTests.cs" />
+    <Compile Include="SensorSendEventsTest.cs" />
     <Compile Include="ViewEventsTests.cs" />
     <Compile Include="SessionEventsTests.cs" />
     <Compile Include="AnnotationEventsTests.cs" />
@@ -98,12 +99,16 @@
     <EmbeddedResource Include="ReferenceJson\caliperAssessmentItemCompletedEvent.json" />
     <EmbeddedResource Include="ReferenceJson\caliperAssessmentItemStartedEvent.json" />
     <EmbeddedResource Include="ReferenceJson\caliperSharedAnnotationEvent.json" />
+    <EmbeddedResource Include="ReferenceJson\eventStorePayload.json" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\ImsGlobal.Caliper\ImsGlobal.Caliper.csproj">
       <Project>{9aaef49d-f8c3-4c31-b9c5-20cae780d7df}</Project>
       <Name>ImsGlobal.Caliper</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

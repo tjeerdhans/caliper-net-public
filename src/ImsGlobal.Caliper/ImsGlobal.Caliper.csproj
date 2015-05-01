@@ -118,6 +118,7 @@
     <Compile Include="Events\Media\MediaEvent.cs" />
     <Compile Include="Events\Outcome\OutcomeEvent.cs" />
     <Compile Include="Events\Reading\ViewEvent.cs" />
+    <Compile Include="Properties\FriendAssemblies.cs" />
     <Compile Include="Util\IJsonId.cs" />
     <Compile Include="Util\IJsonValue.cs" />
     <Compile Include="Util\JsonIdConverter.cs" />

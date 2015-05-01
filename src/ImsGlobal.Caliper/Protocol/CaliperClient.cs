@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Globalization;
 using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Formatting;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,21 +17,30 @@ namespace ImsGlobal.Caliper.Protocol {
 	internal class CaliperClient {
 
 		private readonly CaliperEndpointOptions _options;
+		private readonly string _sensorId;
 		private readonly JsonSerializerSettings _serializerSettings;
 
-		public CaliperClient( CaliperEndpointOptions options ) {
+		public CaliperClient( CaliperEndpointOptions options, string sensorId ) {
 			_options = options;
+			_sensorId = sensorId;
 			_serializerSettings = new JsonSerializerSettings();
 			_serializerSettings.ConfigureForNodaTime( DateTimeZoneProviders.Tzdb );
 		}
 
-		public async Task<bool> Send( Event @event ) {
+		public async Task<bool> Send( IEnumerable<Event> events ) {
+			return await SendData( events );
+		}
 
-			var message = new CaliperMessage {
-				Id = "caliper-net_" + Guid.NewGuid(),
-				Time = SystemClock.Instance.Now,
-				Type = "caliperEvent",
-				Data = @event
+		public async Task<bool> Describe( IEnumerable<Entity> entities ) {
+			return await SendData( entities );
+		}
+
+		public async Task<bool> SendData<T>( IEnumerable<T> data ) {
+
+			var message = new CaliperMessage<T> {
+				SensorId = _sensorId,
+				SendTime = SystemClock.Instance.Now,
+				Data = data
 			};
 			string json = JsonConvert.SerializeObject( message, _serializerSettings );
 			var content = new StringContent( json, Encoding.UTF8, "application/json" );
@@ -47,17 +54,13 @@ namespace ImsGlobal.Caliper.Protocol {
 					response.EnsureSuccessStatusCode();
 
 				} catch( HttpRequestException ex ) {
-					var msg = String.Format( "Failed to send event: {0}", ex.Message );
+					var msg = String.Format( "Failed to send data: {0}", ex.Message );
 					Trace.WriteLine( msg );
 					return false;
 				}
 			}
 
 			return true;
-		}
-
-		public async Task<bool> Describe( Entity entity ) {
-			return false;
 		}
 
 	}

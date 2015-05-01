@@ -11,7 +11,6 @@ using NodaTime.Serialization.JsonNet;
 using Xunit;
 
 namespace ImsGlobal.Caliper.Tests.SimpleHelpers {
-	using ImsGlobal.Caliper.Events;
 
 	internal static class JsonAssertions {
 
@@ -22,9 +21,9 @@ namespace ImsGlobal.Caliper.Tests.SimpleHelpers {
 			_serializerSettings.ConfigureForNodaTime( DateTimeZoneProviders.Tzdb );
 		}
 
-		public static void AssertSameEventJson( Event @event, string eventReferenceFile ) {
+		public static void AssertSameObjectJson( object obj, string eventReferenceFile ) {
 
-			var eventJsonString = JsonConvert.SerializeObject( @event, _serializerSettings );
+			var eventJsonString = JsonConvert.SerializeObject( obj, _serializerSettings );
 			var eventJObject = JObject.Parse( eventJsonString );
 			var refJsonString = TestUtils.LoadReferenceJsonFile( eventReferenceFile );
 			var refJObject = JObject.Parse( refJsonString );

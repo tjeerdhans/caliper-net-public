@@ -8,12 +8,14 @@ using Xunit;
 
 namespace ImsGlobal.Caliper.Tests {
 	using ImsGlobal.Caliper.Tests.SimpleHelpers;
+	using ImsGlobal.Caliper.Events;
 	using ImsGlobal.Caliper.Events.Reading;
+	using ImsGlobal.Caliper.Protocol;
 
-	public class NavigationEventsTests {
+	public class SensorSendEventsTest {
 
 		[Fact]
-		public void NavigationEvent_MatchesReferenceJson() {
+		public void CaliperMessage_MatchesReferenceJson() {
 
 			var navigationEvent = new NavigationEvent {
 				EdApp = TestEntities.Readium,
@@ -25,7 +27,13 @@ namespace ImsGlobal.Caliper.Tests {
 				StartedAt = TestEntities.DefaultStartedAtTime
 			};
 
-			JsonAssertions.AssertSameObjectJson( navigationEvent, "caliperNavigationEvent" );
+			var caliperMessage = new CaliperMessage<Event> {
+				SensorId = "http://learning-app.some-university.edu/sensor",
+				SendTime = NodaTime.Instant.FromUtc( 2015, 09, 15, 11, 05, 01 ),
+				Data = new [] {navigationEvent}
+			};
+
+			JsonAssertions.AssertSameObjectJson( caliperMessage, "eventStorePayload" );
 		}
 
 	}

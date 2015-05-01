@@ -32,7 +32,7 @@ namespace ImsGlobal.Caliper.Tests {
 				StartedAt = TestEntities.DefaultStartedAtTime
 			};
 
-			JsonAssertions.AssertSameEventJson( bookmarkEvent, "caliperBookmarkAnnotationEvent" );
+			JsonAssertions.AssertSameObjectJson( bookmarkEvent, "caliperBookmarkAnnotationEvent" );
 		}
 
 		[Fact]
@@ -54,7 +54,7 @@ namespace ImsGlobal.Caliper.Tests {
 				StartedAt = TestEntities.DefaultStartedAtTime
 			};
 
-			JsonAssertions.AssertSameEventJson( highlightEvent, "caliperHighlightAnnotationEvent" );
+			JsonAssertions.AssertSameObjectJson( highlightEvent, "caliperHighlightAnnotationEvent" );
 		}
 
 		[Fact]
@@ -84,7 +84,7 @@ namespace ImsGlobal.Caliper.Tests {
 				StartedAt = TestEntities.DefaultStartedAtTime
 			};
 
-			JsonAssertions.AssertSameEventJson( shareEvent, "caliperSharedAnnotationEvent" );
+			JsonAssertions.AssertSameObjectJson( shareEvent, "caliperSharedAnnotationEvent" );
 		}
 
 		[Fact]
@@ -105,7 +105,7 @@ namespace ImsGlobal.Caliper.Tests {
 				StartedAt = TestEntities.DefaultStartedAtTime
 			};
 
-			JsonAssertions.AssertSameEventJson( tagEvent, "caliperTagAnnotationEvent" );
+			JsonAssertions.AssertSameObjectJson( tagEvent, "caliperTagAnnotationEvent" );
 		}
 
 	}

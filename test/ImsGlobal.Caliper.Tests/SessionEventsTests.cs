@@ -27,7 +27,7 @@ namespace ImsGlobal.Caliper.Tests {
 				StartedAt = TestEntities.DefaultStartedAtTime
 			};
 
-			JsonAssertions.AssertSameEventJson( loggedInEvent, "caliperSessionLoginEvent" );
+			JsonAssertions.AssertSameObjectJson( loggedInEvent, "caliperSessionLoginEvent" );
 		}
 
 		[Fact]
@@ -44,7 +44,7 @@ namespace ImsGlobal.Caliper.Tests {
 				Duration = TestEntities.SessionEnd.Duration
 			};
 
-			JsonAssertions.AssertSameEventJson( loggedOutEvent, "caliperSessionLogoutEvent" );
+			JsonAssertions.AssertSameObjectJson( loggedOutEvent, "caliperSessionLogoutEvent" );
 		}
 
 		[Fact]
@@ -61,7 +61,7 @@ namespace ImsGlobal.Caliper.Tests {
 				Duration = TestEntities.SessionEnd.Duration
 			};
 
-			JsonAssertions.AssertSameEventJson( timedOutEvent, "caliperSessionTimeoutEvent" );
+			JsonAssertions.AssertSameObjectJson( timedOutEvent, "caliperSessionTimeoutEvent" );
 		}
 
 	}

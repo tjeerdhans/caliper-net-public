@@ -9,19 +9,21 @@ using NodaTime;
 
 namespace ImsGlobal.Caliper.Protocol {
 
-	internal class CaliperMessage {
+	internal class CaliperMessage<T> {
 
-		[JsonProperty( "id", Order = 1 )]
-		public string Id { get; set; }
+		[JsonProperty( "@context", Order = 1 )]
+		public string Context {
+			get { return "http://purl.imsglobal.org/caliper/ctx/v1/Envelope"; }
+		}
 
-		[JsonProperty( "type", Order = 2 )]
-		public string Type { get; set; }
+		[JsonProperty( "sensor", Order = 2 )]
+		public string SensorId { get; set; }
 
-		[JsonProperty( "time", Order = 3 )]
-		public Instant? Time { get; set; }
+		[JsonProperty( "sendTime", Order = 3 )]
+		public Instant? SendTime { get; set; }
 
 		[JsonProperty( "data", Order = 4 )]
-		public object Data { get; set; }
+		public IEnumerable<T> Data { get; set; }
 
 	}
 
