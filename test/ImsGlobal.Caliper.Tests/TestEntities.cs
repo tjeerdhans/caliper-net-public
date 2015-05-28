@@ -258,11 +258,6 @@ namespace ImsGlobal.Caliper.Tests {
 			MaxAttempts = 2,
 			MaxSubmits = 2,
 			MaxScore = 3.0,
-			AssessmentItems = new[] {
-				AssessmentItem1,
-				AssessmentItem2,
-				AssessmentItem3
-			},
 			DateCreated = DefaultDateCreated,
 			DateModified = DefaultDateModified
 		};

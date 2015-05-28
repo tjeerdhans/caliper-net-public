@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NodaTime;
 using NodaTime.Serialization.JsonNet;
-using Xunit;
+using NUnit.Framework;
 
 namespace ImsGlobal.Caliper.Tests.SimpleHelpers {
 

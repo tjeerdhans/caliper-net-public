@@ -4,15 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Xunit;
+using NUnit.Framework;
 
 namespace ImsGlobal.Caliper.Tests {
 	using ImsGlobal.Caliper.Tests.SimpleHelpers;
 	using ImsGlobal.Caliper.Events.Reading;
 
+	[TestFixture]
 	public class NavigationEventsTests {
 
-		[Fact]
+		[Test]
 		public void NavigationEvent_MatchesReferenceJson() {
 
 			var navigationEvent = new NavigationEvent {

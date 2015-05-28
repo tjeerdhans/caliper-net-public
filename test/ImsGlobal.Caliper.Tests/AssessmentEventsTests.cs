@@ -4,16 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Xunit;
+using NUnit.Framework;
 
 namespace ImsGlobal.Caliper.Tests {
 	using ImsGlobal.Caliper.Tests.SimpleHelpers;
 	using ImsGlobal.Caliper.Events;
 	using ImsGlobal.Caliper.Events.Assessment;
 
+	[TestFixture]
 	public class AssessmentEventsTests {
 
-		[Fact]
+		[Test]
 		public void AssessmentEvent_MatchesReferenceJson() {
 
 			var assessmentEvent = new AssessmentEvent( Action.Started ) {

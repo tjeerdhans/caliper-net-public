@@ -5,16 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Xunit;
+using NUnit.Framework;
 
 namespace ImsGlobal.Caliper.Tests {
 	using ImsGlobal.Caliper.Tests.SimpleHelpers;
 	using ImsGlobal.Caliper.Events;
 	using ImsGlobal.Caliper.Events.Session;
 
+	[TestFixture]
 	public class SessionEventsTests {
 
-		[Fact]
+		[Test]
 		public void SessionLoggedInEvent_MatchesReferenceJson() {
 
 			var loggedInEvent = new SessionEvent( Action.LoggedIn ) {
@@ -30,7 +31,7 @@ namespace ImsGlobal.Caliper.Tests {
 			JsonAssertions.AssertSameObjectJson( loggedInEvent, "caliperSessionLoginEvent" );
 		}
 
-		[Fact]
+		[Test]
 		public void SessionLoggedOutEvent_MatchesReferenceJson() {
 
 			var loggedOutEvent = new SessionEvent( Action.LoggedOut ) {
@@ -47,7 +48,7 @@ namespace ImsGlobal.Caliper.Tests {
 			JsonAssertions.AssertSameObjectJson( loggedOutEvent, "caliperSessionLogoutEvent" );
 		}
 
-		[Fact]
+		[Test]
 		public void SessionTimedOutEvent_MatchesReferenceJson() {
 
 			var timedOutEvent = new SessionEvent( Action.TimedOut ) {

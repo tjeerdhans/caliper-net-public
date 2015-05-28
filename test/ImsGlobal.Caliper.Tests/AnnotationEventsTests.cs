@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Xunit;
+using NUnit.Framework;
 
 namespace ImsGlobal.Caliper.Tests {
 	using ImsGlobal.Caliper.Tests.SimpleHelpers;
@@ -12,9 +12,10 @@ namespace ImsGlobal.Caliper.Tests {
 	using ImsGlobal.Caliper.Entities.Annotation;
 	using ImsGlobal.Caliper.Events.Annotation;
 
+	[TestFixture]
 	public class AnnotationEventsTests {
 
-		[Fact]
+		[Test]
 		public void BookmarkAnnotationEvent_MatchesReferenceJson() {
 
 			var bookmarkAnnotation = new BookmarkAnnotation( "https://someEduApp.edu/bookmarks/00001" ) {
@@ -35,7 +36,7 @@ namespace ImsGlobal.Caliper.Tests {
 			JsonAssertions.AssertSameObjectJson( bookmarkEvent, "caliperBookmarkAnnotationEvent" );
 		}
 
-		[Fact]
+		[Test]
 		public void HighlightAnnotationEvent_MatchesReferenceJson() {
 
 			var highlightAnnotation = new HighlightAnnotation( "https://someEduApp.edu/highlights/12345" ) {
@@ -57,7 +58,7 @@ namespace ImsGlobal.Caliper.Tests {
 			JsonAssertions.AssertSameObjectJson( highlightEvent, "caliperHighlightAnnotationEvent" );
 		}
 
-		[Fact]
+		[Test]
 		public void ShareAnnotationEvent_MatchesReferenceJson() {
 
 			var shareAnnotation = new ShareAnnotation( "https://someEduApp.edu/shared/9999" ) {
@@ -87,7 +88,7 @@ namespace ImsGlobal.Caliper.Tests {
 			JsonAssertions.AssertSameObjectJson( shareEvent, "caliperSharedAnnotationEvent" );
 		}
 
-		[Fact]
+		[Test]
 		public void TagAnnotationEvent_MatchesReferenceJson() {
 
 			var tagAnnotation = new TagAnnotation( "https://someEduApp.edu/tags/7654" ) {

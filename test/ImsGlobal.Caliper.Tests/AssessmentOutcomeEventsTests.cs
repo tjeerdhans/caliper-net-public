@@ -4,16 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Xunit;
+using NUnit.Framework;
 
 namespace ImsGlobal.Caliper.Tests {
 	using ImsGlobal.Caliper.Tests.SimpleHelpers;
 	using ImsGlobal.Caliper.Events;
 	using ImsGlobal.Caliper.Events.Outcome;
 
+	[TestFixture]
 	public class AssessmentOutcomeEventsTests {
 
-		[Fact]
+		[Test]
 		public void AssessmentOutcomeEvent_MatchesReferenceJson() {
 
 			var outcomeEvent = new OutcomeEvent( Action.Graded ) {

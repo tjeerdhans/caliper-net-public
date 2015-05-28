@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Xunit;
+using NUnit.Framework;
 
 namespace ImsGlobal.Caliper.Tests {
 	using ImsGlobal.Caliper.Tests.SimpleHelpers;
@@ -12,9 +12,10 @@ namespace ImsGlobal.Caliper.Tests {
 	using ImsGlobal.Caliper.Events.Reading;
 	using ImsGlobal.Caliper.Protocol;
 
+	[TestFixture]
 	public class SensorSendEventsTest {
 
-		[Fact]
+		[Test]
 		public void CaliperMessage_MatchesReferenceJson() {
 
 			var navigationEvent = new NavigationEvent {
