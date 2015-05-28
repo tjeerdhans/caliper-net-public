@@ -24,9 +24,6 @@ namespace ImsGlobal.Caliper.Entities.Reading {
 		[JsonProperty( "timeRequired", Order = 23 )]
 		public string TimeRequired { get; set; }
 
-		[JsonProperty( "version", Order = 24 )]
-		public string Version { get; set; }
-	
 	}
 
 }
