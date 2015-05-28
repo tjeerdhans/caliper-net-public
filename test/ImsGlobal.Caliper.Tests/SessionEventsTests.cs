@@ -55,8 +55,7 @@ namespace ImsGlobal.Caliper.Tests {
 
 			var timedOutEvent = new SessionEvent( Action.TimedOut ) {
 				Actor = TestEntities.Readium,
-				Object = TestEntities.Readium,
-				Target = TestEntities.SessionEnd,
+				Object = TestEntities.SessionEnd,
 				StartedAt = TestEntities.DefaultStartedAtTime,
 				EndedAt = TestEntities.DefaultEndedAtTime,
 				Duration = TestEntities.SessionEnd.Duration,
