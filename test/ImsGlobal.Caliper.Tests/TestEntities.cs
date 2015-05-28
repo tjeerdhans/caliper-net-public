@@ -313,6 +313,12 @@ namespace ImsGlobal.Caliper.Tests {
 			Duration = Period.FromSeconds( 3000 )
 		};
 
+		public static Session FederatedSession = new Session( "https://learning-platform.some-university.edu/federatedSession/123456789" ) {
+			Actor = Student554433,
+			DateCreated = DefaultDateCreated,
+			StartedAt = NodaDefaultStartedAtTime
+		};
+
 	}
 
 }

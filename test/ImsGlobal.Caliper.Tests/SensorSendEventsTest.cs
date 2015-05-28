@@ -26,7 +26,8 @@ namespace ImsGlobal.Caliper.Tests {
 				StartedAt = TestEntities.DefaultStartedAtTime,
 				EdApp = TestEntities.Readium,
 				Group = TestEntities.AmRev101_Group001,
-				Membership = TestEntities.Student554433_AmRev101_CourseSection001_Membership
+				Membership = TestEntities.Student554433_AmRev101_CourseSection001_Membership,
+				FederatedSession = TestEntities.FederatedSession
 			};
 
 			var caliperMessage = new CaliperMessage<Event> {
