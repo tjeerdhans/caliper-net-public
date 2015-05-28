@@ -49,7 +49,6 @@ namespace ImsGlobal.Caliper.Entities {
 		/// A reference to the parent resource, if any.
 		/// </summary>
 		[JsonProperty( "isPartOf", Order = 61 )]
-		[JsonConverter( typeof( JsonIdConverter<Entity> ) )]
 		public ICreativeWork IsPartOf { get; set; }
 
 		/// <summary>

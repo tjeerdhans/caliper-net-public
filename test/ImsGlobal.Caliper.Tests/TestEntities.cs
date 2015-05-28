@@ -216,37 +216,6 @@ namespace ImsGlobal.Caliper.Tests {
 
 		private static string Assessment1_Id = "https://some-university.edu/politicalScience/2015/american-revolution-101/assessment1";
 
-		public static AssessmentItem AssessmentItem1 =
-			new AssessmentItem( Assessment1_Id + "/item1" ) {
-				Name = "Assessment Item 1",
-				Version = "1.0",
-				IsPartOf = new Assessment( Assessment1_Id ),
-				MaxAttempts = 2,
-				MaxSubmits = 2,
-				MaxScore = 1.0,
-				IsTimeDependent = false
-			};
-		public static AssessmentItem AssessmentItem2 =
-			new AssessmentItem( Assessment1_Id + "/item2" ) {
-				Name = "Assessment Item 2",
-				Version = "1.0",
-				IsPartOf = new Assessment( Assessment1_Id ),
-				MaxAttempts = 2,
-				MaxSubmits = 2,
-				MaxScore = 1.0,
-				IsTimeDependent = false
-			};
-		public static AssessmentItem AssessmentItem3 =
-			new AssessmentItem( Assessment1_Id + "/item3" ) {
-				Name = "Assessment Item 3",
-				Version = "1.0",
-				IsPartOf = new Assessment( Assessment1_Id ),
-				MaxAttempts = 2,
-				MaxSubmits = 2,
-				MaxScore = 1.0,
-				IsTimeDependent = false
-			};
-
 		public static Assessment Assessment1 = new Assessment( Assessment1_Id ) {
 			Name = "American Revolution - Key Figures Assessment",
 			Version = "1.0",
@@ -261,6 +230,37 @@ namespace ImsGlobal.Caliper.Tests {
 			DateCreated = DefaultDateCreated,
 			DateModified = DefaultDateModified
 		};
+
+		public static AssessmentItem AssessmentItem1 =
+			new AssessmentItem( Assessment1_Id + "/item1" ) {
+				Name = "Assessment Item 1",
+				Version = "1.0",
+				IsPartOf = Assessment1,
+				MaxAttempts = 2,
+				MaxSubmits = 2,
+				MaxScore = 1.0,
+				IsTimeDependent = false
+			};
+		public static AssessmentItem AssessmentItem2 =
+			new AssessmentItem( Assessment1_Id + "/item2" ) {
+				Name = "Assessment Item 2",
+				Version = "1.0",
+				IsPartOf = Assessment1,
+				MaxAttempts = 2,
+				MaxSubmits = 2,
+				MaxScore = 1.0,
+				IsTimeDependent = false
+			};
+		public static AssessmentItem AssessmentItem3 =
+			new AssessmentItem( Assessment1_Id + "/item3" ) {
+				Name = "Assessment Item 3",
+				Version = "1.0",
+				IsPartOf = Assessment1,
+				MaxAttempts = 2,
+				MaxSubmits = 2,
+				MaxScore = 1.0,
+				IsTimeDependent = false
+			};
 
 		public static Attempt Assessment1_Attempt1 = new Attempt( Assessment1_Id + "/attempt1" ) {
 			Assignable = Assessment1,
