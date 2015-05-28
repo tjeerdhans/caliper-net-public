@@ -56,7 +56,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Agent\Agent.cs" />
     <Compile Include="Entities\Annotation\AnnotationType.cs" />
     <Compile Include="Entities\Assignable\AssignableDigitalResourceType.cs" />
     <Compile Include="Entities\DigitalResourceType.cs" />

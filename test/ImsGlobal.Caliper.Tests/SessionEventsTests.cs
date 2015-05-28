@@ -19,13 +19,14 @@ namespace ImsGlobal.Caliper.Tests {
 		public void SessionLoggedInEvent_MatchesReferenceJson() {
 
 			var loggedInEvent = new SessionEvent( Action.LoggedIn ) {
-				EdApp = TestEntities.Readium,
-				Group = TestEntities.AmRev101_Group001,
 				Actor = TestEntities.Student554433,
 				Object = TestEntities.Readium,
 				Target = TestEntities.EpubSubChap431_Frame,
 				Generated = TestEntities.SessionStart,
-				StartedAt = TestEntities.DefaultStartedAtTime
+				StartedAt = TestEntities.DefaultStartedAtTime,
+				EdApp = TestEntities.Readium,
+				Group = TestEntities.AmRev101_Group001,
+				Membership = TestEntities.Student554433_AmRev101_CourseSection001_Membership
 			};
 
 			JsonAssertions.AssertSameObjectJson( loggedInEvent, "caliperSessionLoginEvent" );
@@ -35,14 +36,15 @@ namespace ImsGlobal.Caliper.Tests {
 		public void SessionLoggedOutEvent_MatchesReferenceJson() {
 
 			var loggedOutEvent = new SessionEvent( Action.LoggedOut ) {
-				EdApp = TestEntities.Readium,
-				Group = TestEntities.AmRev101_Group001,
 				Actor = TestEntities.Student554433,
 				Object = TestEntities.Readium,
 				Target = TestEntities.SessionEnd,
 				StartedAt = TestEntities.DefaultStartedAtTime,
 				EndedAt = TestEntities.DefaultEndedAtTime,
-				Duration = TestEntities.SessionEnd.Duration
+				Duration = TestEntities.SessionEnd.Duration,
+				EdApp = TestEntities.Readium,
+				Group = TestEntities.AmRev101_Group001,
+				Membership = TestEntities.Student554433_AmRev101_CourseSection001_Membership
 			};
 
 			JsonAssertions.AssertSameObjectJson( loggedOutEvent, "caliperSessionLogoutEvent" );
@@ -52,14 +54,14 @@ namespace ImsGlobal.Caliper.Tests {
 		public void SessionTimedOutEvent_MatchesReferenceJson() {
 
 			var timedOutEvent = new SessionEvent( Action.TimedOut ) {
-				EdApp = TestEntities.Readium,
-				Group = TestEntities.AmRev101_Group001,
 				Actor = TestEntities.Readium,
 				Object = TestEntities.Readium,
 				Target = TestEntities.SessionEnd,
 				StartedAt = TestEntities.DefaultStartedAtTime,
 				EndedAt = TestEntities.DefaultEndedAtTime,
-				Duration = TestEntities.SessionEnd.Duration
+				Duration = TestEntities.SessionEnd.Duration,
+				EdApp = TestEntities.Readium,
+				Group = TestEntities.AmRev101_Group001
 			};
 
 			JsonAssertions.AssertSameObjectJson( timedOutEvent, "caliperSessionTimeoutEvent" );

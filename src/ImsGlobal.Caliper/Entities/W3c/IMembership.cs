@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ImsGlobal.Caliper.Entities.W3c {
-	using ImsGlobal.Caliper.Entities.Agent;
+	using ImsGlobal.Caliper.Entities.Foaf;
 
 	/// <summary>
 	/// Indicates the nature of an Agent's membership in an organization.
@@ -17,7 +17,7 @@ namespace ImsGlobal.Caliper.Entities.W3c {
 	/// See http://www.w3.org/TR/vocab-org/#org:Membership
 	/// </summary>
 	public interface IMembership<out TAgent>
-		where TAgent : Agent {
+		where TAgent : IAgent {
 
 		/// <summary>
 		/// The Person (or other Agent including Organization) involved

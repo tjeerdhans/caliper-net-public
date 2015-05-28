@@ -17,12 +17,13 @@ namespace ImsGlobal.Caliper.Tests {
 		public void ViewEvent_MatchesReferenceJson() {
 
 			var viewEvent = new ViewEvent {
-				EdApp = TestEntities.Readium,
-				Group = TestEntities.AmRev101_Group001,
 				Actor = TestEntities.Student554433,
 				Object = TestEntities.EpubVolume43,
 				Target = TestEntities.EpubSubChap431_Frame,
-				StartedAt = TestEntities.DefaultStartedAtTime
+				StartedAt = TestEntities.DefaultStartedAtTime,
+				EdApp = TestEntities.Readium,
+				Group = TestEntities.AmRev101_Group001,
+				Membership = TestEntities.Student554433_AmRev101_CourseSection001_Membership
 			};
 
 			JsonAssertions.AssertSameObjectJson( viewEvent, "caliperViewEvent" );

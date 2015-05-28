@@ -27,11 +27,12 @@ namespace ImsGlobal.Caliper.Tests {
 			};
 
 			var bookmarkEvent = new AnnotationEvent( bookmarkAnnotation ) {
-				EdApp = TestEntities.Readium,
-				Group = TestEntities.AmRev101_Group001,
 				Actor = TestEntities.Student554433,
 				Object = TestEntities.EpubSubChap432_Frame,
-				StartedAt = TestEntities.DefaultStartedAtTime
+				StartedAt = TestEntities.DefaultStartedAtTime,
+				EdApp = TestEntities.Readium,
+				Group = TestEntities.AmRev101_Group001,
+				Membership = TestEntities.Student554433_AmRev101_CourseSection001_Membership
 			};
 
 			JsonAssertions.AssertSameObjectJson( bookmarkEvent, "caliperBookmarkAnnotationEvent" );
@@ -49,11 +50,12 @@ namespace ImsGlobal.Caliper.Tests {
 			};
 
 			var highlightEvent = new AnnotationEvent( highlightAnnotation ) {
-				EdApp = TestEntities.Readium,
-				Group = TestEntities.AmRev101_Group001,
 				Actor = TestEntities.Student554433,
 				Object = TestEntities.EpubSubChap431_Frame,
-				StartedAt = TestEntities.DefaultStartedAtTime
+				StartedAt = TestEntities.DefaultStartedAtTime,
+				EdApp = TestEntities.Readium,
+				Group = TestEntities.AmRev101_Group001,
+				Membership = TestEntities.Student554433_AmRev101_CourseSection001_Membership
 			};
 
 			JsonAssertions.AssertSameObjectJson( highlightEvent, "caliperHighlightAnnotationEvent" );
@@ -66,12 +68,10 @@ namespace ImsGlobal.Caliper.Tests {
 				Annotated = TestEntities.EpubSubChap433,
 				WithAgents = new [] {
 					new Person( "https://some-university.edu/students/657585" ) {
-						Roles = new IRole[] { Role.Learner },
 						DateCreated = TestEntities.DefaultDateCreated,
 						DateModified = TestEntities.DefaultDateModified
 					},
 					new Person( "https://some-university.edu/students/667788" ) {
-						Roles = new IRole[] { Role.Learner },
 						DateCreated = TestEntities.DefaultDateCreated,
 						DateModified = TestEntities.DefaultDateModified
 					}
@@ -81,11 +81,12 @@ namespace ImsGlobal.Caliper.Tests {
 			};
 
 			var shareEvent = new AnnotationEvent( shareAnnotation ) {
-				EdApp = TestEntities.Readium,
-				Group = TestEntities.AmRev101_Group001,
 				Actor = TestEntities.Student554433,
 				Object = TestEntities.EpubSubChap433_Frame,
-				StartedAt = TestEntities.DefaultStartedAtTime
+				StartedAt = TestEntities.DefaultStartedAtTime,
+				EdApp = TestEntities.Readium,
+				Group = TestEntities.AmRev101_Group001,
+				Membership = TestEntities.Student554433_AmRev101_CourseSection001_Membership
 			};
 
 			JsonAssertions.AssertSameObjectJson( shareEvent, "caliperSharedAnnotationEvent" );
@@ -102,11 +103,12 @@ namespace ImsGlobal.Caliper.Tests {
 			};
 
 			var tagEvent = new AnnotationEvent( tagAnnotation ) {
-				EdApp = TestEntities.Readium,
-				Group = TestEntities.AmRev101_Group001,
 				Actor = TestEntities.Student554433,
 				Object = TestEntities.EpubSubChap434_Frame,
-				StartedAt = TestEntities.DefaultStartedAtTime
+				StartedAt = TestEntities.DefaultStartedAtTime,
+				EdApp = TestEntities.Readium,
+				Group = TestEntities.AmRev101_Group001,
+				Membership = TestEntities.Student554433_AmRev101_CourseSection001_Membership
 			};
 
 			JsonAssertions.AssertSameObjectJson( tagEvent, "caliperTagAnnotationEvent" );

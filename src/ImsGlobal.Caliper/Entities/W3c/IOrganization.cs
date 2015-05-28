@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ImsGlobal.Caliper.Util;
 
 namespace ImsGlobal.Caliper.Entities.W3c {
 
@@ -13,13 +14,7 @@ namespace ImsGlobal.Caliper.Entities.W3c {
 	/// belonging to it and can act as an Agent. Organizations are often
 	/// decomposable into hierarchical structures.
 	/// </summary>
-	public interface IOrganization {
-
-		/// <summary>
-		/// An identifier that can be used to used to uniquely identify the
-		/// organization.  Equivalent to org:identifier.
-		/// </summary>
-		string Id { get; }
+	public interface IOrganization : IJsonId {
 
 		/// <summary>
 		/// Equivalent of W3C Organization Ontology org:subOrganizationOf

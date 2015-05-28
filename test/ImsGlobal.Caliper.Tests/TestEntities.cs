@@ -60,35 +60,36 @@ namespace ImsGlobal.Caliper.Tests {
 		};
 
 		public static Person Student554433 = new Person( Student554433_Id ) {
-			Roles = new IRole[] { Role.Learner },
 			DateCreated = DefaultDateCreated,
 			DateModified = DefaultDateModified
 		};
 
-		public static readonly Membership Student554433_AmRev101_CourseOffering_Membership =
-			new Membership( "https://some-university.edu/membership/001" ) {
-				Member = Student554433,
-				Organization = AmRev101_CourseOffering,
-				Roles = new IRole[] { Role.Learner },
-				Status = Status.Active,
-				DateCreated = DefaultDateCreated
-			};
+		//public static readonly Membership Student554433_AmRev101_CourseOffering_Membership =
+		//	new Membership( "https://some-university.edu/membership/001" ) {
+		//		Member = Student554433,
+		//		Organization = AmRev101_CourseOffering,
+		//		Roles = new IRole[] { Role.Learner },
+		//		Status = Status.Active,
+		//		DateCreated = DefaultDateCreated
+		//	};
 		public static readonly Membership Student554433_AmRev101_CourseSection001_Membership =
-			new Membership( "https://some-university.edu/membership/002" ) {
+			new Membership( "https://some-university.edu/politicalScience/2015/american-revolution-101/roster/554433" ) {
+				Name = "American Revolution 101",
+				Description = "Roster entry",
 				Member = Student554433,
 				Organization = AmRev101_CourseSection001,
 				Roles = new IRole[] { Role.Learner },
 				Status = Status.Active,
 				DateCreated = DefaultDateCreated
 			};
-		public static readonly Membership Student554433_AmRev101_Group001_Membership =
-			new Membership( "https://some-university.edu/membership/003" ) {
-				Member = Student554433,
-				Organization = AmRev101_Group001,
-				Roles = new IRole[] { Role.Learner },
-				Status = Status.Active,
-				DateCreated = DefaultDateCreated
-			};
+		//public static readonly Membership Student554433_AmRev101_Group001_Membership =
+		//	new Membership( "https://some-university.edu/membership/003" ) {
+		//		Member = Student554433,
+		//		Organization = AmRev101_Group001,
+		//		Roles = new IRole[] { Role.Learner },
+		//		Status = Status.Active,
+		//		DateCreated = DefaultDateCreated
+		//	};
 
 
 		public static WebPage AmRev101LandingPage = new WebPage( AmRev101_CourseOffering_Id + "/index.html" ) {

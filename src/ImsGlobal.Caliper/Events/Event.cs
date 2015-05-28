@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ImsGlobal.Caliper.Util;
+
 using Newtonsoft.Json;
 using NodaTime;
 
 namespace ImsGlobal.Caliper.Events {
 	using ImsGlobal.Caliper.Entities.Agent;
 	using ImsGlobal.Caliper.Entities.Foaf;
+	using ImsGlobal.Caliper.Entities.Lis;
 	using ImsGlobal.Caliper.Entities.W3c;
 
 	/// <summary>
@@ -91,6 +92,12 @@ namespace ImsGlobal.Caliper.Events {
 		/// </summary>
 		[JsonProperty( "group", Order = 12 )]
 		public IOrganization Group { get; set; }
+
+		/// <summary>
+		/// Group context
+		/// </summary>
+		[JsonProperty( "membership", Order = 13 )]
+		public Membership Membership { get; set; }
 
 	}
 
