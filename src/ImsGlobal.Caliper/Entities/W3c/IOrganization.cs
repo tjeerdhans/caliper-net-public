@@ -22,11 +22,6 @@ namespace ImsGlobal.Caliper.Entities.W3c {
 		string Id { get; }
 
 		/// <summary>
-		/// A membership entity that records the role of some Agent within this Organization.
-		/// </summary>
-		IList<IMembership> Membership { get; }
-
-		/// <summary>
 		/// Equivalent of W3C Organization Ontology org:subOrganizationOf
 		/// property. Represents hierarchical containment of Organizations
 		/// or OrganizationalUnits; indicates an Organization which

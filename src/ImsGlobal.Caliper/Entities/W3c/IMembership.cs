@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ImsGlobal.Caliper.Entities.W3c {
+	using ImsGlobal.Caliper.Entities.Agent;
 
 	/// <summary>
 	/// Indicates the nature of an Agent's membership in an organization.
@@ -15,18 +16,19 @@ namespace ImsGlobal.Caliper.Entities.W3c {
 	/// an organization.
 	/// See http://www.w3.org/TR/vocab-org/#org:Membership
 	/// </summary>
-	public interface IMembership {
+	public interface IMembership<out TAgent>
+		where TAgent : Agent {
 
 		/// <summary>
 		/// The Person (or other Agent including Organization) involved
 		/// in the Membership relationship.
 		/// </summary>
-		string MemberId { get; }
+		TAgent Member { get; }
 
 		/// <summary>
 		/// The Organization in which the Agent is a member.
 		/// </summary>
-		string OrganizationId { get; }
+		IOrganization Organization { get; }
 
 		/// <summary>
 		/// The set of roles that the agent plays in a membership

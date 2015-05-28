@@ -36,43 +36,6 @@ namespace ImsGlobal.Caliper.Tests {
 		public static readonly Instant NodaDefaultStartedAtTime = Instant.FromUtc(  2015, 9, 15, 10, 15, 0 );
 		public static readonly Instant DefaultEndedAtTime = Instant.FromUtc( 2015, 9, 15, 11, 05, 0 );
 
-		public static readonly IMembership Student554433_AmRev101_CourseOffering_Membership =
-			new Membership( "https://some-university.edu/membership/001" ) {
-				MemberId = Student554433_Id,
-				OrganizationId = AmRev101_CourseOffering_Id,
-				Roles = new IRole[] { Role.Learner },
-				Status = Status.Active,
-				DateCreated = DefaultDateCreated
-			};
-		public static readonly IMembership Student554433_AmRev101_CourseSection001_Membership =
-			new Membership( "https://some-university.edu/membership/002" ) {
-				MemberId = Student554433_Id,
-				OrganizationId = AmRev101_CourseSection001_Id,
-				Roles = new IRole[] { Role.Learner },
-				Status = Status.Active,
-				DateCreated = DefaultDateCreated
-			};
-		public static readonly IMembership Student554433_AmRev101_Group001_Membership =
-			new Membership( "https://some-university.edu/membership/003" ) {
-				MemberId = Student554433_Id,
-				OrganizationId = AmRev101_Group001_Id,
-				Roles = new IRole[] { Role.Learner },
-				Status = Status.Active,
-				DateCreated = DefaultDateCreated
-			};
-
-		public static IList<IMembership> Student554433_Memberships = new IMembership[] {
-			Student554433_AmRev101_CourseOffering_Membership,
-			Student554433_AmRev101_CourseSection001_Membership,
-			Student554433_AmRev101_Group001_Membership
-		};
-
-		public static Person Student554433 = new Person( Student554433_Id ) {
-			Memberships = Student554433_Memberships,
-			DateCreated = DefaultDateCreated,
-			DateModified = DefaultDateModified
-		};
-
 		public static CourseOffering AmRev101_CourseOffering = new CourseOffering( AmRev101_CourseOffering_Id ) {
 			CourseNumber = "POL101",
 			Name = "Political Science 101: The American Revolution",
@@ -85,7 +48,6 @@ namespace ImsGlobal.Caliper.Tests {
 			CourseNumber = "POL101",
 			Name = "American Revolution 101",
 			AcademicSession = "Fall-2015",
-			Membership = new IMembership[] { Student554433_AmRev101_CourseSection001_Membership },
 			SubOrganizationOf = AmRev101_CourseOffering,
 			DateCreated = DefaultDateCreated,
 			DateModified = DefaultDateModified
@@ -93,10 +55,41 @@ namespace ImsGlobal.Caliper.Tests {
 
 		public static Group AmRev101_Group001 = new Group( AmRev101_Group001_Id ) {
 			Name = "Discussion Group 001",
-			Membership = new IMembership[] { Student554433_AmRev101_Group001_Membership },
 			SubOrganizationOf = AmRev101_CourseSection001,
 			DateCreated = DefaultDateCreated
 		};
+
+		public static Person Student554433 = new Person( Student554433_Id ) {
+			Roles = new IRole[] { Role.Learner },
+			DateCreated = DefaultDateCreated,
+			DateModified = DefaultDateModified
+		};
+
+		public static readonly Membership Student554433_AmRev101_CourseOffering_Membership =
+			new Membership( "https://some-university.edu/membership/001" ) {
+				Member = Student554433,
+				Organization = AmRev101_CourseOffering,
+				Roles = new IRole[] { Role.Learner },
+				Status = Status.Active,
+				DateCreated = DefaultDateCreated
+			};
+		public static readonly Membership Student554433_AmRev101_CourseSection001_Membership =
+			new Membership( "https://some-university.edu/membership/002" ) {
+				Member = Student554433,
+				Organization = AmRev101_CourseSection001,
+				Roles = new IRole[] { Role.Learner },
+				Status = Status.Active,
+				DateCreated = DefaultDateCreated
+			};
+		public static readonly Membership Student554433_AmRev101_Group001_Membership =
+			new Membership( "https://some-university.edu/membership/003" ) {
+				Member = Student554433,
+				Organization = AmRev101_Group001,
+				Roles = new IRole[] { Role.Learner },
+				Status = Status.Active,
+				DateCreated = DefaultDateCreated
+			};
+
 
 		public static WebPage AmRev101LandingPage = new WebPage( AmRev101_CourseOffering_Id + "/index.html" ) {
 			Name = "American Revolution 101 Landing Page",

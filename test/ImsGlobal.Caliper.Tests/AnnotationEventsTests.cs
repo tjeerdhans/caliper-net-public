@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using ImsGlobal.Caliper.Entities.Lis;
+using ImsGlobal.Caliper.Entities.W3c;
 using NUnit.Framework;
 
 namespace ImsGlobal.Caliper.Tests {
@@ -65,10 +66,12 @@ namespace ImsGlobal.Caliper.Tests {
 				Annotated = TestEntities.EpubSubChap433,
 				WithAgents = new [] {
 					new Person( "https://some-university.edu/students/657585" ) {
+						Roles = new IRole[] { Role.Learner },
 						DateCreated = TestEntities.DefaultDateCreated,
 						DateModified = TestEntities.DefaultDateModified
 					},
 					new Person( "https://some-university.edu/students/667788" ) {
+						Roles = new IRole[] { Role.Learner },
 						DateCreated = TestEntities.DefaultDateCreated,
 						DateModified = TestEntities.DefaultDateModified
 					}

@@ -18,11 +18,7 @@ namespace ImsGlobal.Caliper.Entities.Lis {
 		public Group( string id )
 			: base( id ) {
 			this.Type = EntityType.Group;
-			this.Membership = new List<IMembership>();
 		}
-
-		[JsonProperty( "membership", Order = 21 )]
-		public IList<IMembership> Membership { get; set; }
 
 		[JsonProperty( "subOrganizationOf", Order = 22 )]
 		public IOrganization SubOrganizationOf { get; set; }

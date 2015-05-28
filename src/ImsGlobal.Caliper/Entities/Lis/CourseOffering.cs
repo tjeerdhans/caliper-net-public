@@ -20,7 +20,6 @@ namespace ImsGlobal.Caliper.Entities.Lis {
 		public CourseOffering( string id )
 			: base( id ) {
 			this.Type = EntityType.CourseOffering;
-			this.Membership = new List<IMembership>();
 		}
 
 		[JsonProperty( "courseNumber", Order = 21 )]
@@ -28,9 +27,6 @@ namespace ImsGlobal.Caliper.Entities.Lis {
 
 		[JsonProperty( "academicSession", Order = 22 )]
 		public string AcademicSession { get; set; }
-
-		[JsonProperty( "membership", Order = 23 )]
-		public IList<IMembership> Membership { get; set; }
 
 		[JsonProperty( "subOrganizationOf", Order = 24 )]
 		public IOrganization SubOrganizationOf { get; set; }

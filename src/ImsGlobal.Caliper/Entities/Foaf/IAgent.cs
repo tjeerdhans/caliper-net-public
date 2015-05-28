@@ -17,8 +17,6 @@ namespace ImsGlobal.Caliper.Entities.Foaf {
 
 		IType Type { get; set; }
 
-		IList<IMembership> Memberships { get; }
-
 	}
 
 }

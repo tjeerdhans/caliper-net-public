@@ -16,16 +16,12 @@ namespace ImsGlobal.Caliper.Entities.Agent {
 	/// belonging to it and can act as an Agent. Organizations are often
 	/// decomposable into hierarchical structures.
 	/// </summary>
-	public class Organization : Entity, IOrganization {
+	public class Organization : Agent, IOrganization {
 
 		public Organization( string id )
 			: base( id ) {
 			this.Type = EntityType.Organization;
-			this.Membership = new List<IMembership>();
 		}
-
-		[JsonProperty( "membership", Order = 11 )]
-		public IList<IMembership> Membership { get; set; }
 
 		[JsonProperty( "subOrganizationOf", Order = 12 )]
 		public IOrganization SubOrganizationOf { get; set; }

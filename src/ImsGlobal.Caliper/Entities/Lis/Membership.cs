@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace ImsGlobal.Caliper.Entities.Lis {
+	using ImsGlobal.Caliper.Entities.Agent;
 	using ImsGlobal.Caliper.Entities.W3c;
 
 	/// <summary>
@@ -16,7 +17,7 @@ namespace ImsGlobal.Caliper.Entities.Lis {
 	/// CourseSection and Group, all of which implement the IOrganization
 	/// marker interface. Any Agent entity can be a member.
 	/// </summary>
-	public class Membership : Entity, IMembership {
+	public class Membership : Entity, IMembership<Person> {
 
 		public Membership( string id )
 			: base( id ) {
@@ -25,10 +26,10 @@ namespace ImsGlobal.Caliper.Entities.Lis {
 		}
 
 		[JsonProperty( "member", Order = 21 )]
-		public string MemberId { get; set; }
+		public Person Member { get; set; }
 
 		[JsonProperty( "organization", Order = 22 )]
-		public string OrganizationId { get; set; }
+		public IOrganization Organization { get; set; }
 
 		[JsonProperty( "roles", Order = 23 )]
 		public IList<IRole> Roles { get; set; }
