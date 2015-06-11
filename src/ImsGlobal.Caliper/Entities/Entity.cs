@@ -21,6 +21,11 @@ namespace ImsGlobal.Caliper.Entities {
 			this.Extensions = new Dictionary<string, string>();
 		}
 
+		[JsonProperty( "@context", Order = 0 )]
+		public string Context {
+			get { return CaliperContext.Context.Value; }
+		}
+
 		[JsonProperty( "@id", Order = 1 )]
 		public string Id { get; set; }
 
