@@ -12,7 +12,6 @@ namespace ImsGlobal.Caliper.Events.Assignable {
 	public class AssignableEvent : Event {
 
 		public AssignableEvent( Action action ) {
-			this.Context = EventContext.Assignable;
 			this.Type = EventType.Assignable;
 			this.Action = action;
 		}

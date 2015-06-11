@@ -16,7 +16,6 @@ namespace ImsGlobal.Caliper.Events.Reading {
 	public class NavigationEvent : Event {
 
 		public NavigationEvent() {
-			this.Context = EventContext.Navigation;
 			this.Type = EventType.Navigation;
 			this.Action = Action.NavigatedTo;
 		}

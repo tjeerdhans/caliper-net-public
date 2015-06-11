@@ -18,13 +18,18 @@ namespace ImsGlobal.Caliper.Events {
 	/// Base class for all Caliper events.
 	/// </summary>
 	public abstract class Event {
+
+		protected Event() {
+			this.Context = CaliperContext.Context;
+		}
+	
 		// ------ Core Properties ------
 
 		/// <summary>
 		/// Required - JSON-LD context for the CaliperEvent
 		/// </summary>
 		[JsonProperty( "@context", Order = 1 )]
-		public EventContext Context { get; set; }
+		public CaliperContext Context { get; set; }
 
 		/// <summary>
 		/// Required - Type of the CaliperEvent

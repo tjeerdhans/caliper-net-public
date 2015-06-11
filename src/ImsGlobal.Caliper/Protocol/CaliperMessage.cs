@@ -13,7 +13,7 @@ namespace ImsGlobal.Caliper.Protocol {
 
 		[JsonProperty( "@context", Order = 1 )]
 		public string Context {
-			get { return "http://purl.imsglobal.org/caliper/ctx/v1/Envelope"; }
+			get { return CaliperContext.Context.Value; }
 		}
 
 		[JsonProperty( "sensor", Order = 2 )]
