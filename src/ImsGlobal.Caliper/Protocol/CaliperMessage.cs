@@ -11,11 +11,6 @@ namespace ImsGlobal.Caliper.Protocol {
 
 	internal class CaliperMessage<T> {
 
-		[JsonProperty( "@context", Order = 1 )]
-		public string Context {
-			get { return CaliperContext.Context.Value; }
-		}
-
 		[JsonProperty( "sensor", Order = 2 )]
 		public string SensorId { get; set; }
 
