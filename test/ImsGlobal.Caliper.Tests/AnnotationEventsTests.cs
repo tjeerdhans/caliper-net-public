@@ -19,7 +19,7 @@ namespace ImsGlobal.Caliper.Tests {
 		[Test]
 		public void BookmarkAnnotationEvent_MatchesReferenceJson() {
 
-			var bookmarkAnnotation = new BookmarkAnnotation( "https://someEduApp.edu/bookmarks/00001" ) {
+			var bookmarkAnnotation = new BookmarkAnnotation( "https://example.edu/bookmarks/00001" ) {
 				Annotated = TestEntities.EpubSubChap432,
 				BookmarkNotes = "The Intolerable Acts (1774)--bad idea Lord North",
 				DateCreated = TestEntities.DefaultDateCreated,
@@ -27,12 +27,12 @@ namespace ImsGlobal.Caliper.Tests {
 			};
 
 			var bookmarkEvent = new AnnotationEvent( bookmarkAnnotation ) {
-				Actor = TestEntities.Student554433,
+				Actor = TestEntities.User554433,
 				Object = TestEntities.EpubSubChap432_Frame,
 				StartedAt = TestEntities.DefaultStartedAtTime,
-				EdApp = TestEntities.Readium,
+				EdApp = TestEntities.EpubViewerApp,
 				Group = TestEntities.AmRev101_Group001,
-				Membership = TestEntities.Student554433_AmRev101_CourseSection001_Membership
+				Membership = TestEntities.User554433_AmRev101_CourseSection001_Membership
 			};
 
 			JsonAssertions.AssertSameObjectJson( bookmarkEvent, "caliperBookmarkAnnotationEvent" );
@@ -41,7 +41,7 @@ namespace ImsGlobal.Caliper.Tests {
 		[Test]
 		public void HighlightAnnotationEvent_MatchesReferenceJson() {
 
-			var highlightAnnotation = new HighlightAnnotation( "https://someEduApp.edu/highlights/12345" ) {
+			var highlightAnnotation = new HighlightAnnotation( "https://example.edu/highlights/12345" ) {
 				Annotated = TestEntities.EpubSubChap431,
 				Selection = new TextPositionSelector { Start = "455", End = "489" },
 				SelectionText = "Life, Liberty and the pursuit of Happiness",
@@ -50,12 +50,12 @@ namespace ImsGlobal.Caliper.Tests {
 			};
 
 			var highlightEvent = new AnnotationEvent( highlightAnnotation ) {
-				Actor = TestEntities.Student554433,
+				Actor = TestEntities.User554433,
 				Object = TestEntities.EpubSubChap431_Frame,
 				StartedAt = TestEntities.DefaultStartedAtTime,
-				EdApp = TestEntities.Readium,
+				EdApp = TestEntities.EpubViewerApp,
 				Group = TestEntities.AmRev101_Group001,
-				Membership = TestEntities.Student554433_AmRev101_CourseSection001_Membership
+				Membership = TestEntities.User554433_AmRev101_CourseSection001_Membership
 			};
 
 			JsonAssertions.AssertSameObjectJson( highlightEvent, "caliperHighlightAnnotationEvent" );
@@ -64,14 +64,14 @@ namespace ImsGlobal.Caliper.Tests {
 		[Test]
 		public void ShareAnnotationEvent_MatchesReferenceJson() {
 
-			var shareAnnotation = new ShareAnnotation( "https://someEduApp.edu/shared/9999" ) {
+			var shareAnnotation = new ShareAnnotation( "https://example.edu/shared/9999" ) {
 				Annotated = TestEntities.EpubSubChap433,
 				WithAgents = new [] {
-					new Person( "https://some-university.edu/students/657585" ) {
+					new Person( "https://example.edu/user/657585" ) {
 						DateCreated = TestEntities.DefaultDateCreated,
 						DateModified = TestEntities.DefaultDateModified
 					},
-					new Person( "https://some-university.edu/students/667788" ) {
+					new Person( "https://example.edu/user/667788" ) {
 						DateCreated = TestEntities.DefaultDateCreated,
 						DateModified = TestEntities.DefaultDateModified
 					}
@@ -81,12 +81,12 @@ namespace ImsGlobal.Caliper.Tests {
 			};
 
 			var shareEvent = new AnnotationEvent( shareAnnotation ) {
-				Actor = TestEntities.Student554433,
+				Actor = TestEntities.User554433,
 				Object = TestEntities.EpubSubChap433_Frame,
 				StartedAt = TestEntities.DefaultStartedAtTime,
-				EdApp = TestEntities.Readium,
+				EdApp = TestEntities.EpubViewerApp,
 				Group = TestEntities.AmRev101_Group001,
-				Membership = TestEntities.Student554433_AmRev101_CourseSection001_Membership
+				Membership = TestEntities.User554433_AmRev101_CourseSection001_Membership
 			};
 
 			JsonAssertions.AssertSameObjectJson( shareEvent, "caliperSharedAnnotationEvent" );
@@ -95,7 +95,7 @@ namespace ImsGlobal.Caliper.Tests {
 		[Test]
 		public void TagAnnotationEvent_MatchesReferenceJson() {
 
-			var tagAnnotation = new TagAnnotation( "https://someEduApp.edu/tags/7654" ) {
+			var tagAnnotation = new TagAnnotation( "https://example.edu/tags/7654" ) {
 				Annotated = TestEntities.EpubSubChap434,
 				Tags = new [] { "to-read", "1765", "shared-with-project-team" },
 				DateCreated = TestEntities.DefaultDateCreated,
@@ -103,12 +103,12 @@ namespace ImsGlobal.Caliper.Tests {
 			};
 
 			var tagEvent = new AnnotationEvent( tagAnnotation ) {
-				Actor = TestEntities.Student554433,
+				Actor = TestEntities.User554433,
 				Object = TestEntities.EpubSubChap434_Frame,
 				StartedAt = TestEntities.DefaultStartedAtTime,
-				EdApp = TestEntities.Readium,
+				EdApp = TestEntities.EpubViewerApp,
 				Group = TestEntities.AmRev101_Group001,
-				Membership = TestEntities.Student554433_AmRev101_CourseSection001_Membership
+				Membership = TestEntities.User554433_AmRev101_CourseSection001_Membership
 			};
 
 			JsonAssertions.AssertSameObjectJson( tagEvent, "caliperTagAnnotationEvent" );

@@ -18,13 +18,13 @@ namespace ImsGlobal.Caliper.Tests {
 		public void AssessmentItemCompletedEvent_MatchesReferenceJson() {
 
 			var assessmentItemEvent = new AssessmentItemEvent( Action.Completed ) {
-				Actor = TestEntities.Student554433,
+				Actor = TestEntities.User554433,
 				Object = TestEntities.AssessmentItem1,
 				Generated = TestEntities.Assessment1_Item1_Attempt1_Response,
 				StartedAt = TestEntities.DefaultStartedAtTime,
 				EdApp = TestEntities.SuperAssessmentTool,
 				Group = TestEntities.AmRev101_Group001,
-				Membership = TestEntities.Student554433_AmRev101_CourseSection001_Membership
+				Membership = TestEntities.User554433_AmRev101_CourseSection001_Membership
 			};
 
 			JsonAssertions.AssertSameObjectJson( assessmentItemEvent, "caliperAssessmentItemCompletedEvent" );

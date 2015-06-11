@@ -20,10 +20,10 @@ namespace ImsGlobal.Caliper.Tests {
 
 	internal static class TestEntities {
 
-		public static readonly string Student554433_Id = "https://some-university.edu/user/554433";
-		public static readonly string AmRev101_CourseOffering_Id = "https://some-university.edu/politicalScience/2015/american-revolution-101";
-		public static readonly string AmRev101_CourseSection001_Id = "https://some-university.edu/politicalScience/2015/american-revolution-101/section/001";
-		public static readonly string AmRev101_Group001_Id = "https://some-university.edu/politicalScience/2015/american-revolution-101/section/001/group/001";
+		public static readonly string User554433_Id = "https://example.edu/user/554433";
+		public static readonly string AmRev101_CourseOffering_Id = "https://example.edu/politicalScience/2015/american-revolution-101";
+		public static readonly string AmRev101_CourseSection001_Id = "https://example.edu/politicalScience/2015/american-revolution-101/section/001";
+		public static readonly string AmRev101_Group001_Id = "https://example.edu/politicalScience/2015/american-revolution-101/section/001/group/001";
 
 		public static readonly Instant DefaultDateCreated = Instant.FromUtc( 2015, 8, 1, 6, 0, 0 );
 		public static readonly Instant DefaultDateModified = Instant.FromUtc( 2015, 9, 2, 11, 30, 0 );
@@ -59,37 +59,21 @@ namespace ImsGlobal.Caliper.Tests {
 			DateCreated = DefaultDateCreated
 		};
 
-		public static Person Student554433 = new Person( Student554433_Id ) {
+		public static Person User554433 = new Person( User554433_Id ) {
 			DateCreated = DefaultDateCreated,
 			DateModified = DefaultDateModified
 		};
 
-		//public static readonly Membership Student554433_AmRev101_CourseOffering_Membership =
-		//	new Membership( "https://some-university.edu/membership/001" ) {
-		//		Member = Student554433,
-		//		Organization = AmRev101_CourseOffering,
-		//		Roles = new IRole[] { Role.Learner },
-		//		Status = Status.Active,
-		//		DateCreated = DefaultDateCreated
-		//	};
-		public static readonly Membership Student554433_AmRev101_CourseSection001_Membership =
-			new Membership( "https://some-university.edu/politicalScience/2015/american-revolution-101/roster/554433" ) {
+		public static readonly Membership User554433_AmRev101_CourseSection001_Membership =
+			new Membership( "https://example.edu/politicalScience/2015/american-revolution-101/roster/554433" ) {
 				Name = "American Revolution 101",
 				Description = "Roster entry",
-				Member = Student554433,
+				Member = User554433,
 				Organization = AmRev101_CourseSection001,
 				Roles = new IRole[] { Role.Learner },
 				Status = Status.Active,
 				DateCreated = DefaultDateCreated
 			};
-		//public static readonly Membership Student554433_AmRev101_Group001_Membership =
-		//	new Membership( "https://some-university.edu/membership/003" ) {
-		//		Member = Student554433,
-		//		Organization = AmRev101_Group001,
-		//		Roles = new IRole[] { Role.Learner },
-		//		Status = Status.Active,
-		//		DateCreated = DefaultDateCreated
-		//	};
 
 
 		public static WebPage AmRev101LandingPage = new WebPage( AmRev101_CourseOffering_Id + "/index.html" ) {
@@ -99,20 +83,20 @@ namespace ImsGlobal.Caliper.Tests {
 			DateModified = DefaultDateModified
 		};
 
-		public static SoftwareApplication Readium = new SoftwareApplication( "https://github.com/readium/readium-js-viewer" ) {
-			Name = "Readium",
+		public static SoftwareApplication EpubViewerApp = new SoftwareApplication( "https://example.com/viewer" ) {
+			Name = "ePub",
 			DateCreated = DefaultDateCreated,
 			DateModified = DefaultDateModified
 		};
 
-		public static EPubVolume EpubVolume43 = new EPubVolume( "https://github.com/readium/readium-js-viewer/book/34843#epubcfi(/4/3)" ) {
+		public static EPubVolume EpubVolume43 = new EPubVolume( "https://example.com/viewer/book/34843#epubcfi(/4/3)" ) {
 			Name = "The Glorious Cause: The American Revolution, 1763-1789 (Oxford History of the United States)",
 			Version = "2nd ed.",
 			DateCreated = DefaultDateCreated,
 			DateModified = DefaultDateModified
 		};
 
-		public static EPubSubChapter EpubSubChap431 = new EPubSubChapter( "https://github.com/readium/readium-js-viewer/book/34843#epubcfi(/4/3/1)" ) {
+		public static EPubSubChapter EpubSubChap431 = new EPubSubChapter( "https://example.com/viewer/book/34843#epubcfi(/4/3/1)" ) {
 			Name = "Key Figures: George Washington",
 			Version = "2nd ed.",
 			IsPartOf = EpubVolume43,
@@ -128,7 +112,7 @@ namespace ImsGlobal.Caliper.Tests {
 			DateModified = DefaultDateModified
 		};
 
-		public static EPubSubChapter EpubSubChap432 = new EPubSubChapter( "https://github.com/readium/readium-js-viewer/book/34843#epubcfi(/4/3/2)" ) {
+		public static EPubSubChapter EpubSubChap432 = new EPubSubChapter( "https://example.com/viewer/book/34843#epubcfi(/4/3/2)" ) {
 			Name = "Key Figures: Lord North",
 			Version = "2nd ed.",
 			IsPartOf = EpubVolume43,
@@ -145,7 +129,7 @@ namespace ImsGlobal.Caliper.Tests {
 			DateModified = DefaultDateModified
 		};
 
-		public static EPubSubChapter EpubSubChap433 = new EPubSubChapter( "https://github.com/readium/readium-js-viewer/book/34843#epubcfi(/4/3/3)" ) {
+		public static EPubSubChapter EpubSubChap433 = new EPubSubChapter( "https://example.com/viewer/book/34843#epubcfi(/4/3/3)" ) {
 			Name = "Key Figures: John Adams",
 			Version = "2nd ed.",
 			IsPartOf = EpubVolume43,
@@ -162,7 +146,7 @@ namespace ImsGlobal.Caliper.Tests {
 			DateModified = DefaultDateModified
 		};
 
-		public static EPubSubChapter EpubSubChap434 = new EPubSubChapter( "https://github.com/readium/readium-js-viewer/book/34843#epubcfi(/4/3/4)" ) {
+		public static EPubSubChapter EpubSubChap434 = new EPubSubChapter( "https://example.com/viewer/book/34843#epubcfi(/4/3/4)" ) {
 			Name = "The Stamp Act Crisis",
 			Version = "2nd ed.",
 			IsPartOf = EpubVolume43,
@@ -178,16 +162,16 @@ namespace ImsGlobal.Caliper.Tests {
 			DateModified = DefaultDateModified
 		};
 
-		public static SoftwareApplication SuperMediaTool = new SoftwareApplication( "https://com.sat/super-media-tool" ) {
+		public static SoftwareApplication SuperMediaTool = new SoftwareApplication( "https://example.com/super-media-tool" ) {
 			Name = "Super Media Tool",
 			DateCreated = DefaultDateCreated,
 			DateModified = DefaultDateModified
 		};
 
-		public static VideoObject VideoWithLearningObjective = new VideoObject( "https://com.sat/super-media-tool/video/video1" ) {
+		public static VideoObject VideoWithLearningObjective = new VideoObject( "https://example.com/super-media-tool/video/1225" ) {
 			Name = "American Revolution - Key Figures Video",
 			AlignedLearningObjectives = new[] { 
-				new LearningObjective( "http://americanrevolution.com/personalities/learn" ) {
+				new LearningObjective( "https://example.edu/american-revolution-101/personalities/learn" ) {
 					DateCreated = DefaultDateCreated
 				}
 			},
@@ -203,12 +187,12 @@ namespace ImsGlobal.Caliper.Tests {
 			DateCreated = DefaultDateCreated
 		};
 
-		public static SoftwareApplication SuperAssessmentTool = new SoftwareApplication( "https://com.sat/super-assessment-tool" ) {
+		public static SoftwareApplication SuperAssessmentTool = new SoftwareApplication( "https://example.com/super-assessment-tool" ) {
 			Name = "Super Assessment Tool",
 			DateCreated = DefaultDateCreated
 		};
 
-		private static string Assessment1_Id = "https://some-university.edu/politicalScience/2015/american-revolution-101/assessment1";
+		private static string Assessment1_Id = "https://example.edu/politicalScience/2015/american-revolution-101/assessment/001";
 
 		public static Assessment Assessment1 = new Assessment( Assessment1_Id ) {
 			Name = "American Revolution - Key Figures Assessment",
@@ -226,7 +210,7 @@ namespace ImsGlobal.Caliper.Tests {
 		};
 
 		public static AssessmentItem AssessmentItem1 =
-			new AssessmentItem( Assessment1_Id + "/item1" ) {
+			new AssessmentItem( Assessment1_Id + "/item/001" ) {
 				Name = "Assessment Item 1",
 				Version = "1.0",
 				IsPartOf = Assessment1,
@@ -236,7 +220,7 @@ namespace ImsGlobal.Caliper.Tests {
 				IsTimeDependent = false
 			};
 		public static AssessmentItem AssessmentItem2 =
-			new AssessmentItem( Assessment1_Id + "/item2" ) {
+			new AssessmentItem( Assessment1_Id + "/item/002" ) {
 				Name = "Assessment Item 2",
 				Version = "1.0",
 				IsPartOf = Assessment1,
@@ -246,7 +230,7 @@ namespace ImsGlobal.Caliper.Tests {
 				IsTimeDependent = false
 			};
 		public static AssessmentItem AssessmentItem3 =
-			new AssessmentItem( Assessment1_Id + "/item3" ) {
+			new AssessmentItem( Assessment1_Id + "/item/003" ) {
 				Name = "Assessment Item 3",
 				Version = "1.0",
 				IsPartOf = Assessment1,
@@ -256,25 +240,25 @@ namespace ImsGlobal.Caliper.Tests {
 				IsTimeDependent = false
 			};
 
-		public static Attempt Assessment1_Attempt1 = new Attempt( Assessment1_Id + "/attempt1" ) {
+		public static Attempt Assessment1_Attempt1 = new Attempt( Assessment1_Id + "/attempt/5678" ) {
 			Assignable = Assessment1,
-			Actor = Student554433,
+			Actor = User554433,
 			Count = 1,
 			DateCreated = DefaultDateCreated,
 			StartedAtTime = DefaultStartedAtTime
 		};
 
-		public static Attempt Assessment1_Item1_Attempt1 = new Attempt( AssessmentItem1.Id + "/attempt1" ) {
+		public static Attempt Assessment1_Item1_Attempt1 = new Attempt( AssessmentItem1.Id + "/attempt/789" ) {
 			Assignable = Assessment1,
-			Actor = Student554433,
+			Actor = User554433,
 			Count = 1,
 			DateCreated = DefaultDateCreated,
 			StartedAtTime = DefaultStartedAtTime
 		};
 
-		public static FillInBlankResponse Assessment1_Item1_Attempt1_Response = new FillInBlankResponse( AssessmentItem1.Id + "/response1" ) {
+		public static FillInBlankResponse Assessment1_Item1_Attempt1_Response = new FillInBlankResponse( AssessmentItem1.Id + "/response/001" ) {
 			Assignable = Assessment1,
-			Actor = Student554433,
+			Actor = User554433,
 			Attempt = Assessment1_Item1_Attempt1,
 			Values = new [] { "2 July 1776" },
 			DateCreated = DefaultDateCreated,
@@ -283,7 +267,7 @@ namespace ImsGlobal.Caliper.Tests {
 
 		public static Result Assessment1_Attempt1_Result = new Result( Assessment1_Attempt1.Id + "/result" ) {
 			Assignable = Assessment1,
-			Actor = Student554433,
+			Actor = User554433,
 			NormalScore = 3.0,
 			PenaltyScore = 0.0,
 			ExtraCreditScore = 0.0,
@@ -295,17 +279,17 @@ namespace ImsGlobal.Caliper.Tests {
 			DateCreated = DefaultDateCreated
 		};
 
-		public static Session SessionStart = new Session( "https://github.com/readium/session-123456789" ) {
+		public static Session SessionStart = new Session( "https://example.com/viewer/session-123456789" ) {
 			Name = "session-123456789",
-			Actor = Student554433,
+			Actor = User554433,
 			DateCreated = DefaultDateCreated,
 			DateModified = DefaultDateModified,
 			StartedAt = NodaDefaultStartedAtTime
 		};
 
-		public static Session SessionEnd = new Session( "https://github.com/readium/session-123456789" ) {
+		public static Session SessionEnd = new Session( "https://example.com/viewer/session-123456789" ) {
 			Name = "session-123456789",
-			Actor = Student554433,
+			Actor = User554433,
 			DateCreated = DefaultDateCreated,
 			DateModified = DefaultDateModified,
 			StartedAt = NodaDefaultStartedAtTime,
@@ -313,8 +297,8 @@ namespace ImsGlobal.Caliper.Tests {
 			Duration = Period.FromSeconds( 3000 )
 		};
 
-		public static Session FederatedSession = new Session( "https://learning-platform.some-university.edu/federatedSession/123456789" ) {
-			Actor = Student554433,
+		public static Session FederatedSession = new Session( "https://learning-platform.example.edu/federatedSession/123456789" ) {
+			Actor = User554433,
 			DateCreated = DefaultDateCreated,
 			StartedAt = NodaDefaultStartedAtTime
 		};

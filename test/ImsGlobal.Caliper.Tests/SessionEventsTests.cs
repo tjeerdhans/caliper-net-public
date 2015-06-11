@@ -19,14 +19,14 @@ namespace ImsGlobal.Caliper.Tests {
 		public void SessionLoggedInEvent_MatchesReferenceJson() {
 
 			var loggedInEvent = new SessionEvent( Action.LoggedIn ) {
-				Actor = TestEntities.Student554433,
-				Object = TestEntities.Readium,
+				Actor = TestEntities.User554433,
+				Object = TestEntities.EpubViewerApp,
 				Target = TestEntities.EpubSubChap431_Frame,
 				Generated = TestEntities.SessionStart,
 				StartedAt = TestEntities.DefaultStartedAtTime,
-				EdApp = TestEntities.Readium,
+				EdApp = TestEntities.EpubViewerApp,
 				Group = TestEntities.AmRev101_Group001,
-				Membership = TestEntities.Student554433_AmRev101_CourseSection001_Membership
+				Membership = TestEntities.User554433_AmRev101_CourseSection001_Membership
 			};
 
 			JsonAssertions.AssertSameObjectJson( loggedInEvent, "caliperSessionLoginEvent" );
@@ -36,15 +36,15 @@ namespace ImsGlobal.Caliper.Tests {
 		public void SessionLoggedOutEvent_MatchesReferenceJson() {
 
 			var loggedOutEvent = new SessionEvent( Action.LoggedOut ) {
-				Actor = TestEntities.Student554433,
-				Object = TestEntities.Readium,
+				Actor = TestEntities.User554433,
+				Object = TestEntities.EpubViewerApp,
 				Target = TestEntities.SessionEnd,
 				StartedAt = TestEntities.DefaultStartedAtTime,
 				EndedAt = TestEntities.DefaultEndedAtTime,
 				Duration = TestEntities.SessionEnd.Duration,
-				EdApp = TestEntities.Readium,
+				EdApp = TestEntities.EpubViewerApp,
 				Group = TestEntities.AmRev101_Group001,
-				Membership = TestEntities.Student554433_AmRev101_CourseSection001_Membership
+				Membership = TestEntities.User554433_AmRev101_CourseSection001_Membership
 			};
 
 			JsonAssertions.AssertSameObjectJson( loggedOutEvent, "caliperSessionLogoutEvent" );
@@ -54,12 +54,12 @@ namespace ImsGlobal.Caliper.Tests {
 		public void SessionTimedOutEvent_MatchesReferenceJson() {
 
 			var timedOutEvent = new SessionEvent( Action.TimedOut ) {
-				Actor = TestEntities.Readium,
+				Actor = TestEntities.EpubViewerApp,
 				Object = TestEntities.SessionEnd,
 				StartedAt = TestEntities.DefaultStartedAtTime,
 				EndedAt = TestEntities.DefaultEndedAtTime,
 				Duration = TestEntities.SessionEnd.Duration,
-				EdApp = TestEntities.Readium,
+				EdApp = TestEntities.EpubViewerApp,
 				Group = TestEntities.AmRev101_Group001
 			};
 

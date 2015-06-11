@@ -19,19 +19,19 @@ namespace ImsGlobal.Caliper.Tests {
 		public void CaliperMessage_MatchesReferenceJson() {
 
 			var navigationEvent = new NavigationEvent {
-				Actor = TestEntities.Student554433,
+				Actor = TestEntities.User554433,
 				Object = TestEntities.EpubVolume43,
 				Target = TestEntities.EpubSubChap431_Frame,
 				FromResource = TestEntities.AmRev101LandingPage,
 				StartedAt = TestEntities.DefaultStartedAtTime,
-				EdApp = TestEntities.Readium,
+				EdApp = TestEntities.EpubViewerApp,
 				Group = TestEntities.AmRev101_Group001,
-				Membership = TestEntities.Student554433_AmRev101_CourseSection001_Membership,
+				Membership = TestEntities.User554433_AmRev101_CourseSection001_Membership,
 				FederatedSession = TestEntities.FederatedSession
 			};
 
 			var caliperMessage = new CaliperMessage<Event> {
-				SensorId = "http://learning-app.some-university.edu/sensor",
+				SensorId = "https://example.edu/sensor/001",
 				SendTime = NodaTime.Instant.FromUtc( 2015, 09, 15, 11, 05, 01 ),
 				Data = new [] {navigationEvent}
 			};

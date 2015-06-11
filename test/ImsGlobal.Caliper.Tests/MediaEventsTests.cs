@@ -18,13 +18,13 @@ namespace ImsGlobal.Caliper.Tests {
 		public void MediaEvent_MatchesReferenceJson() {
 
 			var mediaEvent = new MediaEvent( Action.Paused ) {
-				Actor = TestEntities.Student554433,
+				Actor = TestEntities.User554433,
 				Object = TestEntities.VideoWithLearningObjective,
 				Target = TestEntities.VideoWithLearningObjective_Location710,
 				StartedAt = TestEntities.DefaultStartedAtTime,
 				EdApp = TestEntities.SuperMediaTool,
 				Group = TestEntities.AmRev101_Group001,
-				Membership = TestEntities.Student554433_AmRev101_CourseSection001_Membership
+				Membership = TestEntities.User554433_AmRev101_CourseSection001_Membership
 			};
 
 			JsonAssertions.AssertSameObjectJson( mediaEvent, "caliperMediaEvent" );
