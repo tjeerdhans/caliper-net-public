@@ -12,7 +12,7 @@ namespace ImsGlobal.Caliper.Entities.Media {
 
 		public MediaObject( string id )
 			: base( id ) {
-			this.Type = EntityType.MediaObject;
+			this.Type = DigitalResourceType.MediaObject;
 		}
 
 		public MediaObject( string id, MediaObjectType type )

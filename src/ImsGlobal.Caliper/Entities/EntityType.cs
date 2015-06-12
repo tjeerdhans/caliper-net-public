@@ -14,7 +14,6 @@ namespace ImsGlobal.Caliper.Entities {
 		public static readonly EntityType Entity = new EntityType( "http://purl.imsglobal.org/caliper/v1/Entity" );
 		public static readonly EntityType Group = new EntityType( "http://purl.imsglobal.org/caliper/v1/lis/Group" );
 		public static readonly EntityType LearningObjective = new EntityType( "http://purl.imsglobal.org/caliper/v1/LearningObjective" );
-		public static readonly EntityType MediaObject = new EntityType( "http://purl.imsglobal.org/caliper/v1/MediaObject" );
 		public static readonly EntityType Membership = new EntityType( "http://purl.imsglobal.org/caliper/v1/lis/Membership" );
 		public static readonly EntityType Person = new EntityType( "http://purl.imsglobal.org/caliper/v1/lis/Person" );
 		public static readonly EntityType Organization = new EntityType( "http://purl.imsglobal.org/caliper/v1/lis/Organization" );
