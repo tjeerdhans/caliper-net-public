@@ -13,12 +13,9 @@ namespace ImsGlobal.Caliper.Entities {
 
 	/// <summary>
 	/// Caliper representation of a CreativeWork (https://schema.org/CreativeWork)
-	/// 
-	/// We add learning specific attributes, including a list of
-	/// <see cref="LearningObjective"/> learning objectives and a list of
-	/// <see cref="String"/> keywords.
 	/// </summary>
 	public class DigitalResource : Entity, ICreativeWork {
+
 		public DigitalResource( string id )
 			: base( id ) {
 			this.Type = EntityType.DigitalResource;
