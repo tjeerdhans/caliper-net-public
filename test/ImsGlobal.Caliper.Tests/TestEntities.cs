@@ -297,7 +297,7 @@ namespace ImsGlobal.Caliper.Tests {
 			Duration = Period.FromSeconds( 3000 )
 		};
 
-		public static Session FederatedSession = new Session( "https://learning-platform.example.edu/federatedSession/123456789" ) {
+		public static Session FederatedSession = new Session( "https://example.edu/lms/federatedSession/123456789" ) {
 			Actor = User554433,
 			DateCreated = DefaultDateCreated,
 			StartedAt = NodaDefaultStartedAtTime
