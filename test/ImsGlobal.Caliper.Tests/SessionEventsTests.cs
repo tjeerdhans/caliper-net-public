@@ -23,7 +23,7 @@ namespace ImsGlobal.Caliper.Tests {
 				Object = TestEntities.EpubViewerApp,
 				Target = TestEntities.EpubSubChap431_Frame,
 				Generated = TestEntities.SessionStart,
-				StartedAt = TestEntities.DefaultStartedAtTime,
+				EventTime = TestEntities.DefaultStartedAtTime,
 				EdApp = TestEntities.EpubViewerApp,
 				Group = TestEntities.AmRev101_Group001,
 				Membership = TestEntities.User554433_AmRev101_CourseSection001_Membership
@@ -39,9 +39,7 @@ namespace ImsGlobal.Caliper.Tests {
 				Actor = TestEntities.User554433,
 				Object = TestEntities.EpubViewerApp,
 				Target = TestEntities.SessionEnd,
-				StartedAt = TestEntities.DefaultStartedAtTime,
-				EndedAt = TestEntities.DefaultEndedAtTime,
-				Duration = TestEntities.SessionEnd.Duration,
+				EventTime = TestEntities.DefaultStartedAtTime,
 				EdApp = TestEntities.EpubViewerApp,
 				Group = TestEntities.AmRev101_Group001,
 				Membership = TestEntities.User554433_AmRev101_CourseSection001_Membership
@@ -56,9 +54,7 @@ namespace ImsGlobal.Caliper.Tests {
 			var timedOutEvent = new SessionEvent( Action.TimedOut ) {
 				Actor = TestEntities.EpubViewerApp,
 				Object = TestEntities.SessionEnd,
-				StartedAt = TestEntities.DefaultStartedAtTime,
-				EndedAt = TestEntities.DefaultEndedAtTime,
-				Duration = TestEntities.SessionEnd.Duration,
+				EventTime = TestEntities.DefaultStartedAtTime,
 				EdApp = TestEntities.EpubViewerApp,
 				Group = TestEntities.AmRev101_Group001
 			};

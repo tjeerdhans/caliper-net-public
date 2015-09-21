@@ -21,7 +21,7 @@ namespace ImsGlobal.Caliper.Tests {
 				Actor = TestEntities.User554433,
 				Object = TestEntities.AssessmentItem1,
 				Generated = TestEntities.Assessment1_Item1_Attempt1_Response,
-				StartedAt = TestEntities.DefaultStartedAtTime,
+				EventTime = TestEntities.DefaultStartedAtTime,
 				EdApp = TestEntities.SuperAssessmentTool,
 				Group = TestEntities.AmRev101_Group001,
 				Membership = TestEntities.User554433_AmRev101_CourseSection001_Membership

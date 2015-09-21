@@ -29,7 +29,7 @@ namespace ImsGlobal.Caliper.Tests {
 			var bookmarkEvent = new AnnotationEvent( bookmarkAnnotation ) {
 				Actor = TestEntities.User554433,
 				Object = TestEntities.EpubSubChap432_Frame,
-				StartedAt = TestEntities.DefaultStartedAtTime,
+				EventTime = TestEntities.DefaultStartedAtTime,
 				EdApp = TestEntities.EpubViewerApp,
 				Group = TestEntities.AmRev101_Group001,
 				Membership = TestEntities.User554433_AmRev101_CourseSection001_Membership
@@ -52,7 +52,7 @@ namespace ImsGlobal.Caliper.Tests {
 			var highlightEvent = new AnnotationEvent( highlightAnnotation ) {
 				Actor = TestEntities.User554433,
 				Object = TestEntities.EpubSubChap431_Frame,
-				StartedAt = TestEntities.DefaultStartedAtTime,
+				EventTime = TestEntities.DefaultStartedAtTime,
 				EdApp = TestEntities.EpubViewerApp,
 				Group = TestEntities.AmRev101_Group001,
 				Membership = TestEntities.User554433_AmRev101_CourseSection001_Membership
@@ -83,7 +83,7 @@ namespace ImsGlobal.Caliper.Tests {
 			var shareEvent = new AnnotationEvent( shareAnnotation ) {
 				Actor = TestEntities.User554433,
 				Object = TestEntities.EpubSubChap433_Frame,
-				StartedAt = TestEntities.DefaultStartedAtTime,
+				EventTime = TestEntities.DefaultStartedAtTime,
 				EdApp = TestEntities.EpubViewerApp,
 				Group = TestEntities.AmRev101_Group001,
 				Membership = TestEntities.User554433_AmRev101_CourseSection001_Membership
@@ -105,7 +105,7 @@ namespace ImsGlobal.Caliper.Tests {
 			var tagEvent = new AnnotationEvent( tagAnnotation ) {
 				Actor = TestEntities.User554433,
 				Object = TestEntities.EpubSubChap434_Frame,
-				StartedAt = TestEntities.DefaultStartedAtTime,
+				EventTime = TestEntities.DefaultStartedAtTime,
 				EdApp = TestEntities.EpubViewerApp,
 				Group = TestEntities.AmRev101_Group001,
 				Membership = TestEntities.User554433_AmRev101_CourseSection001_Membership

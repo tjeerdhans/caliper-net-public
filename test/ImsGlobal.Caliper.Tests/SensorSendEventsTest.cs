@@ -23,7 +23,7 @@ namespace ImsGlobal.Caliper.Tests {
 				Object = TestEntities.EpubVolume43,
 				Target = TestEntities.EpubSubChap431_Frame,
 				FromResource = TestEntities.AmRev101LandingPage,
-				StartedAt = TestEntities.DefaultStartedAtTime,
+				EventTime = TestEntities.DefaultStartedAtTime,
 				EdApp = TestEntities.EpubViewerApp,
 				Group = TestEntities.AmRev101_Group001,
 				Membership = TestEntities.User554433_AmRev101_CourseSection001_Membership,

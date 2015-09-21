@@ -70,20 +70,8 @@ namespace ImsGlobal.Caliper.Events {
 		/// <summary>
 		/// Required - time that the event was started at
 		/// </summary>
-		[JsonProperty( "startedAtTime", Order = 8 )]
-		public Instant? StartedAt { get; set; }
-
-		/// <summary>
-		/// An optional time that the event ended at
-		/// </summary>
-		[JsonProperty( "endedAtTime", Order = 9 )]
-		public Instant? EndedAt { get; set; }
-
-		/// <summary>
-		/// Optional - duration of the event
-		/// </summary>
-		[JsonProperty( "duration", Order = 10 )]
-		public Period Duration { get; set; }
+		[JsonProperty( "eventTime", Order = 8 )]
+		public Instant? EventTime { get; set; }
 
 		// ------ Contextual Properties ------
 
