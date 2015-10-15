@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ImsGlobal.Caliper.Entities.Response;
+
 using NodaTime;
 
 namespace ImsGlobal.Caliper.Tests {
@@ -15,6 +15,7 @@ namespace ImsGlobal.Caliper.Tests {
 	using ImsGlobal.Caliper.Entities.Media;
 	using ImsGlobal.Caliper.Entities.Outcome;
 	using ImsGlobal.Caliper.Entities.Reading;
+	using ImsGlobal.Caliper.Entities.Response;
 	using ImsGlobal.Caliper.Entities.Session;
 	using ImsGlobal.Caliper.Entities.W3c;
 

@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ImsGlobal.Caliper.Entities.Foaf {
-	using ImsGlobal.Caliper.Entities.W3c;
 	using ImsGlobal.Caliper.Util;
 
 	/// <summary>

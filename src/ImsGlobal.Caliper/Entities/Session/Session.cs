@@ -9,7 +9,6 @@ using NodaTime;
 
 namespace ImsGlobal.Caliper.Entities.Session {
 	using ImsGlobal.Caliper.Entities.Foaf;
-	using ImsGlobal.Caliper.Util;
 
 	public class Session : Entity {
 

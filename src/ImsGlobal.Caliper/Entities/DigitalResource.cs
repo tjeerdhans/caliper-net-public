@@ -9,7 +9,6 @@ using NodaTime;
 
 namespace ImsGlobal.Caliper.Entities {
 	using ImsGlobal.Caliper.Entities.SchemaDotOrg;
-	using ImsGlobal.Caliper.Util;
 
 	/// <summary>
 	/// Caliper representation of a CreativeWork (https://schema.org/CreativeWork)

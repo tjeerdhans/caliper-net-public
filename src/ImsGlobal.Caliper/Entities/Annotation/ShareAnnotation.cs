@@ -6,18 +6,18 @@ using System.Text;
 using Newtonsoft.Json;
 
 namespace ImsGlobal.Caliper.Entities.Annotation {
-    using ImsGlobal.Caliper.Entities.Foaf;
+	using ImsGlobal.Caliper.Entities.Foaf;
 
 	public class ShareAnnotation : Annotation {
 
-        public ShareAnnotation(string id)
+		public ShareAnnotation(string id)
 			: base( id ) {
 			this.Type = AnnotationType.Share;
-            this.WithAgents = new List<IAgent>();
+			this.WithAgents = new List<IAgent>();
 		}
 
 		[JsonProperty( "withAgents", Order = 31 )]
-        public IList<IAgent> WithAgents { get; set; }
+		public IList<IAgent> WithAgents { get; set; }
 
 	}
 }

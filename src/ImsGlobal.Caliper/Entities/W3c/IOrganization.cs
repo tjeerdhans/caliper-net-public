@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ImsGlobal.Caliper.Util;
 
 namespace ImsGlobal.Caliper.Entities.W3c {
+	using ImsGlobal.Caliper.Util;
 
 	/// <summary>
 	/// A collection of people organized together into a community or other

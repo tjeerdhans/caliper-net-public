@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ImsGlobal.Caliper.Util;
+
 using Newtonsoft.Json;
 
 namespace ImsGlobal.Caliper.Entities.Lis {
 	using ImsGlobal.Caliper.Entities.Agent;
 	using ImsGlobal.Caliper.Entities.W3c;
+	using ImsGlobal.Caliper.Util;
 
 	/// <summary>
 	/// A Caliper Membership is used to define the relationship between

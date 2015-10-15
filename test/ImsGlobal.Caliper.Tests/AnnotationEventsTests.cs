@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ImsGlobal.Caliper.Entities.Lis;
-using ImsGlobal.Caliper.Entities.W3c;
+
 using NUnit.Framework;
 
 namespace ImsGlobal.Caliper.Tests {
