@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 namespace ImsGlobal.Caliper.Entities.Media {
 	using ImsGlobal.Caliper.Entities.SchemaDotOrg;
 
-	public abstract class MediaObject : DigitalResource, IMediaObject {
+	public class MediaObject : DigitalResource, IMediaObject {
 
 		public MediaObject( string id )
 			: base( id ) {
