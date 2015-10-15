@@ -1,4 +1,4 @@
-#region *   License     *
+﻿#region *   License     *
 /*
     SimpleHelpers - ObjectDiffPatch   
 
@@ -176,8 +176,8 @@ namespace ImsGlobal.Caliper.Tests.SimpleHelpers
             }
             else if (source.Type == Newtonsoft.Json.Linq.JTokenType.Array)
             {
-                var aS = (source as Newtonsoft.Json.Linq.JArray) ?? new JArray();
-				var aT = (target as Newtonsoft.Json.Linq.JArray) ?? new JArray();
+                var aS = (source as Newtonsoft.Json.Linq.JArray);
+                var aT = (target as Newtonsoft.Json.Linq.JArray);
 
                 if ((aS.Count == 0 || aT.Count == 0) && (aS.Count != aT.Count))
                 {
@@ -260,14 +260,15 @@ namespace ImsGlobal.Caliper.Tests.SimpleHelpers
                 if (sourceJson.Type == JTokenType.Array)
                 {                    
                     int sz = 0;
-                    if (diffObj.TryGetValue (PREFIX_ARRAY_SIZE, out token)) 
+                    bool foundArraySize = diffObj.TryGetValue(PREFIX_ARRAY_SIZE, out token);
+                    if (foundArraySize)
                     {
                         diffObj.Remove (PREFIX_ARRAY_SIZE);
                         sz = token.Value<int> ();                        
                     }
                     var array = sourceJson as JArray;
                     // resize array
-                    if (array.Count != sz)
+                    if (foundArraySize && array.Count != sz)
                     {
                         JArray snapshot = array.DeepClone () as JArray;
                         array.Clear ();
@@ -288,7 +289,7 @@ namespace ImsGlobal.Caliper.Tests.SimpleHelpers
                 }
                 else
                 {
-                    var sourceObj = sourceJson as JObject;
+                    var sourceObj = sourceJson as JObject ?? new JObject();
                     // remove fields
                     if (diffObj.TryGetValue (PREFIX_REMOVED_FIELDS, out token))
                     {
