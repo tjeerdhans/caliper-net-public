@@ -84,7 +84,7 @@ namespace ImsGlobal.Caliper {
 		/// Sends a sequence of entities to all configured Caliper endpoints.
 		/// </summary>
 		/// <param name="entities">The entities to be sent.</param>
-		public async Task<bool> Describe( IEnumerable<Entity> entities ) {
+		public async Task<bool> DescribeAsync( IEnumerable<Entity> entities ) {
 			var tasks = _clients.Values.Select( c => c.Describe( entities ) );
 			var results = await Task.WhenAll( tasks );
 			return results.All( c => c );
@@ -94,8 +94,8 @@ namespace ImsGlobal.Caliper {
 		/// Sends an entity to the configured Caliper endpoint.
 		/// </summary>
 		/// <param name="entity">The entity to be sent.</param>
-		public async Task<bool> Describe( Entity entity ) {
-			return await Describe( new [] { entity } );
+		public async Task<bool> DescribeAsync( Entity entity ) {
+			return await DescribeAsync( new[] { entity } );
 		}
 
 		/// <summary>
@@ -103,7 +103,7 @@ namespace ImsGlobal.Caliper {
 		/// </summary>
 		/// <param name="entities">The entities to be sent.</param>
 		/// <param name="endpointId">The Caliper endpoint identifier.</param>
-		public async Task<bool> Describe( IEnumerable<Entity> entities, string endpointId ) {
+		public async Task<bool> DescribeAsync( IEnumerable<Entity> entities, string endpointId ) {
 			CaliperClient client;
 			if( !_clients.TryGetValue( endpointId, out client ) ) {
 				return false;
@@ -116,17 +116,9 @@ namespace ImsGlobal.Caliper {
 		/// </summary>
 		/// <param name="entity">The entity to be sent.</param>
 		/// <param name="endpointId">The Caliper endpoint identifier.</param>
-		public async Task<bool> Describe( Entity entity, string endpointId ) {
-			return await Describe( new[] { entity }, endpointId );
+		public async Task<bool> DescribeAsync( Entity entity, string endpointId ) {
+			return await DescribeAsync( new[] { entity }, endpointId );
 		}
-
-		/// <summary>
-		/// Retrieves current statistics about sent events and entities.
-		/// </summary>
-		/// <returns>The current statistics.</returns>
-		//public CaliperStatistics GetStatistics() {
-		//	return _client.GetStatistics();
-		//}
 
 	}
 
