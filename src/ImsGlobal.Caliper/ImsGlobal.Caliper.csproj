@@ -56,9 +56,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Agent\Agent.cs" />
     <Compile Include="Entities\Annotation\AnnotationType.cs" />
     <Compile Include="Entities\Assignable\AssignableDigitalResourceType.cs" />
     <Compile Include="Entities\DigitalResourceType.cs" />
+    <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\EntityType.cs" />
     <Compile Include="Entities\IType.cs" />
     <Compile Include="Entities\Lis\Membership.cs" />
@@ -113,6 +115,7 @@
     <Compile Include="Events\Assessment\AssessmentEvent.cs" />
     <Compile Include="Events\Assignable\AssignableEvent.cs" />
     <Compile Include="CaliperContext.cs" />
+    <Compile Include="Events\BaseEvent.cs" />
     <Compile Include="Events\EventType.cs" />
     <Compile Include="Events\Session\SessionEvent.cs" />
     <Compile Include="Events\Media\MediaEvent.cs" />

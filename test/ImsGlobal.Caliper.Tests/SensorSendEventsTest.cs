@@ -32,7 +32,7 @@ namespace ImsGlobal.Caliper.Tests {
 
 			var caliperMessage = new CaliperMessage<Event> {
 				SensorId = "https://example.edu/sensor/001",
-				SendTime = NodaTime.Instant.FromUtc( 2015, 09, 15, 11, 05, 01 ),
+				SendTime = TestEntities.DefaultSendTime,
 				Data = new [] {navigationEvent}
 			};
 

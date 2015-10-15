@@ -33,8 +33,8 @@ namespace ImsGlobal.Caliper.Tests {
 		public static readonly Instant DefaultDateToStartOn = DefaultDateToActivate;
 		public static readonly Instant DefaultDateToSubmit = Instant.FromUtc( 2015, 9, 28, 11, 59, 59 );
 		public static readonly Instant DefaultStartedAtTime = Instant.FromUtc( 2015, 9, 15, 10, 15, 0 );
-		public static readonly Instant NodaDefaultStartedAtTime = Instant.FromUtc(  2015, 9, 15, 10, 15, 0 );
 		public static readonly Instant DefaultEndedAtTime = Instant.FromUtc( 2015, 9, 15, 11, 05, 0 );
+		public static readonly Instant DefaultSendTime = Instant.FromUtc( 2015, 9, 15, 11, 05, 1 );
 
 		public static CourseOffering AmRev101_CourseOffering = new CourseOffering( AmRev101_CourseOffering_Id ) {
 			CourseNumber = "POL101",
@@ -284,7 +284,7 @@ namespace ImsGlobal.Caliper.Tests {
 			Actor = User554433,
 			DateCreated = DefaultDateCreated,
 			DateModified = DefaultDateModified,
-			StartedAt = NodaDefaultStartedAtTime
+			StartedAt = DefaultStartedAtTime
 		};
 
 		public static Session SessionEnd = new Session( "https://example.com/viewer/session-123456789" ) {
@@ -292,7 +292,7 @@ namespace ImsGlobal.Caliper.Tests {
 			Actor = User554433,
 			DateCreated = DefaultDateCreated,
 			DateModified = DefaultDateModified,
-			StartedAt = NodaDefaultStartedAtTime,
+			StartedAt = DefaultStartedAtTime,
 			EndedAt = DefaultEndedAtTime,
 			Duration = Period.FromSeconds( 3000 )
 		};
@@ -300,7 +300,7 @@ namespace ImsGlobal.Caliper.Tests {
 		public static Session FederatedSession = new Session( "https://example.edu/lms/federatedSession/123456789" ) {
 			Actor = User554433,
 			DateCreated = DefaultDateCreated,
-			StartedAt = NodaDefaultStartedAtTime
+			StartedAt = DefaultStartedAtTime
 		};
 
 	}

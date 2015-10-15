@@ -8,16 +8,14 @@ using Newtonsoft.Json;
 using NodaTime;
 
 namespace ImsGlobal.Caliper.Entities {
-	using ImsGlobal.Caliper.Util;
 
 	/// <summary>
-	/// The base Caliper Entity. Analogous to a schema.org Thing.
+	/// Default base class for Caliper entities.
 	/// </summary>
-	public class Entity : IJsonId {
+	public class Entity : BaseEntity {
 
-		public Entity( string id ) {
-			this.Id = id;
-			this.Type = EntityType.Entity;
+		public Entity( string id )
+			: base( id ) {
 			this.Extensions = new Dictionary<string, string>();
 		}
 
@@ -25,12 +23,6 @@ namespace ImsGlobal.Caliper.Entities {
 		public string Context {
 			get { return CaliperContext.Context.Value; }
 		}
-
-		[JsonProperty( "@id", Order = 1 )]
-		public string Id { get; set; }
-
-		[JsonProperty( "@type", Order = 2 )]
-		public IType Type { get; set; }
 
 		[JsonProperty( "name", Order = 3 )]
 		public string Name { get; set; }

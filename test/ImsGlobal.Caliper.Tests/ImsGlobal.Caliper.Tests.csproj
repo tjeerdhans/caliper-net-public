@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssessmentItemCompletedEventsTests.cs" />
+    <Compile Include="MinimalEventTest.cs" />
     <Compile Include="SensorSendEventsTest.cs" />
     <Compile Include="ViewEventsTests.cs" />
     <Compile Include="SessionEventsTests.cs" />
@@ -93,6 +94,7 @@
     <EmbeddedResource Include="ReferenceJson\caliperAssessmentItemStartedEvent.json" />
     <EmbeddedResource Include="ReferenceJson\caliperSharedAnnotationEvent.json" />
     <EmbeddedResource Include="ReferenceJson\eventStorePayload.json" />
+    <EmbeddedResource Include="ReferenceJson\caliperEnvelopeEventViewViewedMinimal.json" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\ImsGlobal.Caliper\ImsGlobal.Caliper.csproj">
