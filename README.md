@@ -157,3 +157,7 @@ The build output will be under `.\src\ImsGlobal.Caliper\bin\Debug` or `.src\ImsG
 # License
 
 GNU LGPL v3.0
+
+© 2015 IMS Global Learning Consortium, Inc. All Rights Reserved. Trademark Information- http://www.imsglobal.org/copyright.html
+
+For license information contact info@imsglobal.org and read the license file contained in the repository.
