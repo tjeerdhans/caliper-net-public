@@ -1,10 +1,10 @@
 # caliper-net
 IMS Global caliper-net
-NOTE: THESE MATERIALS ARE FOR IMS CONTRIBUTING MEMBERS ONLY. THEY MAY NOT BE RELEASED UNTIL APPROVED BY IMS GLOBAL.
+==============
 
 # Overview
 
-**caliper-net** is a .NET client for the IMS Global Caliper Analytics™ Sensor API. It is meant to be used by learning tools and applications to send events to a Caliper endpoint.
+**caliper-net** is a .NET client for [Caliper](http://www.imsglobal.org/caliper) that provides an implementation of the Caliper SensorAPI™.
 
 # Getting Started
 
@@ -154,9 +154,9 @@ The build output will be under `.\src\ImsGlobal.Caliper\bin\Debug` or `.src\ImsG
 
 ```
 
-# License
+## Documentation
 
-GNU LGPL v3.0
+Documentation is available at [http://www.imsglobal.org/caliper](https://www.imsglobal.org/caliper).
 
 © 2015 IMS Global Learning Consortium, Inc. All Rights Reserved. Trademark Information- http://www.imsglobal.org/copyright.html
 
