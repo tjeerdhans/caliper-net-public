@@ -1,15 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImsGlobal.Caliper", "src\ImsGlobal.Caliper\ImsGlobal.Caliper.csproj", "{9AAEF49D-F8C3-4C31-B9C5-20CAE780D7DF}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A4F13222-401A-4B4F-9A9B-FF0860F264A5}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImsGlobal.Caliper.Tests", "test\ImsGlobal.Caliper.Tests\ImsGlobal.Caliper.Tests.csproj", "{E820BC6B-A8CE-45D5-92B3-76E03B052A40}"
 EndProject
