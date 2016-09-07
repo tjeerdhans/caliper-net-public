@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ImsGlobal.Caliper.Entities.SchemaDotOrg;
 
-namespace ImsGlobal.Caliper.Entities.Media {
-	using ImsGlobal.Caliper.Entities.SchemaDotOrg;
-
-	/// <summary>
-	/// An image object embedded in a web page.
-	/// </summary>
-	public class ImageObject : MediaObject, IImageObject {
-
-		public ImageObject( string id )
-			: base( id, MediaObjectType.ImageObject ) {
-		}
-
-	}
-
+namespace ImsGlobal.Caliper.Entities.Media
+{
+    /// <summary>
+    /// An image object embedded in a web page.
+    /// </summary>
+    public class ImageObject : MediaObject, IImageObject
+    {
+        public ImageObject(string id)
+            : base(id, MediaObjectType.ImageObject)
+        {
+        }
+    }
 }

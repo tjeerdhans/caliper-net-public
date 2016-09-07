@@ -1,36 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using ImsGlobal.Caliper.Entities.W3c;
 using Newtonsoft.Json;
 
-namespace ImsGlobal.Caliper.Entities.Lis {
-	using ImsGlobal.Caliper.Entities.W3c;
+namespace ImsGlobal.Caliper.Entities.Lis
+{
+    /// <summary>
+    /// A CourseOffering is the occurrence of a course in a specific term,
+    /// semester, etc. A Caliper CourseOffering provides a subset of the
+    /// CourseOffering properties specified in the IMS LTI 2.0 specification,
+    /// which in turn, draws inspiration from the IMS LIS 1.0 specification.
+    /// </summary>
+    public class CourseOffering : Entity, ICourse
+    {
+        public CourseOffering(string id)
+            : base(id)
+        {
+            Type = EntityType.CourseOffering;
+        }
 
-	/// <summary>
-	/// A CourseOffering is the occurrence of a course in a specific term,
-	/// semester, etc. A Caliper CourseOffering provides a subset of the
-	/// CourseOffering properties specified in the IMS LTI 2.0 specification,
-	/// which in turn, draws inspiration from the IMS LIS 1.0 specification.
-	/// </summary>
-	public class CourseOffering : Entity, ICourse {
+        [JsonProperty("courseNumber", Order = 21)]
+        public string CourseNumber { get; set; }
 
-		public CourseOffering( string id )
-			: base( id ) {
-			this.Type = EntityType.CourseOffering;
-		}
+        [JsonProperty("academicSession", Order = 22)]
+        public string AcademicSession { get; set; }
 
-		[JsonProperty( "courseNumber", Order = 21 )]
-		public string CourseNumber { get; set; }
-
-		[JsonProperty( "academicSession", Order = 22 )]
-		public string AcademicSession { get; set; }
-
-		[JsonProperty( "subOrganizationOf", Order = 24 )]
-		public IOrganization SubOrganizationOf { get; set; }
-
-	}
-
+        [JsonProperty("subOrganizationOf", Order = 24)]
+        public IOrganization SubOrganizationOf { get; set; }
+    }
 }

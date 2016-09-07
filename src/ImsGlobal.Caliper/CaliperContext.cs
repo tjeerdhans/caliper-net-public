@@ -1,20 +1,22 @@
-﻿using Newtonsoft.Json;
+﻿using ImsGlobal.Caliper.Util;
+using Newtonsoft.Json;
 
-namespace ImsGlobal.Caliper {
-	using ImsGlobal.Caliper.Util;
+namespace ImsGlobal.Caliper
+{
+    [JsonConverter(typeof(JsonValueConverter<CaliperContext>))]
+    public sealed class CaliperContext : IJsonValue
+    {
+        public static readonly CaliperContext Context = new CaliperContext("http://purl.imsglobal.org/ctx/caliper/v1/Context");
 
-	[JsonConverter( typeof( JsonValueConverter<CaliperContext> ) )]
-	public sealed class CaliperContext : IJsonValue {
+        public CaliperContext()
+        {
+        }
 
-		public static readonly CaliperContext Context = new CaliperContext( "http://purl.imsglobal.org/ctx/caliper/v1/Context" );
+        public CaliperContext(string value)
+        {
+            Value = value;
+        }
 
-		public CaliperContext() {}
-
-		public CaliperContext( string value ) {
-			this.Value = value;
-		}
-
-		public string Value { get; set; }
-	}
-
+        public string Value { get; set; }
+    }
 }

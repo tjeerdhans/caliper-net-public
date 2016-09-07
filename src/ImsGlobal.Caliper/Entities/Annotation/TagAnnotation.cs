@@ -1,22 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace ImsGlobal.Caliper.Entities.Annotation {
+namespace ImsGlobal.Caliper.Entities.Annotation
+{
+    public class TagAnnotation : Annotation
+    {
+        public TagAnnotation(string id)
+            : base(id)
+        {
+            Type = AnnotationType.Tag;
+            Tags = new List<string>();
+        }
 
-	public class TagAnnotation : Annotation {
-
-		public TagAnnotation( string id )
-			: base( id ) {
-			this.Type = AnnotationType.Tag;
-			this.Tags = new List<string>();
-		}
-
-		[JsonProperty( "tags", Order = 31 )]
-		public IList<string> Tags { get; set; }
-
-	}
+        [JsonProperty("tags", Order = 31)]
+        public IList<string> Tags { get; set; }
+    }
 }

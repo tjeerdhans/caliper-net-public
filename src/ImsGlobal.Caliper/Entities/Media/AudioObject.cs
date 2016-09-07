@@ -1,35 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using ImsGlobal.Caliper.Entities.SchemaDotOrg;
 using Newtonsoft.Json;
 
-namespace ImsGlobal.Caliper.Entities.Media {
-	using ImsGlobal.Caliper.Entities.SchemaDotOrg;
+namespace ImsGlobal.Caliper.Entities.Media
+{
+    /// <summary>
+    /// An audio object embedded in a web page.
+    /// </summary>
+    public class AudioObject : MediaObject, IAudioObject
+    {
+        public AudioObject(string id)
+            : base(id, MediaObjectType.AudioObject)
+        {
+        }
 
-	/// <summary>
-	/// An audio object embedded in a web page.
-	/// </summary>
-	public class AudioObject : MediaObject, IAudioObject {
+        [JsonProperty("volumeMin", Order = 81)]
+        public string VolumeMin { get; set; }
 
-		public AudioObject( string id )
-			: base( id, MediaObjectType.AudioObject ) {
-		}
+        [JsonProperty("volumeMax", Order = 82)]
+        public string VolumeMax { get; set; }
 
-		[JsonProperty( "volumeMin", Order = 81 )]
-		public string VolumeMin { get; set; }
+        [JsonProperty("volumeLevel", Order = 83)]
+        public string VolumeLevel { get; set; }
 
-		[JsonProperty( "volumeMax", Order = 82 )]
-		public string VolumeMax { get; set; }
-
-		[JsonProperty( "volumeLevel", Order = 83 )]
-		public string VolumeLevel { get; set; }
-
-		[JsonProperty( "muted", Order = 84 )]
-		public bool Muted { get; set; }
-
-	}
-
+        [JsonProperty("muted", Order = 84)]
+        public bool Muted { get; set; }
+    }
 }

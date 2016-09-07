@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ImsGlobal.Caliper.Entities.Foaf;
 
-namespace ImsGlobal.Caliper.Entities.Agent {
-	using ImsGlobal.Caliper.Entities.Foaf;
-
-	public class Person : Entity, IAgent {
-
-		public Person( string id )
-			: base( id ) {
-			this.Type = EntityType.Person;
-		}
-
-	}
-
+namespace ImsGlobal.Caliper.Entities.Agent
+{
+    public class Person : Entity, IAgent
+    {
+        public Person(string id)
+            : base(id)
+        {
+            Type = EntityType.Person;
+        }
+    }
 }

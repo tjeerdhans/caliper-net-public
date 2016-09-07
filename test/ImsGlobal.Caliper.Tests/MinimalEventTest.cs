@@ -1,48 +1,44 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using ImsGlobal.Caliper.Entities;
+using ImsGlobal.Caliper.Entities.Agent;
+using ImsGlobal.Caliper.Events;
+using ImsGlobal.Caliper.Protocol;
+using ImsGlobal.Caliper.Tests.SimpleHelpers;
 using NUnit.Framework;
 
-namespace ImsGlobal.Caliper.Tests {
-	using ImsGlobal.Caliper.Tests.SimpleHelpers;
-	using ImsGlobal.Caliper.Entities;
-	using ImsGlobal.Caliper.Entities.Agent;
-	using ImsGlobal.Caliper.Events;
-	using ImsGlobal.Caliper.Protocol;
+namespace ImsGlobal.Caliper.Tests
+{
+    [TestFixture]
+    public class MinimalEventTest
+    {
+        [Test]
+        public void MinimalEvent_MatchesReferenceJson()
+        {
+            var @object = new BaseEntity("https://example.com/viewer/book/34843#epubcfi(/4/3)")
+            {
+                Type = new EntityType("http://www.idpf.org/epub/vocab/structure/#volume")
+            };
 
-	[TestFixture]
-	public class MinimalEventTest {
+            var actor = new Agent("https://example.edu/user/554433")
+            {
+                Type = new EntityType("http://purl.imsglobal.org/caliper/v1/lis/Person")
+            };
 
-		[Test]
-		public void MinimalEvent_MatchesReferenceJson() {
+            var @event = new BaseEvent
+            {
+                Actor = actor,
+                Action = Action.Viewed,
+                Object = @object,
+                EventTime = TestEntities.DefaultStartedAtTime
+            };
 
-			var @object = new BaseEntity( "https://example.com/viewer/book/34843#epubcfi(/4/3)" ) {
-				Type = new EntityType( "http://www.idpf.org/epub/vocab/structure/#volume" )
-			};
+            var caliperMessage = new CaliperMessage<BaseEvent>
+            {
+                SensorId = "https://example.edu/sensor/001",
+                SendTime = TestEntities.DefaultSendTime,
+                Data = new[] { @event }
+            };
 
-			var actor = new Agent( "https://example.edu/user/554433" ) {
-				Type = new EntityType( "http://purl.imsglobal.org/caliper/v1/lis/Person" )
-			};
-
-			var @event = new BaseEvent {
-				Actor = actor,
-				Action = Action.Viewed,
-				Object = @object,
-				EventTime = TestEntities.DefaultStartedAtTime
-			};
-
-			var caliperMessage = new CaliperMessage<BaseEvent> {
-				SensorId = "https://example.edu/sensor/001",
-				SendTime = TestEntities.DefaultSendTime,
-				Data = new [] { @event }
-			};
-
-			JsonAssertions.AssertSameObjectJson( caliperMessage, "caliperEnvelopeEventViewViewedMinimal" );
-		}
-
-	}
-
+            JsonAssertions.AssertSameObjectJson(caliperMessage, "caliperEnvelopeEventViewViewedMinimal");
+        }
+    }
 }

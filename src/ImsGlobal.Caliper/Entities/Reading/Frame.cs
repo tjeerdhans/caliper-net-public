@@ -1,29 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Newtonsoft.Json;
 
-using Newtonsoft.Json;
+namespace ImsGlobal.Caliper.Entities.Reading
+{
+    public class Frame : DigitalResource
+    {
+        public Frame(string id)
+            : base(id)
+        {
+            Type = DigitalResourceType.Frame;
+        }
 
-namespace ImsGlobal.Caliper.Entities.Reading {
+        [JsonIgnore]
+        public Reading Reading { get; set; }
 
-	public class Frame : DigitalResource {
-
-		public Frame( string id )
-			: base( id ) {
-			this.Type = DigitalResourceType.Frame;
-		}
-
-		[JsonIgnore]
-		public Reading Reading { get; set; }
-
-		/// <summary>
-		/// Numeric index of the location relative to sibling locations in the content.
-		/// </summary>
-		[JsonProperty( "index", Order = 21 )]
-		public int Index { get; set; }
-
-	}
-
+        /// <summary>
+        /// Numeric index of the location relative to sibling locations in the content.
+        /// </summary>
+        [JsonProperty("index", Order = 21)]
+        public int Index { get; set; }
+    }
 }

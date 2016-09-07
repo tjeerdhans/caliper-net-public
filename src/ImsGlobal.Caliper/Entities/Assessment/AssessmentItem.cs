@@ -1,25 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Newtonsoft.Json;
 
-using Newtonsoft.Json;
+namespace ImsGlobal.Caliper.Entities.Assessment
+{
+    using Assignable;
+    using Qti;
 
-namespace ImsGlobal.Caliper.Entities.Assessment {
-	using ImsGlobal.Caliper.Entities.Assignable;
-	using ImsGlobal.Caliper.Entities.Qti;
+    public class AssessmentItem : AssignableDigitalResource, IAssessmentItem
+    {
 
-	public class AssessmentItem : AssignableDigitalResource, IAssessmentItem {
+        public AssessmentItem(string id)
+            : base(id)
+        {
+            Type = AssignableDigitalResourceType.AssessmentItem;
+        }
 
-		public AssessmentItem( string id )
-			: base( id ) {
-			this.Type = AssignableDigitalResourceType.AssessmentItem;
-		}
+        [JsonProperty("isTimeDependent", Order = 31)]
+        public bool IsTimeDependent { get; set; }
 
-		[JsonProperty( "isTimeDependent", Order = 31 )]
-		public bool IsTimeDependent { get; set; }
-
-	}
+    }
 
 }

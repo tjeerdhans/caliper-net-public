@@ -1,30 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using ImsGlobal.Caliper.Util;
 using Newtonsoft.Json;
 
-namespace ImsGlobal.Caliper.Entities {
-	using ImsGlobal.Caliper.Util;
+namespace ImsGlobal.Caliper.Entities
+{
+    /// <summary>
+    /// Core base class for Caliper entities. Analogous to a schema.org Thing.
+    /// </summary>
+    public class BaseEntity : IJsonId
+    {
+        public BaseEntity(string id)
+        {
+            Id = id;
+            Type = EntityType.Entity;
+        }
 
-	/// <summary>
-	/// Core base class for Caliper entities. Analogous to a schema.org Thing.
-	/// </summary>
-	public class BaseEntity : IJsonId {
+        [JsonProperty("@type", Order = 2)]
+        public IType Type { get; set; }
 
-		public BaseEntity( string id ) {
-			this.Id = id;
-			this.Type = EntityType.Entity;
-		}
-
-		[JsonProperty( "@id", Order = 1 )]
-		public string Id { get; set; }
-
-		[JsonProperty( "@type", Order = 2 )]
-		public IType Type { get; set; }
-
-	}
-
+        [JsonProperty("@id", Order = 1)]
+        public string Id { get; set; }
+    }
 }
