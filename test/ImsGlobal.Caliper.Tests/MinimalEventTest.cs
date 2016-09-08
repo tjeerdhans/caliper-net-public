@@ -3,14 +3,13 @@ using ImsGlobal.Caliper.Entities.Agent;
 using ImsGlobal.Caliper.Events;
 using ImsGlobal.Caliper.Protocol;
 using ImsGlobal.Caliper.Tests.SimpleHelpers;
-using NUnit.Framework;
+using Xunit;
 
 namespace ImsGlobal.Caliper.Tests
 {
-    [TestFixture]
     public class MinimalEventTest
     {
-        [Test]
+        [Fact]
         public void MinimalEvent_MatchesReferenceJson()
         {
             var @object = new BaseEntity("https://example.com/viewer/book/34843#epubcfi(/4/3)")

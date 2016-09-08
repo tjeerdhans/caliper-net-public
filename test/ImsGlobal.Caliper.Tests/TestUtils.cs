@@ -8,7 +8,7 @@ namespace ImsGlobal.Caliper.Tests
     {
         public static string LoadReferenceJsonFile(string refJsonName)
         {
-            var assembly = Assembly.GetExecutingAssembly();
+            var assembly = typeof(TestUtils).GetTypeInfo().Assembly;
             var resourceName = "ImsGlobal.Caliper.Tests.ReferenceJson." + refJsonName + ".json";
 
             string content;

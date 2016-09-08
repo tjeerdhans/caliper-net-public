@@ -1,14 +1,13 @@
 ﻿using ImsGlobal.Caliper.Events;
 using ImsGlobal.Caliper.Events.Assessment;
 using ImsGlobal.Caliper.Tests.SimpleHelpers;
-using NUnit.Framework;
+using Xunit;
 
 namespace ImsGlobal.Caliper.Tests
 {
-    [TestFixture]
     public class AssessmentItemStartedEventsTests
     {
-        [Test]
+        [Fact]
         public void AssessmentItemStartedEvent_MatchesReferenceJson()
         {
             var assessmentItemEvent = new AssessmentItemEvent(Action.Started)

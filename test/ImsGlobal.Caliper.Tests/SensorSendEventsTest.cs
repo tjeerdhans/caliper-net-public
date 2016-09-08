@@ -2,14 +2,13 @@
 using ImsGlobal.Caliper.Events.Reading;
 using ImsGlobal.Caliper.Protocol;
 using ImsGlobal.Caliper.Tests.SimpleHelpers;
-using NUnit.Framework;
+using Xunit;
 
 namespace ImsGlobal.Caliper.Tests
 {
-    [TestFixture]
     public class SensorSendEventsTest
     {
-        [Test]
+        [Fact]
         public void CaliperMessage_MatchesReferenceJson()
         {
             var navigationEvent = new NavigationEvent

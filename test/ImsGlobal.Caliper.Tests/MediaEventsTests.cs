@@ -1,14 +1,13 @@
 ﻿using ImsGlobal.Caliper.Events;
 using ImsGlobal.Caliper.Events.Media;
 using ImsGlobal.Caliper.Tests.SimpleHelpers;
-using NUnit.Framework;
+using Xunit;
 
 namespace ImsGlobal.Caliper.Tests
 {
-    [TestFixture]
     public class MediaEventsTests
     {
-        [Test]
+        [Fact]
         public void MediaEvent_MatchesReferenceJson()
         {
             var mediaEvent = new MediaEvent(Action.Paused)

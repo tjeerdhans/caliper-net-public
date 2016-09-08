@@ -41,7 +41,7 @@ namespace ImsGlobal.Caliper.Protocol
             var message = new CaliperMessage<T>
             {
                 SensorId = _sensorId,
-                SendTime = SystemClock.Instance.Now,
+                SendTime = SystemClock.Instance.GetCurrentInstant(),
                 Data = data
             };
             string json = JsonConvert.SerializeObject(message, _serializerSettings);

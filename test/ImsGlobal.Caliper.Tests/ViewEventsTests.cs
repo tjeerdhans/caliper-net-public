@@ -1,13 +1,12 @@
 ﻿using ImsGlobal.Caliper.Events.Reading;
 using ImsGlobal.Caliper.Tests.SimpleHelpers;
-using NUnit.Framework;
+using Xunit;
 
 namespace ImsGlobal.Caliper.Tests
 {
-    [TestFixture]
     public class ViewEventsTests
     {
-        [Test]
+        [Fact]
         public void ViewEvent_MatchesReferenceJson()
         {
             var viewEvent = new ViewEvent
